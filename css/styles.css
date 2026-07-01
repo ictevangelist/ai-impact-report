@@ -2,11 +2,11 @@
    Embedding AI in Education — Woodland Academy Trust
    Strategic Review website stylesheet (shared across all pages)
    Brand: ICT Evangelist — clean white base, near-black geometric-sans
-   type (Jost), teal→green chevron gradient accent, charcoal buttons.
+   type (Poppins body, Exo 2 headings), teal→green chevron accent, charcoal buttons.
    Self-contained: fonts vendored locally, no external requests.
    ===================================================================== */
 
-/* ---------- Vendored font: Jost (SIL OFL) ---------- */
+/* ---------- Vendored fonts: Poppins + Exo 2 (SIL OFL) ---------- */
 @font-face { font-family:'Poppins'; src:url('../assets/fonts/poppins-400.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap; }
 @font-face { font-family:'Poppins'; src:url('../assets/fonts/poppins-500.woff2') format('woff2'); font-weight:500; font-style:normal; font-display:swap; }
 @font-face { font-family:'Poppins'; src:url('../assets/fonts/poppins-600.woff2') format('woff2'); font-weight:600; font-style:normal; font-display:swap; }

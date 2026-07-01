@@ -24,20 +24,22 @@
   Chart.defaults.font.size = 13;
   Chart.defaults.color = TICK;
 
+  // Legend sits BELOW the plot so it never collides with value labels
+  // printed above full-height (100%) bars.
   function legend() {
-    return { position: 'top', labels: { boxWidth: 14, padding: 16, font: { size: 13 } } };
+    return { position: 'bottom', labels: { boxWidth: 14, padding: 16, font: { size: 13 } } };
   }
   // Value label sitting just above each vertical bar (shows even for 0).
   function pctLabelTop() {
     return {
-      anchor: 'end', align: 'end', offset: 0, clamp: true,
+      anchor: 'end', align: 'end', offset: 2, clamp: false,
       color: LABEL, font: { weight: '600', size: 12 },
       formatter: function (v) { return v + '%'; }
     };
   }
   function hrsLabelTop() {
     return {
-      anchor: 'end', align: 'end', offset: 0, clamp: true,
+      anchor: 'end', align: 'end', offset: 2, clamp: false,
       color: LABEL, font: { weight: '600', size: 12 },
       formatter: function (v) { return v; }
     };
@@ -55,7 +57,7 @@
     },
     options: {
       responsive: true, maintainAspectRatio: false,
-      layout: { padding: { top: 18 } },
+      layout: { padding: { top: 26 } },
       plugins: {
         legend: legend(),
         datalabels: hrsLabelTop(),
@@ -80,7 +82,7 @@
     },
     options: {
       responsive: true, maintainAspectRatio: false,
-      layout: { padding: { top: 18 } },
+      layout: { padding: { top: 26 } },
       plugins: {
         legend: legend(),
         datalabels: pctLabelTop(),
@@ -112,7 +114,7 @@
     },
     options: {
       responsive: true, maintainAspectRatio: false,
-      layout: { padding: { top: 18 } },
+      layout: { padding: { top: 26 } },
       plugins: {
         legend: legend(),
         datalabels: pctLabelTop(),
