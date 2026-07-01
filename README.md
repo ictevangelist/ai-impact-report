@@ -30,14 +30,17 @@ static host.
 | `js/charts.js` | Chart definitions with all data values hard-coded |
 | `js/chart.umd.min.js` | Vendored [Chart.js](https://www.chartjs.org/) v4.4.1 (UMD, MIT licence) |
 | `assets/ict-evangelist-logo*.png` | ICT Evangelist logo (colour + white-knockout) |
-| `assets/fonts/jost-*.woff2` | Vendored [Jost](https://github.com/indestructible-type/Jost) font (SIL OFL) |
+| `assets/fonts/poppins-*.woff2` | Vendored [Poppins](https://fonts.google.com/specimen/Poppins) — body text (SIL OFL) |
+| `assets/fonts/exo2-*.woff2` | Vendored [Exo 2](https://fonts.google.com/specimen/Exo+2) — H1/H2 headings (SIL OFL) |
+| `js/chartjs-plugin-datalabels.min.js` | Vendored [chartjs-plugin-datalabels](https://chartjs-plugin-datalabels.netlify.app/) (MIT) |
 
 ## Branding
 
 The visual design follows the **ICT Evangelist** brand: a clean white base with near-black text, the
-teal-to-green chevron gradient as the signature accent, charcoal dark surfaces and buttons, and the
-**Jost** geometric sans-serif for headings (vendored locally). The ICT Evangelist logo appears in the
-header and footer. All fonts and images are local, so the site still makes no external requests.
+teal-to-green chevron gradient as the signature accent, charcoal dark surfaces and buttons. Typography pairs
+**Poppins** for body text with **Exo 2** for H1/H2 headings (both vendored locally). The ICT Evangelist
+logo appears in the header and footer. All fonts and images are local, so the site still makes no
+external requests.
 
 ## Charts
 

@@ -7,10 +7,12 @@
    ===================================================================== */
 
 /* ---------- Vendored font: Jost (SIL OFL) ---------- */
-@font-face { font-family:'Jost'; src:url('../assets/fonts/jost-400.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap; }
-@font-face { font-family:'Jost'; src:url('../assets/fonts/jost-500.woff2') format('woff2'); font-weight:500; font-style:normal; font-display:swap; }
-@font-face { font-family:'Jost'; src:url('../assets/fonts/jost-600.woff2') format('woff2'); font-weight:600; font-style:normal; font-display:swap; }
-@font-face { font-family:'Jost'; src:url('../assets/fonts/jost-700.woff2') format('woff2'); font-weight:700; font-style:normal; font-display:swap; }
+@font-face { font-family:'Poppins'; src:url('../assets/fonts/poppins-400.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:'Poppins'; src:url('../assets/fonts/poppins-500.woff2') format('woff2'); font-weight:500; font-style:normal; font-display:swap; }
+@font-face { font-family:'Poppins'; src:url('../assets/fonts/poppins-600.woff2') format('woff2'); font-weight:600; font-style:normal; font-display:swap; }
+@font-face { font-family:'Poppins'; src:url('../assets/fonts/poppins-700.woff2') format('woff2'); font-weight:700; font-style:normal; font-display:swap; }
+@font-face { font-family:'Exo 2'; src:url('../assets/fonts/exo2-600.woff2') format('woff2'); font-weight:600; font-style:normal; font-display:swap; }
+@font-face { font-family:'Exo 2'; src:url('../assets/fonts/exo2-700.woff2') format('woff2'); font-weight:700; font-style:normal; font-display:swap; }
 
 /* ---------- Design tokens ---------- */
 :root {
@@ -37,8 +39,9 @@
   --radius:  10px;
   --shadow:  0 1px 3px rgba(21,32,43,.07), 0 8px 24px rgba(21,32,43,.06);
   --maxw:    1080px;
-  --font:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-head: "Jost", var(--font);
+  --font:      "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-head: var(--font);
+  --font-display: "Exo 2", var(--font);
 }
 
 /* ---------- Reset / base ---------- */
@@ -68,10 +71,11 @@ a:hover { color: var(--brand-teal); }
 }
 .skip-link:focus { left: 0; color:#fff; }
 
-/* Headings use the geometric brand face */
-h1, h2, h3, h4, .brand__title, .stat__num, .btn, .eyebrow, .kicker {
+/* Body is Poppins (--font-head); H1 & H2 are Exo 2 (--font-display) */
+h3, h4, .brand__title, .stat__num, .btn, .eyebrow, .kicker {
   font-family: var(--font-head);
 }
+h1, h2 { font-family: var(--font-display); }
 
 /* ---------- Header / navigation (slim, waffle menu, autohide) ---------- */
 .site-header {
@@ -217,7 +221,7 @@ h1, h2, h3, h4, .brand__title, .stat__num, .btn, .eyebrow, .kicker {
 .prose li { margin-bottom: .5rem; }
 .lead { font-size: 1.2rem; color: var(--ink-soft); max-width: 70ch; }
 .section-intro { max-width: 72ch; }
-.section > .container > h2:first-child, .container > h2.mt-0 { font-family: var(--font-head); }
+.section > .container > h2:first-child, .container > h2.mt-0 { font-family: var(--font-display); }
 
 /* ---------- Cards ---------- */
 .card-grid { display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
