@@ -91,7 +91,7 @@ h1, h2 { font-family: var(--font-display); }
   content: ""; display: block; height: 4px; background: var(--brand-grad);
 }
 .header-inner {
-  max-width: var(--maxw); margin: 0 auto; padding: .55rem 1.25rem;
+  max-width: var(--maxw); margin: 0 auto; padding: .85rem 1.25rem;
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
 }
 .brand { display: flex; align-items: center; gap: .85rem; color: var(--ink); text-decoration: none; flex: 0 1 auto; min-width: 0; }
