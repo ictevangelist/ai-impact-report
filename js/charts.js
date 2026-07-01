@@ -11,11 +11,11 @@
     return;
   }
 
-  var BASELINE = '#c98b1e';   // amber — baseline (before AI)
-  var FOLLOWUP = '#1b4965';   // deep blue — follow-up (after AI)
-  var ACCENT   = '#2a7f8f';   // teal — single-series inclusion chart
-  var GRID     = 'rgba(22,35,46,.08)';
-  var TICK     = '#3d5060';
+  var BASELINE = '#8a99a3';   // slate — baseline (before AI)
+  var FOLLOWUP = '#0ea3ab';   // brand teal — follow-up (after AI)
+  var ACCENT   = '#45b84a';   // brand green — single-series inclusion chart
+  var GRID     = 'rgba(21,32,43,.08)';
+  var TICK     = '#45525d';
 
   // Shared defaults
   Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif";
