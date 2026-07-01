@@ -26,7 +26,9 @@ static host.
 | `reflections-recommendations.html` | Reflections &amp; Recommendations |
 | `data-findings.html` | Data &amp; Findings — headline metrics visualised as charts |
 | `css/styles.css` | Shared stylesheet |
-| `js/nav.js` | Mobile navigation toggle |
+| `privacy.html` | Privacy notice (no cookies / tracking / data collection) |
+| `js/nav.js` | Header waffle-menu toggle + autohide-on-scroll |
+| `js/a11y.js` | Reading-controls widget (text size, contrast, spacing, listen-aloud) |
 | `js/charts.js` | Chart definitions with all data values hard-coded |
 | `js/chart.umd.min.js` | Vendored [Chart.js](https://www.chartjs.org/) v4.4.1 (UMD, MIT licence) |
 | `assets/ict-evangelist-logo*.png` | ICT Evangelist logo (colour + white-knockout) |
@@ -48,6 +50,15 @@ The Data &amp; Findings page renders charts with [Chart.js](https://www.chartjs.
 library is vendored locally (`js/chart.umd.min.js`) so the site is fully self-contained and makes no
 external requests. Every data value is hard-coded into `js/charts.js` and mirrored in an accessible
 data table on the page, so the figures remain available even if scripting is disabled.
+
+## Accessibility
+
+Designed against WCAG 2.1 AA and audited with axe-core (no violations). Features include a skip link,
+semantic landmarks and headings, keyboard-operable menu with focus management, chart `aria-label`s plus
+a full data-table fallback, honouring of the OS reduced-motion and increased-contrast settings, and a
+**Reading controls** widget offering adjustable text size, a high-contrast theme, extra spacing, and a
+"listen to this page" option (using the browser's built-in speech synthesiser — no external service).
+Preferences are stored locally on the visitor's device.
 
 ## Viewing
 
