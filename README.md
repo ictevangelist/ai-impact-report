@@ -29,6 +29,15 @@ static host.
 | `js/nav.js` | Mobile navigation toggle |
 | `js/charts.js` | Chart definitions with all data values hard-coded |
 | `js/chart.umd.min.js` | Vendored [Chart.js](https://www.chartjs.org/) v4.4.1 (UMD, MIT licence) |
+| `assets/ict-evangelist-logo*.png` | ICT Evangelist logo (colour + white-knockout) |
+| `assets/fonts/jost-*.woff2` | Vendored [Jost](https://github.com/indestructible-type/Jost) font (SIL OFL) |
+
+## Branding
+
+The visual design follows the **ICT Evangelist** brand: a clean white base with near-black text, the
+teal-to-green chevron gradient as the signature accent, charcoal dark surfaces and buttons, and the
+**Jost** geometric sans-serif for headings (vendored locally). The ICT Evangelist logo appears in the
+header and footer. All fonts and images are local, so the site still makes no external requests.
 
 ## Charts
 
