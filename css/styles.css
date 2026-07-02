@@ -406,3 +406,21 @@ html.a11y-spacing li { margin-bottom: .75em; }
 .a11y-reset:hover { background: var(--brand-deep); }
 .a11y-note { font-size: .76rem; color: var(--ink-soft); margin: .8rem 0 0; line-height: 1.5; }
 @media print { .a11y-widget { display: none !important; } }
+
+/* FAQ (Key questions answered) */
+.faq { margin-top: 1.6rem; }
+.faq details {
+  border: 1px solid var(--border); border-radius: 12px;
+  background: var(--surface); margin: .7rem 0; overflow: hidden;
+}
+.faq summary {
+  cursor: pointer; padding: 1rem 1.2rem; font-weight: 600;
+  font-family: var(--font-display); font-size: 1.02rem; list-style: none;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--brand-teal); font-weight: 700; font-size: 1.4rem; line-height: 1; }
+.faq details[open] summary::after { content: "\2013"; }
+.faq details[open] summary { border-bottom: 1px solid var(--border); }
+.faq .faq__a { padding: 1rem 1.2rem; }
+.faq .faq__a p { margin: 0; color: var(--ink-soft); }
