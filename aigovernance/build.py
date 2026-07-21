@@ -28,6 +28,7 @@ NAV = [
     ("breaches.html",           "Breaches"),
     ("pupil-use.html",          "Pupil use"),
     ("guidance-map.html",       "The guidance map"),
+    ("references.html",         "References"),
     ("dpia-tool.html",          "DPIA screening tool"),
     ("policy-template.html",    "Get the template"),
 ]
@@ -110,6 +111,7 @@ FOOTER = f"""</main>
           <li><a href="data-protection.html">Data protection</a></li>
           <li><a href="safeguarding.html">Safeguarding &amp; Prevent</a></li>
           <li><a href="guidance-map.html">The guidance map</a></li>
+          <li><a href="references.html">References</a></li>
           <li><a href="dpia-tool.html">DPIA screening tool</a></li>
           <li><a href="policy-template.html">Get the template</a></li>
           <li><a href="privacy.html">Privacy notice</a></li>

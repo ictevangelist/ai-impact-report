@@ -18,10 +18,11 @@ U = {
  'psed':       'https://www.gov.uk/government/publications/public-sector-equality-duty-guidance-for-public-authorities/public-sector-equality-duty-guidance-for-public-authorities',
  'dfe_genai':  'https://www.gov.uk/government/publications/generative-artificial-intelligence-in-education',
  'dfe_safety': 'https://www.gov.uk/government/publications/generative-ai-product-safety-standards/generative-ai-product-safety-standards',
- 'jcq':        'https://www.jcq.org.uk/exams-office/malpractice/artificial-intelligence/',
+ 'jcq':        'https://www.jcq.org.uk/knowledge-hub/ai-use-in-assessments-your-role-in-protecting-the-integrity-of-qualifications/',
  'dfe_stds':   'https://www.gov.uk/guidance/meeting-digital-and-technology-standards-in-schools-and-colleges',
  'dfe_filter': 'https://www.gov.uk/guidance/meeting-digital-and-technology-standards-in-schools-and-colleges/filtering-and-monitoring-core-standard',
  'dfe_cyber':  'https://www.gov.uk/guidance/meeting-digital-and-technology-standards-in-schools-and-colleges/cyber-security-core-standard',
+ 'dfe_gov':    'https://www.gov.uk/guidance/meeting-digital-and-technology-standards-in-schools-and-colleges/digital-leadership-and-governance-standards',
  'osa':        'https://www.legislation.gov.uk/ukpga/2023/50/contents',
  'ofcom':      'https://www.ofcom.org.uk/online-safety/protecting-children/protection-of-children-duties-under-the-online-safety-act',
  'prevent':    'https://www.gov.uk/government/publications/prevent-duty-guidance',
@@ -133,9 +134,9 @@ G_OSA = (link("Online Safety Act 2023", U['osa']) + " and the "
          + link("Ofcom Protection of Children code of practice", U['ofcom']) + ".")
 G_PREVENT = (link("Prevent duty guidance (2023)", U['prevent']) + " and "
              + link("Working Together to Safeguard Children 2026", U['wttsc']) + ".")
-G_STANDARDS = (link("DfE filtering &amp; monitoring", U['dfe_filter']) + ", "
+G_STANDARDS = ("the DfE " + link("filtering &amp; monitoring", U['dfe_filter']) + ", "
                + link("cyber security", U['dfe_cyber']) + ", and "
-               + link("digital &amp; governance standards", U['dfe_stds']) + ".")
+               + link("digital leadership &amp; governance", U['dfe_gov']) + " standards.")
 
 PAGES = []
 
@@ -465,7 +466,62 @@ PAGES.append(("guidance-map.html", "The guidance map", "Reference",
   </div>
   <p class="chart-note">Frameworks and their commencement dates change. Confirm the current version of each before you rely on it, and take your own professional or legal advice where there is any doubt. This map is a signpost, not a statement of the law.</p>
   """,
-  None, None, ("pupil-use.html", "Pupil use"), ("dpia-tool.html", "DPIA screening tool")))
+  None, None, ("pupil-use.html", "Pupil use"), ("references.html", "References")))
+
+# ---- References (all 17 sources cited by the template, current versions) ----
+REFS = [
+ (link("Keeping Children Safe in Education 2026", U['kcsie']),
+  "Statutory safeguarding guidance for schools and colleges in England — the baseline from 1 September 2026, addressing AI within its four areas of online risk."),
+ (link("The UK GDPR", U['ukgdpr']) + ", as amended by the " + link("Data (Use and Access) Act 2025", U['duaa']),
+  "The core data-protection regime governing the processing of personal data."),
+ (link("The Data Protection Act 2018", U['dpa2018']) + ", as amended by the " + link("Data (Use and Access) Act 2025", U['duaa']),
+  "The UK’s implementing data-protection statute, read alongside the UK GDPR."),
+ (link("ICO guidance on AI", U['ico_ai']),
+  "The Information Commissioner’s guidance on artificial intelligence and data protection."),
+ (link("The ICO AI and data protection risk toolkit", U['ico_toolkit']),
+  "A practical toolkit for identifying and mitigating data-protection risk across an AI project’s lifecycle."),
+ (link("The ICO Children’s Code", U['childrens']),
+  "The age-appropriate design code for online services likely to be accessed by children."),
+ (link("The DfE position on generative AI in education", U['dfe_genai']),
+  "The Department for Education’s policy position on the use of generative AI in schools and colleges."),
+ (link("The DfE generative AI product safety standards", U['dfe_safety']) + " (January 2026)",
+  "The Department’s expectations for the safety of generative AI products used in education settings."),
+ (link("JCQ AI Use in Assessments", U['jcq']) + " (Revision 2)",
+  "Joint Council for Qualifications guidance on AI use where qualifications are involved, including malpractice and marking."),
+ (link("The DfE filtering and monitoring standard", U['dfe_filter']),
+  "The core standard for filtering and monitoring arrangements in schools and colleges."),
+ (link("The DfE cyber security standard", U['dfe_cyber']),
+  "The core standard for cyber security in schools and colleges."),
+ (link("The DfE digital leadership and governance standard", U['dfe_gov']),
+  "The standard for digital leadership and governance, including a senior digital lead and governor oversight."),
+ (link("The Online Safety Act 2023", U['osa']),
+  "The statute establishing online-safety duties for user-to-user and search services."),
+ (link("The Ofcom Protection of Children code of practice", U['ofcom']),
+  "Ofcom’s codes setting out measures to protect children online under the Online Safety Act."),
+ (link("The Prevent duty guidance (2023)", U['prevent']),
+  "Statutory guidance on the Prevent duty for specified authorities in England and Wales."),
+ (link("Working Together to Safeguard Children 2026", U['wttsc']),
+  "The statutory framework for multi-agency working to safeguard and promote the welfare of children."),
+ (link("The Academy Trust Handbook 2026", U['ath']),
+  "The financial and governance framework for academy trusts, relevant to procurement and oversight."),
+]
+_ref_items = "\n".join(
+    f'<li><span class="ref-title">{t}</span><span class="ref-desc">{d}</span></li>' for t, d in REFS)
+references_body = banner("Reference list", "References",
+  "Every source cited by the Use of AI Policy template, at its current version, in one place — each linked to the official document.") + f"""
+  <p class="lead">The <em>Use of AI Policy</em> template sits within a stack of statute, statutory guidance and sector standards. These are the sources it draws on, in the order they appear in the template’s opening section. Each opens the official document in a new tab.</p>
+  <ol class="reflist">
+  {_ref_items}
+  </ol>
+  <div class="commentary">
+    <h3>A note on versions</h3>
+    <p>Law and guidance change, and commencement dates move. The links above point to the official landing page for each source, which the publisher keeps at the current version; the specific edition named is the one the template was written against (adoption from September 2026). Always confirm the current version before relying on it, and take your own professional or legal advice where there is any doubt.</p>
+  </div>
+  <p>Prefer to see what each source governs and where it lands on this site? The <a href="guidance-map.html">guidance map</a> sets that out.</p>
+""" + pagenav(("guidance-map.html", "The guidance map"), ("dpia-tool.html", "DPIA screening tool"))
+write("references.html", "References — " + BRAND_TITLE,
+      "Every source cited by the Use of AI Policy template, at its current version, linked to the official document — KCSIE, UK GDPR, ICO, DfE standards, Online Safety Act and more.",
+      references_body, ORG_LD)
 
 # ---- Build the standard topic pages ----
 for slug, navt, kicker, h1, sub, body, _gi, _extra, prev, nxt in PAGES:

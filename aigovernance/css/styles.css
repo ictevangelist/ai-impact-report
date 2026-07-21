@@ -424,3 +424,11 @@ html.a11y-spacing li { margin-bottom: .75em; }
 .faq details[open] summary { border-bottom: 1px solid var(--border); }
 .faq .faq__a { padding: 1rem 1.2rem; }
 .faq .faq__a p { margin: 0; color: var(--ink-soft); }
+
+/* ---------- References list ---------- */
+.reflist { counter-reset: ref; list-style: none; padding-left: 0; margin: 1.4rem 0; max-width: 82ch; }
+.reflist li { counter-increment: ref; position: relative; padding: .95rem 1.1rem .95rem 3.4rem; border: 1px solid var(--border); border-radius: var(--radius); margin: .7rem 0; background: var(--surface); box-shadow: var(--shadow); }
+.reflist li::before { content: counter(ref); position: absolute; left: 0; top: 0; width: 2.6rem; height: 100%; display: flex; align-items: center; justify-content: center; background: var(--surface-2); color: var(--brand-deep); font-weight: 700; font-family: var(--font-head); border-radius: var(--radius) 0 0 var(--radius); border-right: 1px solid var(--border); }
+.reflist .ref-title { font-weight: 600; color: var(--ink); }
+.reflist .ref-desc { display: block; color: var(--ink-soft); font-size: .92rem; margin-top: .25rem; }
+html.a11y-contrast .reflist li { border-color: #8fa2ac; }

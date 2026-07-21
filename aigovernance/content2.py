@@ -79,7 +79,7 @@ dpia_body = banner("Free resource", "The DPIA screening tool",
   {guidance_box([link("UK GDPR", U['ukgdpr']) + " &amp; " + link("Data Protection Act 2018", U['dpa2018']) + " (as amended by the " + link("Data (Use and Access) Act 2025", U['duaa']) + "); " + link("ICO AI &amp; data protection risk toolkit", U['ico_toolkit']) + ".",
                  link("DfE generative AI product safety standards", U['dfe_safety']) + " (January 2026) and " + link("DfE guidance on procuring edtech", U['dp_schools']) + ".",
                  link("ICO Children’s Code", U['childrens']) + " and " + link("<em>Edtech examined</em> audit findings", U['edtech']) + "."])}
-""" + pagenav(("guidance-map.html", "The guidance map"), ("policy-template.html", "Get the template"))
+""" + pagenav(("references.html", "References"), ("policy-template.html", "Get the template"))
 
 write("dpia-tool.html", "DPIA screening tool — " + build.BRAND_TITLE,
       "Unlock a free, plain-language, browser-based DPIA screening tool for assessing any AI or digital product before you procure it.",
