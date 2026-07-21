@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI and Digital Tool DPIA Screening Tool</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#16A085;         /* Green Sea */
+    --teal-bright:#1ABC9C;  /* Turquoise */
+    --teal-soft:#E8F8F5;
+    --teal-line:#A9DFD3;
+    --ink:#1A1A1A;
+    --navy:#2C3E50;         /* Midnight Blue */
+    --muted:#4A5A66;
+    --amber:#D35400;        /* Pumpkin: borders and accents */
+    --amber-ink:#A04000;    /* darker amber for text, WCAG AA on white */
+    --amber-soft:#FDEBD0;
+    --bad:#C0392B;          /* Pomegranate */
+    --ok:#1E8449;
+    --panel:#F7FBFA;
+    --radius:10px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Poppins','Segoe UI',Arial,sans-serif;
+    color:var(--ink);
+    background:linear-gradient(180deg,#EDF6F4 0%,#F6FAF9 340px,#F6FAF9 100%);
+    line-height:1.55;
+    font-size:16px;
+    min-height:100vh;
+  }
+  .wrap{
+    max-width:1000px;margin:32px auto 48px;padding:36px 44px 60px;
+    background:#fff;border:1px solid var(--teal-line);border-radius:16px;
+    box-shadow:0 10px 34px rgba(22,160,133,.10);
+  }
+  @media(max-width:760px){
+    .wrap{margin:0;padding:24px 18px 60px;border:none;border-radius:0;box-shadow:none;}
+    body{background:#fff;}
+  }
+  header.masthead{
+    display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+    border-bottom:3px solid var(--teal-bright);
+    padding-bottom:24px;margin-bottom:8px;
+  }
+  header.masthead img{height:44px;width:auto;}
+  .title-block h1{margin:0;font-size:1.5rem;color:var(--navy);font-weight:700;letter-spacing:.2px;}
+  .title-block p{margin:8px 0 0;color:var(--ink);font-size:.95rem;}
+  .setup-field{max-width:640px;margin-top:14px;}
+  header.masthead .setup-field{margin:14px 0 6px;}
+  .setup-field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:5px;color:var(--navy);}
+  input[type=text].setup-input{
+    width:100%;padding:10px 12px;border:1px solid #9AA5AD;border-radius:8px;
+    font-family:inherit;font-size:.95rem;font-weight:600;color:var(--navy);background:#fff;
+  }
+  input[type=text].setup-input::placeholder{color:var(--amber-ink);font-weight:700;opacity:1;}
+  input[type=text].setup-input:focus{border-color:var(--teal);outline:2px solid var(--teal-soft);}
+  .ph{color:var(--amber-ink);font-weight:700;}
+  .intro{
+    background:var(--panel);border:1px solid var(--teal-line);border-radius:var(--radius);
+    padding:16px 18px;margin:22px 0;font-size:.95rem;
+  }
+  .intro strong{color:var(--navy);}
+  .principle{
+    background:#fff;border:2px solid var(--teal);border-radius:var(--radius);
+    padding:14px 16px;margin:16px 0;font-size:.93rem;
+  }
+  .principle b{color:var(--navy);}
+  .disclaimer-top{
+    border:2px solid var(--navy);border-radius:var(--radius);
+    padding:16px 18px;margin:22px 0 18px;background:#fff;font-size:.88rem;line-height:1.6;
+  }
+  .disclaimer-top h2{margin:0 0 8px;font-size:.95rem;letter-spacing:.06em;color:var(--navy);}
+  .adopter{
+    background:var(--amber-soft);border:1px solid var(--amber);border-radius:var(--radius);
+    padding:14px 16px;margin:16px 0;font-size:.9rem;
+  }
+  .adopter b{color:var(--amber-ink);}
+  section.card{
+    border:1px solid var(--teal-line);border-radius:var(--radius);
+    margin:18px 0;overflow:hidden;background:#fff;
+  }
+  .card-head{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    background:var(--teal-soft);padding:13px 16px;border-bottom:1px solid var(--teal-line);
+  }
+  .card-head h2{margin:0;font-size:1.08rem;color:var(--navy);font-weight:700;}
+  .card-head .left{display:flex;align-items:center;gap:11px;}
+  .step-num{
+    background:var(--navy);color:#fff;border-radius:50%;
+    width:30px;height:30px;display:grid;place-items:center;font-weight:700;font-size:.92rem;flex:none;
+  }
+  .info-btn{
+    border:2px solid var(--teal);background:#fff;color:var(--navy);
+    width:30px;height:30px;border-radius:50%;font-weight:700;cursor:pointer;
+    font-family:Georgia,serif;font-style:italic;font-size:1rem;flex:none;
+    transition:background .15s,color .15s;
+  }
+  .info-btn:hover,.info-btn:focus{background:var(--navy);color:#fff;outline:none;}
+  .card-body{padding:16px 18px 18px;}
+  .card-body > :first-child{margin-top:0;}
+  .card-body > :first-child label.field{margin-top:0;}
+  .card-body > :last-child{margin-bottom:0;}
+  .card-body textarea,.card-body select,.card-body input[type=text]{margin-bottom:2px;}
+  label.field{display:block;margin:16px 0 6px;font-weight:600;font-size:.92rem;color:var(--ink);}
+  label.field .req{color:var(--bad);font-weight:700;}
+  .hint{font-size:.82rem;color:var(--muted);margin:0 0 6px;font-weight:400;}
+  .hint.mit{color:#6B3A0A;background:var(--amber-soft);border-radius:6px;padding:9px 12px;border-left:3px solid var(--amber);margin:10px 0 12px;}
+  input[type=text],textarea,select{
+    width:100%;padding:10px 12px;border:1px solid #9AA5AD;border-radius:8px;
+    font-family:inherit;font-size:.95rem;color:var(--ink);background:#fff;
+  }
+  textarea{min-height:84px;resize:vertical;}
+  input:focus,textarea:focus,select:focus{border-color:var(--teal);outline:2px solid var(--teal-soft);}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:620px){.row2{grid-template-columns:1fr;}}
+  .checkboxes{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;}
+  .checkboxes label{
+    display:flex;align-items:center;gap:6px;font-weight:400;font-size:.88rem;
+    border:1px solid #B0B8BE;border-radius:20px;padding:5px 12px;cursor:pointer;
+  }
+  .checkboxes input{accent-color:var(--teal);}
+  .toolbar{
+    position:sticky;bottom:0;background:#fff;border-top:2px solid var(--teal-bright);border-radius:0 0 12px 12px;
+    display:flex;gap:12px;flex-wrap:wrap;padding:14px 0;margin-top:26px;justify-content:center;
+  }
+  button.action{
+    background:var(--navy);color:#fff;border:none;border-radius:8px;
+    padding:12px 22px;font-family:inherit;font-size:.98rem;font-weight:700;cursor:pointer;
+    transition:filter .15s;
+  }
+  button.action:hover{filter:brightness(1.15);}
+  button.action.ghost{background:#fff;color:var(--navy);border:2px solid var(--navy);}
+  .modal-overlay{
+    display:none;position:fixed;inset:0;background:rgba(14,26,32,.55);
+    z-index:50;align-items:center;justify-content:center;padding:20px;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal{
+    background:#fff;border-radius:14px;max-width:580px;width:100%;
+    border-top:6px solid var(--teal);box-shadow:0 18px 50px rgba(0,0,0,.3);
+    max-height:85vh;overflow:auto;
+  }
+  .modal h3{margin:0;color:var(--navy);font-size:1.12rem;}
+  .modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding:20px 22px 8px;}
+  .modal-body{padding:4px 22px 22px;font-size:.93rem;color:var(--ink);}
+  .modal-body p{margin:10px 0;}
+  .modal-body p.good{background:var(--teal-soft);border-left:3px solid var(--teal);padding:8px 11px;border-radius:6px;}
+  .modal-close{border:none;background:none;font-size:1.5rem;cursor:pointer;color:var(--muted);line-height:1;}
+  #result{display:none;margin-top:24px;border:1px solid var(--teal-line);border-radius:var(--radius);overflow:hidden;}
+  #result.show{display:block;}
+  .result-head{padding:14px 18px;font-weight:700;color:#fff;}
+  .result-head.pass{background:var(--ok);}
+  .result-head.review{background:var(--amber-ink);}
+  .result-head.fail{background:var(--bad);}
+  .score-bar{height:8px;background:#E3E8EA;}
+  #scoreFill{height:8px;background:var(--teal);width:0;transition:width .4s;}
+  .check-item{display:flex;gap:10px;align-items:flex-start;padding:8px 18px;font-size:.9rem;border-top:1px solid #EEF2F3;}
+  .tick{font-weight:700;flex:none;}
+  .tick.y{color:var(--ok);} .tick.w{color:var(--amber);} .tick.n{color:var(--bad);}
+  a.link-plain{color:inherit;text-decoration:underline;text-underline-offset:2px;}
+  a.link-plain:hover,a.link-plain:focus{color:var(--teal);}
+  a.link-brand{color:inherit;text-decoration:none;}
+  a.link-brand:hover,a.link-brand:focus{font-weight:700;}
+  footer.licence{
+    margin-top:40px;background:var(--panel);
+    border:1px solid var(--teal-line);border-top:3px solid var(--teal-bright);
+    border-radius:var(--radius);padding:20px 22px;
+  }
+  footer.licence .brand{
+    display:flex;align-items:center;gap:14px;
+    padding-bottom:14px;border-bottom:1px solid var(--teal-line);margin-bottom:14px;
+  }
+  footer.licence .brand img{height:26px;width:auto;}
+  footer.licence .brand span{font-size:.8rem;color:var(--muted);}
+  footer.licence .text p{margin:0 0 10px;font-size:.8rem;line-height:1.65;color:var(--muted);}
+  footer.licence .text p:last-child{margin-bottom:0;}
+
+  @media print{
+    body{background:#fff;}
+    .wrap{max-width:none;margin:0;padding:0;border:none;border-radius:0;box-shadow:none;}
+    .toolbar,.info-btn,.adopter{display:none;}
+    section.card{break-inside:avoid;}
+    body{font-size:12px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="title-block" style="width:100%">
+      <h1>AI and Digital Tool DPIA Screening Tool</h1>
+      <p>A plain-language data protection impact assessment for:</p>
+      <div class="setup-field"><input type="text" class="setup-input" id="m_org" aria-label="Your organisation name" placeholder="Type your organisation name here"></div>
+    </div>
+  </header>
+
+  <div class="disclaimer-top">
+    <h2>DISCLAIMER</h2>
+    <p style="margin:0 0 8px">This tool is a screening template to support the creation of a context-specific data protection impact assessment. It does not constitute legal advice, and it supports, and does not replace, your organisation's data protection processes. While every care has been taken to reflect the statutory and regulatory framework current at the time of writing, guidance changes quickly and coverage cannot be guaranteed to be complete or current.</p>
+    <p style="margin:0">Responsibility for data protection compliance rests entirely with the adopting organisation: each assessment must be completed honestly, reviewed by your Data Protection Officer, and signed off before any tool is deployed, and where there is any doubt you should take your own professional or legal advice. The author accepts no liability for any loss or consequence arising from use of, or reliance on, this tool or any assessment produced with it. Use of this tool constitutes acceptance of these terms.</p>
+  </div>
+  <div class="adopter">
+    <b>HOW TO SET THIS UP FOR YOUR ORGANISATION.</b> Two details personalise this tool: your organisation name in the title above, and your DPO contact in the introduction below. Type your organisation name in the box under the title, and your DPO contact in the box in the introduction; both appear on the printed assessment. Typed entries last for the session, so either let each author complete them as part of the form, or fix them permanently by opening this file in a text editor and typing over the placeholder wording. This box never appears in print. The tool reflects the UK GDPR and Data Protection Act 2018 as amended by the Data (Use and Access) Act 2025, the DfE generative AI product safety standards (January 2026), the DfE guidance on procuring EdTech and data protection in schools, the ICO Children’s Code and edtech guidance, and the findings of the ICO’s Edtech examined audit report.
+  </div>
+
+  <div class="intro">
+    <p><strong>Who this is for.</strong> Anyone proposing a new AI or digital tool, or a new AI feature inside a tool you already use. You do not need to be a legal or technical expert; everything is explained in plain language as you go. Work through each section, and tap the <strong>i</strong> button on any section for what it is for and what a good answer looks like.</p>
+    <p>When you have finished, use <strong>Check readiness</strong> at the bottom to see whether the assessment is detailed enough to send to your Data Protection Officer (DPO), the person responsible for data protection across the organisation. This is a readiness check, not approval; only the DPO can sign off a completed assessment. (A DPIA simply means this assessment: a Data Protection Impact Assessment. The law requires one wherever a tool is likely to create a high risk to people, and completing it early, before decisions are made, is what the DfE guidance expects.)</p>
+    <div class="setup-field"><label for="m_dpo">Your DPO (name / contact)</label><input type="text" class="setup-input" id="m_dpo" placeholder="Type your DPO name or contact here"></div>
+    <p style="margin-top:14px;"><strong>Two housekeeping notes.</strong> Fields marked <span class="req">*</span> are required before the readiness check will pass. And this template supports, it does not replace, your organisation’s data protection processes: it is not legal advice, and responsibility for compliance rests with your organisation (full disclaimer at the top of this tool).</p>
+  </div>
+
+  <div class="principle">
+    <b>Guiding principle.</b> A tool missing a particular compliance feature does <b>not</b> automatically rule it out. What matters is whether you can put robust <b>operational mitigations</b> in place around it: minimising the data you put in, relying on the supplier's enterprise privacy terms, switching optional features off, or short automated retention cycles. Wherever a risk or gap appears, document the mitigation rather than abandoning the tool. Suppliers should help you complete this; the DfE guidance says to ask them for their policies, and to walk you through their data flows. A supplier who cannot or will not is itself a finding.
+  </div>
+
+  <!-- 0 META -->
+  <section class="card">
+    <div class="card-head">
+      <div class="left"><span class="step-num">1</span><h2>Document details</h2></div>
+      <button class="info-btn" aria-label="Information" data-info="meta">i</button>
+    </div>
+    <div class="card-body">
+      <div class="row2">
+        <div><label class="field" for="m_tool">Tool / project name <span class="req">*</span></label>
+          <input type="text" id="m_tool" placeholder="e.g. the AI tool or feature being assessed"></div>
+        <div><label class="field" for="m_school">School / team <span class="req">*</span></label>
+          <input type="text" id="m_school" placeholder="e.g. school name, department or central team"></div>
+      </div>
+      <div class="row2">
+        <div><label class="field" for="m_author">Author (name &amp; role) <span class="req">*</span></label>
+          <input type="text" id="m_author" placeholder="e.g. name, Headteacher / Digital Lead"></div>
+        <div><label class="field" for="m_date">Date</label>
+          <input type="text" id="m_date" placeholder="DD/MM/YYYY"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1 PURPOSE -->
+  <section class="card">
+    <div class="card-head">
+      <div class="left"><span class="step-num">2</span><h2>Purpose &amp; description</h2></div>
+      <button class="info-btn" aria-label="Information" data-info="purpose">i</button>
+    </div>
+    <div class="card-body">
+      <label class="field" for="f_purpose">What is the tool and what will it be used for? <span class="req">*</span></label>
+      <p class="hint">Say what it does, who will use it, and the educational or operational purpose it serves. If it is an AI feature newly added to a product you already use, say so: a new AI feature is assessed like a new tool, not waved through because the product is familiar.</p>
+      <textarea id="f_purpose" placeholder="e.g. a lesson-planning assistant for teaching staff; generates draft resources which staff review before use."></textarea>
+      <label class="field" for="f_standalone">Is this a standalone tool, or an AI feature inside a product you already use? <span class="req">*</span></label>
+      <select id="f_standalone">
+        <option value="">Select…</option>
+        <option value="Standalone">Standalone tool</option>
+        <option value="Embedded-new">New AI feature inside an existing product</option>
+        <option value="Embedded-existing">Existing product, reassessed</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- 2 CONSULTATION -->
+  <section class="card">
+    <div class="card-head">
+      <div class="left"><span class="step-num">3</span><h2>Stakeholder consultation</h2></div>
+      <button class="info-btn" aria-label="Information" data-info="consult">i</button>
+    </div>
+    <div class="card-body">
+      <label class="field" id="lb_f_consult">Who has been consulted so far?</label>
+      <p class="hint">The DfE guidance says to involve your DPO at the very start and throughout, not at the end. Tick everyone consulted so far; if none yet, say who you will consult and when in the notes.</p>
+      <div class="checkboxes" id="f_consult" role="group" aria-labelledby="lb_f_consult">
+        <label><input type="checkbox" value="DPO">DPO / data protection lead</label>
+        <label><input type="checkbox" value="IT">IT / network lead</label>
+        <label><input type="checkbox" value="DSL">Designated safeguarding lead</label>
+        <label><input type="checkbox" value="Staff">Staff who will use it</label>
+        <label><input type="checkbox" value="Pupils/parents">Pupils / parents (if pupil-facing)</label>
+        <label><input type="checkbox" value="Supplier">The supplier</label>
+        <label><input type="checkbox" value="None yet">None yet</label>
+      </div>
+      <textarea id="f_consult_notes" aria-label="Consultation notes or plan" placeholder="Notes, or your consultation plan." style="margin-top:10px;"></textarea>
+    </div>
+  </section>
+
+  <!-- 3 PERSONAL INFORMATION -->
+  <section class="card">
+    <div class="card-head">
+      <div class="left"><span class="step-num">4</span><h2>Personal information &amp; whose it is</h2></div>
+      <button class="info-btn" aria-label="Information" data-info="data">i</button>
+    </div>
+    <div class="card-body">
+      <label class="field" id="lb_f_subjects">Whose information does the tool touch? <span class="req">*</span></label>
+      <div class="checkboxes" id="f_subjects" role="group" aria-labelledby="lb_f_subjects">
+        <label><input type="checkbox" value="Pupils">Pupils</label>
+        <label><input type="checkbox" value="Staff">Staff</label>
+        <label><input type="checkbox" value="Parents/carers">Parents / carers</label>
+        <label><input type="checkbox" value="None">No personal information at all</label>
+      </div>
+      <label class="field" for="f_categories">What kinds of personal information does the tool collect or hold?</label>
+      <p class="hint">List each category (names, email, class, attendance and so on). The DfE guidance says to ask the supplier to justify why each category is necessary; collection must be limited to what the tool's educational purpose genuinely needs. If they cannot justify a category, that is a finding to record.</p>
+      <textarea id="f_categories" placeholder="e.g. staff name and work email for login only; no pupil data held."></textarea>
+      <label class="field" for="f_inputs">What can users type, paste or upload into it? <span class="req">*</span></label>
+      <p class="hint mit">This question catches what the sign-up form does not. A tool that only collects a name and email can still end up processing sensitive information the moment someone types free text: a pupil writing about a medical appointment or a visit to a place of worship has just put health or religious data into the tool. Describe the input surfaces (free text, file upload, images, voice) and the rule you will apply to what goes into them.</p>
+      <textarea id="f_inputs" placeholder="e.g. free-text prompts and document upload; organisational rule is no information about identifiable people is entered (see the Use of AI Policy)."></textarea>
+      <label class="field" for="f_special">Any specially protected ("special category") information?</label>
+      <p class="hint">Health, religion, ethnicity, and similar carry extra protection because misuse causes more harm. State the position and the safeguard, even if the answer is "none by design".</p>
+      <textarea id="f_special" placeholder="e.g. none by design; free-text rule above prevents entry, backed by staff training."></textarea>
+    </div>
+  </section>
+
+  <!-- 4 SCALE -->
+  <section class="card">
+    <div class="card-head">
+      <div class="left"><span class="step-num">5</span><h2>Scale &amp; volume of data</h2></div>
+      <button class="info-btn" aria-label="Information" data-info="scale">i</button>
+    </div>
+    <div class="card-body">
+      <div class="row2">
+        <div><label class="field" for="f_scale_num">Roughly how many people's data? <span class="req">*</span></label>
+          <input type="text" id="f_scale_num" placeholder="e.g. 40 staff; or 600 pupils"></div>
+        <div><label class="field" for="f_scale_scope">One school, several, or the whole organisation? <span class="req">*</span></label>
+          <input type="text" id="f_scale_scope" placeholder="e.g. one department to start; whole-school if adopted"></div>
+      </div>
+      <label class="field" for="f_scale_vol">How much data per person?</label>
+      <textarea id="f_scale_vol" placeholder="e.g. login details only; or full profile with work samples."></textarea>
+    </div>
+  </section>
+
+  <!-- 5 ROLES, SHARING, TRANSFERS, CONTRACT -->
+  <section class="card">
+    <div class="card-head">
+      <div class="left"><span class="step-num">6</span><h2>Roles, contract, sub-processors &amp; transfers</h2></div>
+      <button class="info-btn" aria-label="Information" data-info="roles">i</button>
+    </div>
+    <div class="card-body">
+      <label class="field" for="f_roles">Who is in charge of the data? <span class="req">*</span></label>
+      <p class="hint">Normally the school or trust decides why and how the data is used (the "controller") and the supplier only handles it on your instructions (the "processor"). But the label in the contract does not settle it; what the supplier actually does settles it. If the supplier uses the data for its own purposes, such as product development, analytics or improving its AI, it is acting as a controller for that use, extra rules apply to it (including the Children's Code where pupils are involved), and you should ask why it needs to do this at all. The ICO's audits found this exact confusion to be the sector's most common failing.</p>
+      <textarea id="f_roles" placeholder="e.g. we decide how the data is used; supplier confirms it acts only on our instructions and uses no data for its own purposes."></textarea>
+      <label class="field" for="f_flows">Has the supplier walked you through the data flows, end to end? <span class="req">*</span></label>
+      <p class="hint mit">The DfE guidance says to ask the supplier to walk you through what happens to the data at every stage: where it goes, who touches it, what happens to it at the end. If they cannot provide this, find out before procuring, not after. A supplier with nothing to show you is a finding in itself.</p>
+      <select id="f_flows">
+        <option value="">Select…</option>
+        <option value="Yes">Yes, walked through and understood</option>
+        <option value="Requested">Requested, awaiting response</option>
+        <option value="No">Not yet requested</option>
+      </select>
+      <label class="field" for="f_subproc">Does the supplier use sub-processors (other companies that touch the data)?</label>
+      <p class="hint">You should know who can access the data, not just the supplier you contract with. The ICO found around 30% of edtech providers had not handled sub-processor authorisation properly, and one case where a sub-processor's standard terms trained its AI model on children's data without the providers realising. Ask for the sub-processor list and how you will be told when it changes.</p>
+      <textarea id="f_subproc" placeholder="e.g. supplier lists two sub-processors (hosting, email); contract requires notice of changes with a right to object."></textarea>
+      <label class="field" for="f_subproc_notice">Does the supplier provide a clear mechanism to notify you of future sub-processor changes?</label>
+      <select id="f_subproc_notice">
+        <option value="">Select…</option>
+        <option value="Contractual">Yes, contractual notice with a right to object</option>
+        <option value="Informal">Informal only (e.g. a webpage to check)</option>
+        <option value="No">No mechanism</option>
+        <option value="Unknown">Not sure yet</option>
+      </select>
+      <div class="row2">
+        <div><label class="field" for="f_transfer">Is data transferred outside the UK? <span class="req">*</span></label>
+          <select id="f_transfer">
+            <option value="">Select…</option>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+            <option value="Unknown">Not sure yet</option>
+          </select></div>
+        <div><label class="field" for="f_transfer_safe">If yes, what protects the data abroad?</label>
+          <input type="text" id="f_transfer_safe" placeholder="e.g. UK Data Privacy Framework or IDTA (see supplier's privacy page)"></div>
+      </div>
+      <p class="hint mit">Mitigation prompt: data handled abroad is not a reason to reject a tool. Established suppliers normally cover this with an approved arrangement (you may see "UK Data Privacy Framework" or "International Data Transfer Agreement"). Note which one the supplier says applies.</p>
+      <label class="field" id="lb_f_contract">Contract check: which of these does the written contract clearly cover?</label>
+      <p class="hint">These five are the clauses the DfE guidance says to check and challenge before signing, and the ones the ICO's audits most often found vague or missing. "Deletion and return" means the contract states that at the end, the data is deleted or returned at your choice; some contracts fail even that.</p>
+      <div class="checkboxes" id="f_contract" role="group" aria-labelledby="lb_f_contract">
+        <label><input type="checkbox" value="Instructions">Specific processing instructions (data fields, retention, features on/off)</label>
+        <label><input type="checkbox" value="Security">Security measures</label>
+        <label><input type="checkbox" value="Sub-processors">Sub-processor authorisation and notice</label>
+        <label><input type="checkbox" value="Exit">Deletion and return of data at the end</label>
+        <label><input type="checkbox" value="Breach">Breach notification</label>
+      </div>
+      <textarea id="f_contract_notes" aria-label="Contract check notes" placeholder="Notes: anything unclear, missing, or challenged with the supplier." style="margin-top:10px;"></textarea>
+    </div>
+  </section>
+
+  <!-- 6 LAWFUL BASIS & RETENTION -->
+  <section class="card">
+    <div class="card-head">
+      <div class="left"><span class="step-num">7</span><h2>Lawful basis &amp; retention</h2></div>
+      <button class="info-btn" aria-label="Information" data-info="lawful">i</button>
+    </div>
+    <div class="card-body">
+      <label class="field" for="f_lawful">What is the reason you are allowed to use this data? <span class="req">*</span></label>
+      <p class="hint">The law requires a valid reason (a "lawful basis") for using people's data. For most things a school does, that reason is that it is part of running the school and educating pupils ("public task"). Two boundaries to know. First, public task only stretches as far as your official functions: if a tool has extra features beyond that, such as features parents sign up to directly, public task will not cover them and the supplier may be the controller for that part. Second, do not confuse a tool's terms requiring parent or guardian agreement for young users with your lawful basis; that agreement is about the tool's terms of service, and your lawful basis is decided here, separately, and is rarely consent. If you do rely on consent for anything, there must be a real choice, a clear way to say no, and a way to withdraw it later. (Your DPO may also mention "recognised legitimate interests", a route added by the 2025 Act; that is for the DPO to weigh, not something this form decides.)</p>
+      <textarea id="f_lawful" placeholder="e.g. public task: part of delivering education. No features relying on consent."></textarea>
+      <label class="field" for="f_retention">How long is data kept, and what happens at the end? <span class="req">*</span></label>
+      <p class="hint mit">Mitigation prompt: ask whether you can configure the retention period yourself; the ICO asked providers to offer this. Cover both routine deletion during use and the exit position: when the contract ends or the supplier folds, how do you get the data back or confirm deletion?</p>
+      <textarea id="f_retention" placeholder="e.g. chat history auto-deletes after 30 days (configurable); on exit, contract requires deletion within 90 days with written confirmation."></textarea>
+    </div>
+  </section>
+  <!-- 7 AUTOMATED DECISION-MAKING -->
+  <section class="card">
+    <div class="card-head">
+      <div class="left"><span class="step-num">8</span><h2>Decisions the tool makes on its own</h2></div>
+      <button class="info-btn" aria-label="Information" data-info="adm">i</button>
+    </div>
+    <div class="card-body">
+      <label class="field" for="f_adm">Does the tool make decisions about people, or sort and score them, without a person checking? <span class="req">*</span></label>
+      <select id="f_adm">
+        <option value="">Select…</option>
+        <option value="No">No, it does not make decisions about people</option>
+        <option value="Yes-human">Yes, but a person reviews and can change the outcome</option>
+        <option value="Yes-solely">Yes, the tool decides entirely on its own</option>
+      </select>
+      <label class="field" for="f_adm_notes">If yes, describe how a person stays in control</label>
+      <p class="hint mit">Mitigation prompt: if a member of staff genuinely looks at what the tool suggests and is free to change it, rather than just accepting it, then it is really the staff member deciding, not the tool, and that is fine; the law calls this meaningful human involvement. Since February 2026 the law (Articles 22A to 22D of the UK GDPR) does permit some decisions with a significant effect on a person to be made entirely by a tool, but only with safeguards: the person must be told, must be able to make representations, get human intervention, and contest the outcome. If you answered "decides entirely on its own", describe those safeguards here and flag for DPO review; your Use of AI Policy may hold a stricter line and rule this out regardless.</p>
+      <textarea id="f_adm_notes" placeholder="e.g. the tool suggests groupings, but a teacher reviews and decides; no decision affecting a pupil is acted on without staff sign-off."></textarea>
+      <label class="field" for="f_biometric">Does the tool identify people from their face, voice or body, or claim to read emotions? <span class="req">*</span></label>
+      <p class="hint mit">Biometric identification and emotion inference are the highest-risk category in this form. If a tool does either, stop and involve the DPO before going further: biometric identification of anyone under 18 in a school requires written parental consent under the Protection of Freedoms Act 2012, with an alternative offered to anyone who refuses, and your Use of AI Policy may prohibit it outright.</p>
+      <select id="f_biometric">
+        <option value="">Select…</option>
+        <option value="No">No</option>
+        <option value="Yes">Yes, flag for DPO review before proceeding</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- 8 AI BEHAVIOUR: TRAINING AND LOGS -->
+  <section class="card">
+    <div class="card-head">
+      <div class="left"><span class="step-num">9</span><h2>What the supplier does with the data: AI training &amp; logs</h2></div>
+      <button class="info-btn" aria-label="Information" data-info="ai">i</button>
+    </div>
+    <div class="card-body">
+      <label class="field" for="f_training">Does the supplier use the data to train AI models, develop the product, or for analytics? <span class="req">*</span></label>
+      <p class="hint">Check the actual terms, not the marketing page, and check for sub-processors too: the ICO's audits found a sub-processor whose standard terms trained its AI model on children's data, with an opt-out the providers had not exercised because they did not know it existed. If the answer is yes for anything beyond delivering the service to you, the supplier is acting as a controller for that use, and for education tools the DfE product safety standards expect no use of personal data for model training without a confirmed lawful basis.</p>
+      <select id="f_training">
+        <option value="">Select…</option>
+        <option value="No">No, contractually confirmed</option>
+        <option value="Opt-out">Yes by default, but opt-out available and exercised</option>
+        <option value="Yes">Yes, and no opt-out: flag for DPO review</option>
+        <option value="Unknown">Not sure yet</option>
+      </select>
+      <label class="field" for="f_logs">Where are prompts and outputs logged, and for how long? <span class="req">*</span></label>
+      <p class="hint mit">What people type into an AI tool, and what it produces, are organisational records: they can be requested under subject access requests and freedom of information, so you need to know where they live. In a Microsoft environment, Copilot interactions are searchable through Purview under the standard audit licence; in a Google environment, Gemini app conversations are searchable through Vault, though Gemini features embedded inside Gmail and Docs keep no record. For other tools, ask the supplier. "Nowhere" is an acceptable answer if true; "we do not know" is not.</p>
+      <textarea id="f_logs" placeholder="e.g. interactions retained in-tenant for 180 days, searchable by admins; included in our SAR search locations."></textarea>
+    </div>
+  </section>
+
+  <!-- 9 TECHNICAL INTEGRATION, SECURITY, CONFIGURATION -->
+  <section class="card">
+    <div class="card-head">
+      <div class="left"><span class="step-num">10</span><h2>Technical integration, security &amp; configuration</h2></div>
+      <button class="info-btn" aria-label="Information" data-info="tech">i</button>
+    </div>
+    <div class="card-body">
+      <div class="row2">
+        <div><label class="field" for="f_auth">How do users sign in? <span class="req">*</span></label>
+          <select id="f_auth">
+            <option value="">Select…</option>
+            <option value="SSO (Google/Microsoft)">Single sign-on (Google / Microsoft)</option>
+            <option value="Separate username/password">Separate username &amp; password</option>
+            <option value="No login">No login required</option>
+          </select></div>
+        <div><label class="field" for="f_mis">Does it link to the MIS? <span class="req">*</span></label>
+          <select id="f_mis">
+            <option value="">Select…</option>
+            <option value="No">No link to MIS</option>
+            <option value="Yes-read">Yes, reads data from the MIS</option>
+            <option value="Yes-write">Yes, reads and writes to the MIS</option>
+            <option value="Unknown">Not sure yet</option>
+          </select></div>
+      </div>
+      <label class="field" for="f_config">Have you checked the default configuration? <span class="req">*</span></label>
+      <p class="hint mit">Data protection by design means the tool arrives with only what you need switched on: non-core features off by default, optional data fields disabled, the strongest privacy settings applied from the start. The ICO found many products shipped as an all-or-nothing bundle; the DfE guidance says to review optional fields and disable what you do not need. Record what you switched off.</p>
+      <select id="f_config">
+        <option value="">Select…</option>
+        <option value="Yes">Yes, reviewed and configured to minimum</option>
+        <option value="Partly">Partly, some settings still to review</option>
+        <option value="No">Not yet</option>
+      </select>
+      <label class="field" for="f_tech_notes">Notes on architecture &amp; security</label>
+      <p class="hint">Where is it hosted, is single sign-on enforced, and is access limited to the right people? Single sign-on through your existing accounts is itself a strong security mitigation.</p>
+      <textarea id="f_tech_notes" placeholder="e.g. cloud-hosted, Google SSO enforced, no MIS link; optional analytics module disabled; access limited to named staff."></textarea>
+    </div>
+  </section>
+
+  <!-- 10 DATA SUBJECT RIGHTS -->
+  <section class="card">
+    <div class="card-head">
+      <div class="left"><span class="step-num">11</span><h2>Data subject rights (access &amp; deletion)</h2></div>
+      <button class="info-btn" aria-label="Information" data-info="dsr">i</button>
+    </div>
+    <div class="card-body">
+      <label class="field" for="f_dsr">If someone asks to see or delete their data, can you do that with this tool? <span class="req">*</span></label>
+      <select id="f_dsr">
+        <option value="">Select…</option>
+        <option value="Yes">Yes, the tool supports this natively</option>
+        <option value="Partly">Partly / only in bulk</option>
+        <option value="No">No native support</option>
+      </select>
+      <label class="field" for="f_dsr_notes">If not fully supported, what is your operational mitigation? <span class="req">*</span></label>
+      <p class="hint mit">If the tool does not natively allow individual extraction or deletion, state the mitigation: a strict rule of anonymised input only, enterprise terms guaranteeing short automated retention, or supplier assistance committed in the contract. Remember the logs from section 9 count as this person's data too. If no mitigation is possible, flag explicitly for DPO review.</p>
+      <textarea id="f_dsr_notes" placeholder="State the mitigation, or explicitly flag for DPO review if none is possible."></textarea>
+    </div>
+  </section>
+
+  <!-- 11 CHILDREN -->
+  <section class="card">
+    <div class="card-head">
+      <div class="left"><span class="step-num">12</span><h2>Tools that children will use</h2></div>
+      <button class="info-btn" aria-label="Information" data-info="aadc">i</button>
+    </div>
+    <div class="card-body">
+      <label class="field" for="f_pupilfacing">Is this tool pupil-facing? <span class="req">*</span></label>
+      <select id="f_pupilfacing">
+        <option value="">Select…</option>
+        <option value="No">No, staff use only</option>
+        <option value="Yes">Yes, pupils will use it</option>
+      </select>
+      <label class="field" id="lb_f_aadc">If children will use it, check it is built sensibly for them</label>
+      <p class="hint">There are special rules for online tools that under-18s use (the Children's Code). The rules bind the companies that make the tools rather than schools directly, but looking after children's best interests is already your duty, and since the 2025 Act the law expressly requires services to take account of children's higher protection needs when designing their processing. Confirm three things: the strongest privacy settings are on from the start; it does not automatically sort or score pupils unless deliberately switched on; and it does not use design tricks ("nudges") that push children into sharing more or lowering their privacy. For generative tools, also consider under the Prevent duty whether the tool could generate or expose pupils to extremist or otherwise inappropriate ideological content, and note the safeguards: filtering, supervision, and reporting to the designated safeguarding lead.</p>
+      <div class="checkboxes" id="f_aadc" role="group" aria-labelledby="lb_f_aadc">
+        <label><input type="checkbox" value="High privacy by default">Strong privacy on by default</label>
+        <label><input type="checkbox" value="Profiling off by default">No automatic sorting/scoring of pupils</label>
+        <label><input type="checkbox" value="No nudge techniques">No design tricks pushing children to share more</label>
+      </div>
+      <textarea id="f_aadc_notes" aria-label="Notes on how the children’s checks were confirmed" placeholder="Note how you checked these, e.g. supplier's child-safety documentation, admin settings applied." style="margin-top:10px;"></textarea>
+    </div>
+  </section>
+
+  <!-- 12 PRODUCT SAFETY STANDARDS -->
+  <section class="card">
+    <div class="card-head">
+      <div class="left"><span class="step-num">13</span><h2>DfE product safety standards check (AI tools)</h2></div>
+      <button class="info-btn" aria-label="Information" data-info="pss">i</button>
+    </div>
+    <div class="card-body">
+      <label class="field" for="f_pss">For a generative AI tool: has it been checked against the DfE generative AI product safety standards (January 2026)? <span class="req">*</span></label>
+      <p class="hint">The standards cover a product's stated purpose, educational use cases, filtering, monitoring and reporting, security, privacy and data protection, intellectual property, design and testing, governance, and safeguards for cognitive development, emotional and social development, mental health and manipulation. Ask the supplier which standards they meet and for their evidence; this check runs alongside the DPIA, not instead of it, and belongs to your tool approval process.</p>
+      <select id="f_pss">
+        <option value="">Select…</option>
+        <option value="Yes">Yes, checked point by point and recorded</option>
+        <option value="Partial">Partly checked, gaps recorded</option>
+        <option value="No">Not yet</option>
+        <option value="N/A">Not a generative AI tool</option>
+      </select>
+      <textarea id="f_pss_notes" aria-label="Product safety standards check notes" placeholder="Where the record of the check lives, and any gaps found." style="margin-top:10px;"></textarea>
+    </div>
+  </section>
+
+  <!-- 13 RISKS -->
+  <section class="card">
+    <div class="card-head">
+      <div class="left"><span class="step-num">14</span><h2>Risks &amp; mitigations</h2></div>
+      <button class="info-btn" aria-label="Information" data-info="risks">i</button>
+    </div>
+    <div class="card-body">
+      <label class="field" for="f_risks">What could go wrong for the people whose data this is, and what will you do about each risk? <span class="req">*</span></label>
+      <p class="hint">For each risk, think how likely it is and how much harm it could cause, then state the control that reduces it. For AI tools, the recurring risks are: staff or pupils entering personal or sensitive data, including through free text (section 4); inaccurate or invented output being relied on; data feeding the supplier's models (section 9); and weak access control; and, under the Prevent duty, a generative tool producing or surfacing extremist or otherwise inappropriate ideological content, sometimes from innocuous prompts. Each risk needs a matching mitigation, and any Prevent or safeguarding concern goes to your designated safeguarding lead.</p>
+      <textarea id="f_risks" placeholder="e.g. Risk: free-text entry of pupil data. Mitigation: policy rule, training, and spot checks. Risk: inaccurate output. Mitigation: staff review everything before use."></textarea>
+    </div>
+  </section>
+
+  <!-- 14 TRANSPARENCY -->
+  <section class="card">
+    <div class="card-head">
+      <div class="left"><span class="step-num">15</span><h2>Transparency &amp; privacy notice</h2></div>
+      <button class="info-btn" aria-label="Information" data-info="transparency">i</button>
+    </div>
+    <div class="card-body">
+      <label class="field" for="f_privnotice">Do privacy notices need updating for this tool? <span class="req">*</span></label>
+      <p class="hint">Fairness means people are told how their data is used. If this tool introduces a new use of staff or pupil data, the relevant privacy notice is updated in plain language before go-live, and that includes AI sitting inside a teacher-facing tool that pupils never touch: if it processes their data, they and their parents are told. Treat an outstanding update as an action to close before the tool goes live.</p>
+      <select id="f_privnotice">
+        <option value="">Select…</option>
+        <option value="Yes-done">Yes, updated</option>
+        <option value="Yes-outstanding">Yes, update still outstanding</option>
+        <option value="No">No update needed (no new use of personal data)</option>
+      </select>
+      <textarea id="f_priv_notes" aria-label="Privacy notice update notes" placeholder="Which notice, who owns the update, and by when." style="margin-top:10px;"></textarea>
+    </div>
+  </section>
+
+  <!-- 15 REVIEW -->
+  <section class="card">
+    <div class="card-head">
+      <div class="left"><span class="step-num">16</span><h2>Scheduled review cycle</h2></div>
+      <button class="info-btn" aria-label="Information" data-info="review">i</button>
+    </div>
+    <div class="card-body">
+      <div class="row2">
+        <div><label class="field" for="f_reviewdate">When will this assessment be reviewed? <span class="req">*</span></label>
+          <input type="text" id="f_reviewdate" placeholder="e.g. 12 months from approval, or sooner"></div>
+        <div><label class="field" for="f_reviewtrigger">What would trigger an early review?</label>
+          <input type="text" id="f_reviewtrigger" placeholder="e.g. supplier adds an AI feature; terms change; incident"></div>
+      </div>
+      <p class="hint mit">A DPIA is a living record, not a one-off form. Tools change, and suppliers push new AI features into products you have already approved; a materially changed tool is reassessed, not assumed. Keep this assessment updated as and when the processing changes.</p>
+    </div>
+  </section>
+
+  <p class="hint" style="text-align:center;max-width:820px;margin:18px auto 0;">
+    <strong>What the readiness check does, and does not do.</strong> It checks completeness and consistency: that every section is answered, in enough detail, and that answers agree with each other (a yes to overseas transfer needs a safeguard named, a pupil-facing tool needs the children's checks confirmed). It does not, and cannot, judge whether your answers are <em>correct</em>; that judgement belongs to your DPO. A green result means ready to submit, not approved.
+  </p>
+  <div class="toolbar">
+    <button class="action" id="checkBtn">Check readiness</button>
+    <button class="action ghost" id="printBtn">Print / save as PDF</button>
+  </div>
+
+  <div id="result">
+    <div class="result-head" id="resultHead" role="status" aria-live="polite"></div>
+    <div class="score-bar"><div id="scoreFill"></div></div>
+    <div id="checkList"></div>
+  </div>
+
+  <!-- 16 SIGN-OFF (pen / PDF only) -->
+  <section class="card">
+    <div class="card-head">
+      <div class="left"><span class="step-num">17</span><h2>Outcome &amp; DPO sign-off</h2></div>
+      <button class="info-btn" aria-label="Information" data-info="signoff">i</button>
+    </div>
+    <div class="card-body">
+      <p class="hint">Completed by the DPO after review; leave blank when submitting. Print or save to PDF for signature.</p>
+      <div class="row2">
+        <div><label class="field" for="s_outcome">Outcome</label>
+          <input type="text" id="s_outcome" placeholder="Approved / approved with conditions / not approved"></div>
+        <div><label class="field" for="s_conditions">Conditions (if any)</label>
+          <input type="text" id="s_conditions" placeholder=""></div>
+      </div>
+      <div class="row2">
+        <div><label class="field" for="s_dpo">DPO name &amp; signature</label>
+          <input type="text" id="s_dpo" placeholder=""></div>
+        <div><label class="field" for="s_date">Date</label>
+          <input type="text" id="s_date" placeholder=""></div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="licence">
+    <div class="brand">
+      <img src="data:image/png;base64,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" alt="ICT Evangelist">
+      <span><a class="link-brand" href="https://ictevangelist.com" target="_blank" rel="noopener">ictevangelist.com</a></span>
+    </div>
+    <div class="text">
+      <p>This screening tool supports, and does not replace, your organisation's data protection processes; the full disclaimer at the top of this tool applies throughout. Read alongside your Use of AI Policy.</p>
+      <p>&copy; Mark Anderson 2026. Shared under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International licence (CC BY-NC-SA 4.0). Credit Mark Anderson, ICT Evangelist (<a class="link-brand" href="https://ictevangelist.com" target="_blank" rel="noopener">ictevangelist.com</a>), and license any adapted version you share under the same terms. Full licence: <a class="link-plain" href="https://creativecommons.org/licenses/by-nc-sa/4.0" target="_blank" rel="noopener">creativecommons.org/licenses/by-nc-sa/4.0</a>.</p>
+    </div>
+  </footer>
+</div>
+
+<div class="modal-overlay" id="overlay">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-head"><h3 id="modalTitle"></h3><button class="modal-close" id="modalClose" aria-label="Close">&times;</button></div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+<script>
+const INFO = {
+  meta:{t:"Document details",b:"<p>Who is proposing the tool, where, and when. The DPO needs a named author to come back to with questions, so use a real name and role, not a team.</p><p class='good'>A good answer names the tool precisely (including the specific AI feature if it sits inside a bigger product), the school or team, and you.</p>"},
+  purpose:{t:"Purpose &amp; description",b:"<p>The single most useful section for the DPO. Say what the tool does, who uses it, and the educational or operational purpose. Purpose limits everything else: a tool is assessed for the use you describe here, not for anything it could theoretically do.</p><p>The standalone-or-embedded question matters because suppliers increasingly push AI features into products you already run. A new AI feature is a new assessment; the familiar product name approves nothing.</p><p class='good'>A good answer covers what, who and why in a few sentences, and is honest about whether this is a new tool or a new feature inside an old one.</p>"},
+  consult:{t:"Stakeholder consultation",b:"<p>DfE guidance says to involve the DPO at the very start and throughout, because their advice shapes the answers in every later section, and problems they spot early are cheap to fix. The people who will actually use the tool are worth consulting too; they know the workflow the paperwork does not.</p><p class='good'>A good answer shows the DPO consulted early, or names a date when they will be, before any commitment to the supplier.</p>"},
+  data:{t:"Personal information &amp; whose it is",b:"<p>Two different questions hide here and both matter. What does the tool <strong>collect</strong> (the sign-up form, the roster sync)? And what can users <strong>put into it</strong> (free text, uploads, images)? The second is where AI tools go wrong: a tool collecting only a name and email can still process health or religious information the moment someone types about a medical appointment or a faith event.</p><p>For everything collected, the DfE guidance says the supplier should justify each category; collection is limited to what the educational purpose needs.</p><p class='good'>A good answer lists the categories, records the supplier's justification for each, and states the rule applied to free-text input.</p>"},
+  scale:{t:"Scale &amp; volume of data",b:"<p>Risk scales with reach. Forty staff using a drafting tool is a different assessment from every pupil in the organisation on an adaptive platform. Be honest about growth: if a pilot will become whole-school on success, assess for whole-school.</p><p class='good'>A good answer gives rough numbers, the scope now, and the scope if adoption succeeds.</p>"},
+  roles:{t:"Roles, contract, sub-processors &amp; transfers",b:"<p>Who is in charge of the data decides who carries which legal duties. Normally you are in charge (the \"controller\") and the supplier acts for you (the \"processor\"). The test is evidence, not labels: whatever the contract says, a supplier using the data for its own purposes, such as product development, analytics or AI improvement, is a controller for that use. The ICO's audits of 28 edtech providers found this confusion to be the sector's most common failing.</p><p>Sub-processors matter because they are who actually touches the data. Ask for the list, the notice arrangements when it changes, and your right to object.</p><p>The five contract checkboxes are the clauses most often found vague or missing. If one is missing, the mitigation is to challenge it with the supplier before signing, and record the outcome.</p><p class='good'>A good answer states the roles with the supplier's confirmation, records the data-flow walk-through, lists sub-processors, and shows all five contract boxes ticked or challenged.</p>"},
+  lawful:{t:"Your reason for using the data, and how long you keep it",b:"<p>For most school activity the lawful basis is public task: it is part of running the school and educating pupils. Watch the boundary: extra features beyond your official functions, especially anything parents sign up to directly, fall outside public task, and the supplier may be the controller for that part.</p><p>Keep two things separate. A tool's terms may require parent or guardian agreement before young users can have accounts; that is about the tool's terms of service. Your lawful basis is a different question, answered here, and it is rarely consent, because consent people cannot realistically refuse is not valid consent.</p><p>Retention has two halves: routine deletion while the tool is in use, and the exit position when the contract ends. The contract should give you the choice of deletion or return.</p><p class='good'>A good answer names the basis, respects the public-task boundary, and covers both halves of retention with the supplier's confirmation.</p>"},
+  adm:{t:"Decisions made by the tool on its own",b:"<p>The question the law asks is whether a person is meaningfully involved before a decision affects someone. A member of staff who genuinely reviews the tool's suggestion and is free to change it is the real decision-maker, and that is fine. A person who just clicks accept is not meaningful involvement.</p><p>Since February 2026, Articles 22A to 22D of the UK GDPR permit some fully automated significant decisions, but only with safeguards: the person is told, can make representations, can obtain human intervention, and can contest the outcome. Anything in that territory goes to the DPO, and your Use of AI Policy may prohibit it regardless, which is a legitimate and common position.</p><p>Biometrics and emotion inference get their own question because they are the highest-risk processing a school can contemplate, with a specific statutory consent requirement for under-18s.</p><p class='good'>A good answer describes who checks the output and how they can overrule it, or flags honestly that the tool decides alone and routes it to the DPO.</p>"},
+  ai:{t:"What the supplier does with the data",b:"<p>The defining data protection question for AI tools: does anything you or your pupils put in end up improving the supplier's product or training its models? Check the actual terms, including for sub-processors; the ICO found a case where a sub-processor's standard terms trained its AI on children's data and nobody in the chain knew until the audit.</p><p>The logs question exists because prompts and outputs are organisational records: subject access requests and freedom of information reach them, so you must know where they live and for how long. For the big platforms the answer is knowable (Purview for Microsoft, Vault for Google's Gemini app); for anything else, ask.</p><p class='good'>A good answer has contractual confirmation on training (or a recorded opt-out), and names the log location, retention period, and its inclusion in your SAR search locations.</p>"},
+  tech:{t:"Technical integration, security &amp; configuration",b:"<p>Three practical questions. How do people get in (single sign-on through your existing accounts is itself a strong control)? Does it touch the MIS, and if so who scopes that link? And what does it look like out of the box: data protection by design means non-core features off by default and optional data fields disabled, so record what you reviewed and switched off rather than accepting the bundle.</p><p class='good'>A good answer covers sign-in, MIS position, hosting, and the configuration decisions made, in a couple of sentences each.</p>"},
+  dsr:{t:"Letting people see or delete their data",b:"<p>People have the right to ask for their data, and to ask for it to be deleted. The question is whether this tool lets you honour that for one person at a time. If it cannot, that is not automatically fatal: state the operational mitigation, such as anonymised input only, short automated retention, or contractual supplier assistance, and remember the interaction logs count as that person's data too.</p><p class='good'>A good answer either confirms the tool can do this, or sets out a clear mitigation, or honestly flags the gap for the DPO.</p>"},
+  aadc:{t:"Tools that children will use",b:"<p>There are special rules for online tools that under-18s use, called the Children's Code. The code binds the companies that make the tools rather than schools, but children's best interests are already your duty, and since the 2025 Act the law expressly requires processing to be designed with children's higher protection needs in mind. So for any pupil-facing tool, check three things: the strongest privacy settings on from the start; no automatic sorting or scoring of pupils unless deliberately enabled; and no design tricks nudging children to share more.</p><p class='good'>A good answer confirms the three checks and says how: the supplier's child-safety documentation and the admin settings you applied.</p>"},
+  pss:{t:"DfE product safety standards check",b:"<p>For generative AI tools, the DfE publishes product safety standards (January 2026) covering everything from filtering and security to safeguards for cognitive development, mental health and manipulation. The check belongs to your tool approval process and runs alongside this DPIA: the DPIA looks at data protection risk, the standards at whether the product is safe and suitable for education at all. Ask the supplier which standards they meet and for evidence.</p><p class='good'>A good answer says where the point-by-point record lives and names any gaps found, or honestly records that the check is still to happen.</p>"},
+  risks:{t:"Risks &amp; mitigations",b:"<p>The heart of the DPIA. For each risk: how likely, how much harm, and the control that reduces it. For AI tools the recurring four are personal data entering through free text, invented output being relied on, data feeding the supplier's models, and weak access control.</p><p class='good'>A good answer pairs each named risk with a specific mitigation, rather than listing risks with no controls.</p>"},
+  transparency:{t:"Transparency &amp; privacy notice",b:"<p>Fairness means people are told how their data is used, before it is used. A new tool that processes staff or pupil data means updating the relevant privacy notice in plain language, and that includes AI inside teacher-facing tools that pupils never touch: if it processes their data, they and their parents are told. Easy to overlook, easy to fix; treat an outstanding update as an action to close before go-live.</p><p class='good'>A good answer says whether an update is needed, who owns it, and by when.</p>"},
+  review:{t:"Scheduled review cycle",b:"<p>A DPIA is a living record. Tools change, and suppliers push new AI features into approved products without asking; a materially changed tool is reassessed, not assumed. Set a review date and name the triggers that bring it forward.</p><p class='good'>A good answer gives a date within a year and at least one concrete early-review trigger.</p>"},
+  signoff:{t:"Outcome &amp; DPO sign-off",b:"<p>This section belongs to the DPO. Your job ends at submitting a readiness-checked assessment; theirs is the judgement on whether the processing goes ahead, with what conditions. Leave it blank.</p>"}
+};
+
+const overlay=document.getElementById('overlay');
+document.querySelectorAll('.info-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const k=btn.dataset.info;
+    document.getElementById('modalTitle').innerHTML=INFO[k].t;
+    document.getElementById('modalBody').innerHTML=INFO[k].b;
+    overlay.classList.add('open');
+  });
+});
+document.getElementById('modalClose').addEventListener('click',()=>overlay.classList.remove('open'));
+overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('open');});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')overlay.classList.remove('open');});
+
+const val=id=>(document.getElementById(id).value||'').trim();
+const words=s=>s?s.split(/\s+/).filter(Boolean).length:0;
+
+document.getElementById('checkBtn').addEventListener('click',()=>{
+  const checks=[];
+  const subjects=[...document.querySelectorAll('#f_subjects input:checked')].map(c=>c.value);
+  const noPersonal=subjects.includes('None');
+  const consult=[...document.querySelectorAll('#f_consult input:checked')].map(c=>c.value);
+  const pupilFacing=val('f_pupilfacing')==='Yes';
+  const aadc=[...document.querySelectorAll('#f_aadc input:checked')].length;
+  const contract=[...document.querySelectorAll('#f_contract input:checked')].length;
+
+  checks.push({label:"Tool, school and author identified",
+    ok: val('m_tool') && val('m_school') && val('m_author') ? 'y':'n'});
+
+  checks.push({label:"Purpose described in enough detail",
+    ok: words(val('f_purpose'))>=15 ? 'y' : (val('f_purpose')?'w':'n'),
+    note: words(val('f_purpose'))<15 && val('f_purpose') ? "Add more on who uses it and the educational purpose." : ""});
+
+  checks.push({label:"Standalone or embedded AI stated",
+    ok: val('f_standalone') ? 'y':'n'});
+
+  checks.push({label:"Stakeholders consulted (or plan stated)",
+    ok: (consult.length && !(consult.length===1 && consult[0]==='None yet')) ? 'y' : (val('f_consult_notes')?'w':'n'),
+    note: (consult.includes('None yet')&&!val('f_consult_notes'))?"State who you will consult and when; involve the DPO early.":""});
+
+  checks.push({label:"Data subjects identified",
+    ok: subjects.length? 'y':'n'});
+
+  checks.push({label:"Kinds of personal information listed, with justification",
+    ok: noPersonal ? 'y' : (words(val('f_categories'))>=4 ? 'y' : (val('f_categories')?'w':'n'))});
+
+  checks.push({label:"Input surfaces (free text, uploads) considered",
+    ok: words(val('f_inputs'))>=6 ? 'y' : (val('f_inputs')?'w':'n'),
+    note: !val('f_inputs')?"Say what users can type or upload, and the rule that governs it.":""});
+
+  checks.push({label:"Sensitive information considered (with a safeguard)",
+    ok: noPersonal ? 'y' : (val('f_special')?'y':'n'),
+    note: (!noPersonal && !val('f_special'))? "State the position and the mitigation, even if 'none'.":""});
+
+  checks.push({label:"Scale and amount of data assessed",
+    ok: (val('f_scale_num') && val('f_scale_scope')) ? 'y' : ((val('f_scale_num')||val('f_scale_scope'))?'w':'n')});
+
+  checks.push({label:"Who is in charge of the data is stated",
+    ok: noPersonal ? 'y' : (words(val('f_roles'))>=8?'y':(val('f_roles')?'w':'n'))});
+
+  checks.push({label:"Supplier data-flow walk-through addressed",
+    ok: (()=>{const f=val('f_flows');if(!f)return 'n';return f==='Yes'?'y':'w';})(),
+    note: (val('f_flows')&&val('f_flows')!=='Yes')?"Complete the walk-through before procuring, not after.":""});
+
+  checks.push({label:"Sub-processor change notification confirmed",
+    ok: noPersonal ? 'y' : (()=>{const s=val('f_subproc_notice');if(!s)return 'n';return s==='Contractual'?'y':'w';})(),
+    note: (!noPersonal && val('f_subproc_notice') && val('f_subproc_notice')!=='Contractual')?"Ask the supplier to commit to contractual notice of sub-processor changes.":""});
+
+  checks.push({label:"Contract clauses checked (five key clauses)",
+    ok: noPersonal ? 'y' : (contract===5?'y':(contract>0||val('f_contract_notes')?'w':'n')),
+    note: (!noPersonal&&contract<5)?"Untick means unchecked or missing: challenge with the supplier and record the outcome.":""});
+
+  checks.push({label:"Overseas transfer position addressed",
+    ok: (()=>{const t=val('f_transfer');if(!t)return 'n';if(t==='Yes')return val('f_transfer_safe')?'y':'w';return t==='Unknown'?'w':'y';})(),
+    note: (val('f_transfer')==='Yes'&&!val('f_transfer_safe'))?"Transfer is 'Yes' but no safeguard named.":""});
+
+  checks.push({label:"Lawful basis given",
+    ok: noPersonal ? 'y' : (words(val('f_lawful'))>=4?'y':(val('f_lawful')?'w':'n'))});
+
+  checks.push({label:"Retention, deletion and exit specified",
+    ok: noPersonal ? 'y' : (words(val('f_retention'))>=6?'y':(val('f_retention')?'w':'n'))});
+
+  checks.push({label:"Decisions made by the tool addressed",
+    ok: (()=>{const a=val('f_adm');if(!a)return 'n';if(a==='No')return 'y';return words(val('f_adm_notes'))>=8?'y':'w';})(),
+    note: (val('f_adm')==='Yes-solely'&&words(val('f_adm_notes'))<8)?"The tool decides on its own: describe the safeguards and route to the DPO.":""});
+
+  checks.push({label:"Biometrics and emotion inference addressed",
+    ok: (()=>{const b=val('f_biometric');if(!b)return 'n';return b==='No'?'y':'w';})(),
+    note: val('f_biometric')==='Yes'?"Flagged for DPO review; do not proceed without it.":""});
+
+  checks.push({label:"Model training and product development position confirmed",
+    ok: (()=>{const t=val('f_training');if(!t)return 'n';if(t==='No'||t==='Opt-out')return 'y';return 'w';})(),
+    note: (val('f_training')==='Yes'||val('f_training')==='Unknown')?"Confirm the position in the terms; this changes who is in charge of the data.":""});
+
+  checks.push({label:"Interaction logs located (for SARs and FOI)",
+    ok: words(val('f_logs'))>=5 ? 'y' : (val('f_logs')?'w':'n'),
+    note: !val('f_logs')?"Say where prompts and outputs live and for how long; 'nowhere, confirmed' is acceptable.":""});
+
+  checks.push({label:"Sign-in, MIS link and default configuration stated",
+    ok: (val('f_auth') && val('f_mis') && val('f_config')==='Yes') ? 'y' : ((val('f_auth')||val('f_mis')||val('f_config'))?'w':'n'),
+    note: (val('f_config')&&val('f_config')!=='Yes')?"Review the default configuration: optional features off, unused fields disabled.":""});
+
+  checks.push({label:"Seeing or deleting someone's data covered",
+    ok: (()=>{const d=val('f_dsr');if(!d)return 'n';if(d==='Yes')return 'y';return val('f_dsr_notes')?'y':'w';})(),
+    note: ((val('f_dsr')==='No'||val('f_dsr')==='Partly')&&!val('f_dsr_notes'))?"State the operational mitigation, or flag for DPO review.":""});
+
+  if(pupilFacing){
+    checks.push({label:"Safe for children confirmed (children will use it)",
+      ok: aadc===3 ? 'y' : (aadc>0?'w':'n'),
+      note: aadc<3?"Confirm strong privacy on by default, no auto sorting of pupils, and no design tricks.":""});
+  }
+
+  checks.push({label:"DfE product safety standards check addressed",
+    ok: (()=>{const p=val('f_pss');if(!p)return 'n';if(p==='Yes'||p==='N/A')return 'y';return 'w';})(),
+    note: (val('f_pss')==='No')?"For a generative AI tool this check is expected before approval.":""});
+
+  checks.push({label:"Risks paired with mitigations",
+    ok: (()=>{const r=val('f_risks');if(words(r)<20)return r?'w':'n';return /mitigat|reduc|control|will be|by |minimis|guidance|enterprise|retention|training|review/i.test(r)?'y':'w';})(),
+    note: words(val('f_risks'))<20 && val('f_risks')?"Each risk needs a matching control to be convincing.":""});
+
+  checks.push({label:"Telling people (privacy notice) addressed",
+    ok: val('f_privnotice') ? (val('f_privnotice')==='Yes-outstanding'?'w':'y') : 'n',
+    note: val('f_privnotice')==='Yes-outstanding'?"Privacy-notice update still outstanding; close before go-live.":""});
+
+  checks.push({label:"Review date and early-review triggers scheduled",
+    ok: val('f_reviewdate')?(val('f_reviewtrigger')?'y':'w'):'n',
+    note: (val('f_reviewdate')&&!val('f_reviewtrigger'))?"Add a trigger, e.g. the supplier adding a new AI feature.":""});
+
+  const y=checks.filter(c=>c.ok==='y').length;
+  const w=checks.filter(c=>c.ok==='w').length;
+  const total=checks.length;
+  const pct=Math.round(((y + w*0.5)/total)*100);
+
+  const head=document.getElementById('resultHead');
+  const fill=document.getElementById('scoreFill');
+  const list=document.getElementById('checkList');
+  fill.style.width=pct+'%';
+
+  let cls,msg;
+  const hardFails=checks.filter(c=>c.ok==='n').length;
+  if(pct>=90 && hardFails===0){cls='pass';msg='Ready for DPO review: '+pct+'% complete';}
+  else if(pct>=60){cls='review';msg='Nearly there: '+pct+'% complete. Address the flagged items below.';}
+  else {cls='fail';msg='Not ready yet: '+pct+'% complete. Key sections need more detail.';}
+  head.className='result-head '+cls;
+  head.innerHTML=msg;
+
+  list.innerHTML=checks.map(c=>{
+    const sym=c.ok==='y'?'&#10003;':(c.ok==='w'?'&#9888;':'&#10007;');
+    const cl=c.ok==='y'?'y':(c.ok==='w'?'w':'n');
+    return `<div class="check-item"><span class="tick ${cl}">${sym}</span><span>${c.label}${c.note?`: <em style="color:var(--muted)">${c.note}</em>`:''}</span></div>`;
+  }).join('');
+
+  const res=document.getElementById('result');
+  res.classList.add('show');
+  res.scrollIntoView({behavior:'smooth',block:'start'});
+});
+
+document.getElementById('printBtn').addEventListener('click',()=>window.print());
+</script>
+</body>
+</html>
