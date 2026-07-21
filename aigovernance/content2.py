@@ -19,8 +19,8 @@ ORG_LD = {"@context": "https://schema.org", "@type": "Organization",
 
 # ------------------------------------------------ DPIA SCREENING TOOL (value exchange)
 dpia_body = banner("Free resource", "The DPIA screening tool",
-  "A plain-language, browser-based screening tool for any AI or digital product you are thinking of procuring. Tell us where to send it, and it is yours to keep.") + f"""
-  <p class="lead">Assessing an AI tool for procurement should not need a law degree. This screening tool asks the right questions in plain English, then tells you whether your answers are detailed enough to send to your Data Protection Officer for sign-off.</p>
+  "A plain-English tool that runs in your browser, for any AI or digital product you are thinking of buying. Tell us where to send it, and it is yours to keep.") + f"""
+  <p class="lead">Assessing an AI tool before you buy it should not need a law degree. This screening tool asks the right questions in plain English, then tells you whether your answers are detailed enough to send to your Data Protection Officer for sign-off.</p>
 
   <div class="chart-figure">
     <div>
@@ -35,7 +35,7 @@ dpia_body = banner("Free resource", "The DPIA screening tool",
         <li>Automated decisions, biometrics and emotion inference.</li>
         <li>What the supplier does with the data — AI training, product development, analytics and logs.</li>
       </ul>
-      <p>Each section has an <em>i</em> button explaining what it is for and what a good answer looks like. When you have finished, <strong>Check readiness</strong> tells you whether it is ready for your DPO. It runs entirely in your browser — nothing you type is sent anywhere — and prints cleanly for your records.</p>
+      <p>Each section has an <em>i</em> button that explains what it is for and what a good answer looks like. When you have finished, <strong>Check readiness</strong> tells you whether it is ready for your DPO. It runs entirely in your browser, so nothing you type is sent anywhere, and it prints cleanly for your records.</p>
       <p class="chart-note">It reflects the UK GDPR and Data Protection Act 2018 as amended by the Data (Use and Access) Act 2025, the DfE generative AI product safety standards (January 2026), DfE guidance on procuring edtech, the ICO Children’s Code and edtech guidance, and the ICO’s <em>Edtech examined</em> audit findings. It is a template to support a context-specific assessment; it is not legal advice and does not replace your DPO’s sign-off.</p>
     </div>
 
@@ -67,14 +67,14 @@ dpia_body = banner("Free resource", "The DPIA screening tool",
     </div>
   </div>
 
-  <h2>How the reward works</h2>
+  <h2>How it works</h2>
   <ol>
     <li>Complete the short sign-up form above.</li>
-    <li>On submit, the confirmation screen reveals your download link.</li>
-    <li>Save the HTML file, open it, and complete a screening for any tool you are considering.</li>
-    <li>Print or save the finished assessment and send it to your DPO for approval.</li>
+    <li>When you submit it, the confirmation screen shows your download link.</li>
+    <li>Save the file, open it, and complete a screening for any tool you are considering.</li>
+    <li>Print or save the finished assessment, and send it to your DPO for approval.</li>
   </ol>
-  <p>We hold your details only as set out in the <a href="privacy.html">privacy notice</a> — and, fittingly for a site about data governance, we practise what it preaches.</p>
+  <p>We only hold your details as set out in the <a href="privacy.html">privacy notice</a>.</p>
 
   {guidance_box([link("UK GDPR", U['ukgdpr']) + " &amp; " + link("Data Protection Act 2018", U['dpa2018']) + " (as amended by the " + link("Data (Use and Access) Act 2025", U['duaa']) + "); " + link("ICO AI &amp; data protection risk toolkit", U['ico_toolkit']) + ".",
                  link("DfE generative AI product safety standards", U['dfe_safety']) + " (January 2026) and " + link("DfE guidance on procuring edtech", U['dp_schools']) + ".",
@@ -88,7 +88,7 @@ write("dpia-tool.html", "DPIA screening tool — " + build.BRAND_TITLE,
 # ------------------------------------------------ POLICY TEMPLATE (download)
 tmpl_body = banner("Free resource", "Get the policy template",
   "A completable Use of Artificial Intelligence (AI) Policy for schools, trusts and colleges — a staff-use spine with optional modules for pupil use and governed exceptions.") + f"""
-  <p class="lead">This is the document the whole site is built around: a serious, completable AI policy template, written for adoption from <strong>September 2026</strong> against the current framework of law and guidance.</p>
+  <p class="lead">This is the document the whole site is built around: a full, completable AI policy template, written for adoption from <strong>September 2026</strong> against the current framework of law and guidance.</p>
 
   <div style="text-align:center;margin:1.8rem 0;">
     <a class="btn btn--solid" href="downloads/Use-of-AI-Policy-Template.docx" download style="font-size:1.05rem;padding:.9rem 1.8rem;">Download the template (Word .docx)</a>
@@ -109,8 +109,8 @@ tmpl_body = banner("Free resource", "Get the policy template",
   <ol>
     <li>Read the <a href="landscape.html">landscape</a> and the <a href="guidance-map.html">guidance map</a> first, so the choices make sense.</li>
     <li>Work through the template in order; each step has a “how to complete” box.</li>
-    <li>Keep the <a href="#" onclick="return false;">non-negotiables</a> intact — tailor the wording to your voice, not the substance.</li>
-    <li>A multi-academy trust adopts it once, centrally, with school-level detail in local appendices.</li>
+    <li>Keep the non-negotiables intact. Tailor the wording to your own voice, but leave the substance alone.</li>
+    <li>If you are a multi-academy trust, adopt it once, centrally, with school-level detail in local appendices.</li>
     <li>Delete every guidance and optional-flag box, and the front cover, before publishing.</li>
   </ol>
 
@@ -128,8 +128,8 @@ write("policy-template.html", "Get the policy template — " + build.BRAND_TITLE
 
 # ------------------------------------------------ PRIVACY NOTICE
 priv_body = banner("Legal", "Privacy notice",
-  "How this site handles information — including the sign-up you complete to unlock the DPIA screening tool.", crumbs=True) + f"""
-  <p class="lead">A site about data governance ought to model it. Here, plainly, is what we do and do not collect.</p>
+  "How this site handles information, including the sign-up you complete to unlock the DPIA screening tool.", crumbs=True) + f"""
+  <p class="lead">This is a site about data protection, so it ought to hold itself to the same standard. In plain terms, here is what we do and do not collect.</p>
 
   <h2>The site itself</h2>
   <p>These pages are plain, self-contained static files. They set <strong>no cookies</strong>, run <strong>no analytics or tracking</strong>, and make no advertising or profiling calls. Your reading-controls preferences (text size, contrast, spacing) are stored only in your own browser’s local storage, on your device, and are never sent anywhere.</p>
