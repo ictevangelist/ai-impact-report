@@ -143,6 +143,9 @@ def banner(kicker, title, sub, crumbs=True):
 {c}
 """
 
+def link(text, url):
+    return f'<a href="{url}" target="_blank" rel="noopener noreferrer">{text}</a>'
+
 def guidance_box(items):
     lis = "\n".join(f"<li>{i}</li>" for i in items)
     return f"""<div class="commentary">

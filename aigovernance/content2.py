@@ -1,7 +1,18 @@
 #!/usr/bin/env python3
 # Tool, download and privacy pages. Run: python3 content2.py
-from build import (write, banner, guidance_box, keypoints, nonneg, pagenav)
+from build import (write, banner, guidance_box, keypoints, nonneg, pagenav, link)
 import build
+
+U = {
+ 'ukgdpr':     'https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/',
+ 'dpa2018':    'https://www.legislation.gov.uk/ukpga/2018/12/contents',
+ 'duaa':       'https://www.legislation.gov.uk/ukpga/2025/18/contents',
+ 'ico_toolkit':'https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/ai-and-data-protection-risk-toolkit/',
+ 'childrens':  'https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/',
+ 'dfe_safety': 'https://www.gov.uk/government/publications/generative-ai-product-safety-standards/generative-ai-product-safety-standards',
+ 'dp_schools': 'https://www.gov.uk/guidance/data-protection-in-schools',
+ 'edtech':     'https://ico.org.uk/action-weve-taken/audits-and-overview-reports/2026/06/edtech/',
+}
 
 ORG_LD = {"@context": "https://schema.org", "@type": "Organization",
           "name": "ICT Evangelist", "url": "https://ictevangelist.com", "founder": "Mark Anderson"}
@@ -65,9 +76,9 @@ dpia_body = banner("Free resource", "The DPIA screening tool",
   </ol>
   <p>We hold your details only as set out in the <a href="privacy.html">privacy notice</a> — and, fittingly for a site about data governance, we practise what it preaches.</p>
 
-  {guidance_box(["UK GDPR &amp; Data Protection Act 2018 (as amended by the Data (Use and Access) Act 2025); ICO AI &amp; data protection risk toolkit.",
-                 "DfE generative AI product safety standards (January 2026) and DfE guidance on procuring edtech.",
-                 "ICO Children’s Code and <em>Edtech examined</em> audit findings."])}
+  {guidance_box([link("UK GDPR", U['ukgdpr']) + " &amp; " + link("Data Protection Act 2018", U['dpa2018']) + " (as amended by the " + link("Data (Use and Access) Act 2025", U['duaa']) + "); " + link("ICO AI &amp; data protection risk toolkit", U['ico_toolkit']) + ".",
+                 link("DfE generative AI product safety standards", U['dfe_safety']) + " (January 2026) and " + link("DfE guidance on procuring edtech", U['dp_schools']) + ".",
+                 link("ICO Children’s Code", U['childrens']) + " and " + link("<em>Edtech examined</em> audit findings", U['edtech']) + "."])}
 """ + pagenav(("guidance-map.html", "The guidance map"), ("policy-template.html", "Get the template"))
 
 write("dpia-tool.html", "DPIA screening tool — " + build.BRAND_TITLE,

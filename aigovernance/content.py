@@ -2,8 +2,35 @@
 # Content + page assembly for aigovernance.ictevangelist.com
 # Run: python3 content.py   (imports the engine in build.py, writes all pages)
 from build import (write, banner, guidance_box, keypoints, nonneg, pagenav,
-                   FOOTER, head, nav_html, SITE, BRAND_TITLE, AUTHOR)
+                   FOOTER, head, nav_html, SITE, BRAND_TITLE, AUTHOR, link)
 import html as _h
+
+# ---- Verified official source URLs (open in a new tab via build.link) ----
+U = {
+ 'kcsie':      'https://www.gov.uk/government/publications/keeping-children-safe-in-education--2',
+ 'ukgdpr':     'https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/',
+ 'dpa2018':    'https://www.legislation.gov.uk/ukpga/2018/12/contents',
+ 'duaa':       'https://www.legislation.gov.uk/ukpga/2025/18/contents',
+ 'ico_ai':     'https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/',
+ 'ico_toolkit':'https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/ai-and-data-protection-risk-toolkit/',
+ 'childrens':  'https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/',
+ 'equality':   'https://www.legislation.gov.uk/ukpga/2010/15/contents',
+ 'psed':       'https://www.gov.uk/government/publications/public-sector-equality-duty-guidance-for-public-authorities/public-sector-equality-duty-guidance-for-public-authorities',
+ 'dfe_genai':  'https://www.gov.uk/government/publications/generative-artificial-intelligence-in-education',
+ 'dfe_safety': 'https://www.gov.uk/government/publications/generative-ai-product-safety-standards/generative-ai-product-safety-standards',
+ 'jcq':        'https://www.jcq.org.uk/exams-office/malpractice/artificial-intelligence/',
+ 'dfe_stds':   'https://www.gov.uk/guidance/meeting-digital-and-technology-standards-in-schools-and-colleges',
+ 'dfe_filter': 'https://www.gov.uk/guidance/meeting-digital-and-technology-standards-in-schools-and-colleges/filtering-and-monitoring-core-standard',
+ 'dfe_cyber':  'https://www.gov.uk/guidance/meeting-digital-and-technology-standards-in-schools-and-colleges/cyber-security-core-standard',
+ 'osa':        'https://www.legislation.gov.uk/ukpga/2023/50/contents',
+ 'ofcom':      'https://www.ofcom.org.uk/online-safety/protecting-children/protection-of-children-duties-under-the-online-safety-act',
+ 'prevent':    'https://www.gov.uk/government/publications/prevent-duty-guidance',
+ 'wttsc':      'https://www.gov.uk/government/publications/working-together-to-safeguard-children--2',
+ 'ath':        'https://www.gov.uk/guidance/academy-trust-handbook',
+ 'sfvs':       'https://www.gov.uk/government/publications/schools-financial-value-standard-sfvs',
+ 'dp_schools': 'https://www.gov.uk/guidance/data-protection-in-schools',
+ 'edtech':     'https://ico.org.uk/action-weve-taken/audits-and-overview-reports/2026/06/edtech/',
+}
 
 ORG_LD = {
     "@context": "https://schema.org",
@@ -91,15 +118,24 @@ print("wrote index.html")
 
 # ---------------------------------------------------------------- TOPIC PAGES
 # Each: (slug, nav_title, kicker, h1, sub, body_inner_html, guidance_items, prev, next)
-G_DP = "UK GDPR &amp; Data Protection Act 2018 (as amended by the Data (Use and Access) Act 2025); ICO guidance on AI and the ICO AI &amp; data protection risk toolkit."
-G_CC = "ICO Children’s Code, wherever children’s data is involved."
-G_KCSIE = "Keeping Children Safe in Education 2026 — the statutory safeguarding baseline from 1 September 2026."
-G_DFE_SAFETY = "DfE position on generative AI in education and the DfE generative AI product safety standards (January 2026)."
-G_EQ = "Equality Act 2010 and, for public bodies, the public sector equality duty."
-G_JCQ = "JCQ guidance on AI use in assessments, where qualifications are involved."
-G_OSA = "Online Safety Act 2023 and the Ofcom Protection of Children code of practice."
-G_PREVENT = "Prevent duty guidance (2023) and Working Together to Safeguard Children 2026."
-G_STANDARDS = "DfE filtering &amp; monitoring, cyber security, and digital &amp; governance standards."
+G_DP = (link("UK GDPR", U['ukgdpr']) + " &amp; " + link("Data Protection Act 2018", U['dpa2018'])
+        + " (as amended by the " + link("Data (Use and Access) Act 2025", U['duaa']) + "); "
+        + link("ICO guidance on AI", U['ico_ai']) + " and the "
+        + link("ICO AI &amp; data protection risk toolkit", U['ico_toolkit']) + ".")
+G_CC = link("ICO Children’s Code", U['childrens']) + ", wherever children’s data is involved."
+G_KCSIE = link("Keeping Children Safe in Education 2026", U['kcsie']) + " — the statutory safeguarding baseline from 1 September 2026."
+G_DFE_SAFETY = (link("DfE position on generative AI in education", U['dfe_genai']) + " and the "
+                + link("DfE generative AI product safety standards", U['dfe_safety']) + " (January 2026).")
+G_EQ = (link("Equality Act 2010", U['equality']) + " and, for public bodies, the "
+        + link("public sector equality duty", U['psed']) + ".")
+G_JCQ = link("JCQ guidance on AI use in assessments", U['jcq']) + ", where qualifications are involved."
+G_OSA = (link("Online Safety Act 2023", U['osa']) + " and the "
+         + link("Ofcom Protection of Children code of practice", U['ofcom']) + ".")
+G_PREVENT = (link("Prevent duty guidance (2023)", U['prevent']) + " and "
+             + link("Working Together to Safeguard Children 2026", U['wttsc']) + ".")
+G_STANDARDS = (link("DfE filtering &amp; monitoring", U['dfe_filter']) + ", "
+               + link("cyber security", U['dfe_cyber']) + ", and "
+               + link("digital &amp; governance standards", U['dfe_stds']) + ".")
 
 PAGES = []
 
@@ -125,7 +161,7 @@ PAGES.append(("landscape.html", "The landscape", "Sections 1–2 of the template
   ])}
 
   {guidance_box([G_KCSIE, G_DP, G_CC, G_EQ, G_DFE_SAFETY, G_JCQ, G_STANDARDS, G_OSA, G_PREVENT,
-                 "The financial governance framework that applies to you: the Academy Trust Handbook; the scheme for financing schools and the Schools Financial Value Standard; or a college’s corporation framework.",
+                 "The financial governance framework that applies to you: the " + link("Academy Trust Handbook", U['ath']) + "; the scheme for financing schools and the " + link("Schools Financial Value Standard", U['sfvs']) + "; or a college’s corporation framework.",
                  "See them all, with what each requires, on the <a href='guidance-map.html'>guidance map</a>."])}
   """,
   None, None, ("index.html", "Home"), ("roles.html", "Roles & oversight")))
@@ -157,7 +193,7 @@ PAGES.append(("roles.html", "Roles & oversight", "Section 3 of the template",
     "Where the AI / digital lead and the DPO roles sit, and how they hand off to each other.",
   ])}
 
-  {guidance_box([G_STANDARDS, G_DP, "Academy Trust Handbook / financial governance framework for oversight and assurance duties."])}
+  {guidance_box([G_STANDARDS, G_DP, link("Academy Trust Handbook", U['ath']) + " / financial governance framework for oversight and assurance duties."])}
   """,
   None, None, ("landscape.html", "The landscape"), ("approval-gate.html", "The approval gate")))
 
@@ -185,7 +221,7 @@ PAGES.append(("approval-gate.html", "The approval gate", "Sections 4 &amp; 4a of
 
   <p>Assessing a specific product? The <a href="dpia-tool.html">DPIA screening tool</a> walks you through the questions the gate should ask.</p>
 
-  {guidance_box([G_DFE_SAFETY, G_DP, G_STANDARDS, "DfE guidance on procuring edtech and data protection in schools."])}
+  {guidance_box([G_DFE_SAFETY, G_DP, G_STANDARDS, link("DfE guidance on procuring edtech and data protection in schools", U['dp_schools']) + "."])}
   """,
   None, None, ("roles.html", "Roles & oversight"), ("acceptable-use.html", "Acceptable use")))
 
@@ -243,7 +279,7 @@ PAGES.append(("data-protection.html", "Data protection", "Section 7 of the templ
 
   <p>Use the <a href="dpia-tool.html">DPIA screening tool</a> to work through roles, transfers, retention and sub-processors for a specific product.</p>
 
-  {guidance_box([G_DP, G_CC, "DfE guidance on procuring edtech and data protection in schools; the ICO’s <em>Edtech examined</em> audit findings.", G_DFE_SAFETY])}
+  {guidance_box([G_DP, G_CC, link("DfE guidance on procuring edtech and data protection in schools", U['dp_schools']) + "; the ICO’s " + link("<em>Edtech examined</em> audit findings", U['edtech']) + ".", G_DFE_SAFETY])}
   """,
   None, None, ("acceptable-use.html", "Acceptable use"), ("accuracy-oversight.html", "Accuracy & oversight")))
 
@@ -308,7 +344,7 @@ PAGES.append(("impact-assessment.html", "Impact assessment", "Section 10 of the 
 
   {nonneg("A DPIA before deploying AI that processes personal data is a non-negotiable. The screening tool supports that assessment — it does not replace your DPO’s sign-off.")}
 
-  {guidance_box([G_DP + " ICO AI &amp; data protection risk toolkit.", G_DFE_SAFETY, G_CC, "DfE guidance on procuring edtech and data protection in schools."])}
+  {guidance_box([G_DP, G_DFE_SAFETY, G_CC, link("DfE guidance on procuring edtech and data protection in schools", U['dp_schools']) + "."])}
   """,
   None, None, ("safeguarding.html", "Safeguarding & Prevent"), ("training.html", "Training")))
 
@@ -399,20 +435,20 @@ PAGES.append(("pupil-use.html", "Pupil use", "Optional module",
 
 # ---- Guidance map (reference) ----
 gmap_rows = [
-    ("Keeping Children Safe in Education 2026", "Statutory safeguarding baseline from 1 September 2026; addresses AI within its four areas of online risk.", "Safeguarding, pupil use, filtering &amp; monitoring, breaches"),
-    ("UK GDPR &amp; Data Protection Act 2018 — as amended by the Data (Use and Access) Act 2025", "The core data protection law: lawful basis, roles, transfers, retention, automated decision-making, breach reporting.", "Data protection, impact assessment, acceptable use"),
-    ("ICO guidance on AI &amp; the AI and data protection risk toolkit", "How the regulator expects AI risk to data to be assessed and mitigated.", "Data protection, impact assessment"),
-    ("ICO Children’s Code", "Applies wherever children’s data is processed: best interests first, high-privacy defaults, profiling off by default.", "Pupil use, data protection"),
-    ("Equality Act 2010 &amp; the public sector equality duty", "Applies to AI-assisted activity as to everything else; bias and discrimination duties.", "Accuracy &amp; oversight, acceptable use"),
-    ("DfE position on generative AI &amp; the DfE generative AI product safety standards (January 2026)", "The Department’s expectations for safe AI products in education, including on training on personal data.", "The approval gate, impact assessment, product safety"),
-    ("JCQ guidance on AI use in assessments", "Where qualifications are involved: malpractice, disclosure, and not relying on AI as sole marker.", "Acceptable use, accuracy &amp; oversight"),
-    ("DfE filtering &amp; monitoring, cyber security, and digital &amp; governance standards", "The technical and governance standards that make the approval gate enforceable and assured.", "Filtering &amp; monitoring, roles &amp; oversight"),
-    ("Online Safety Act 2023 &amp; Ofcom Protection of Children code", "Illegal and harmful content duties, including AI-generated sexual imagery of children.", "Safeguarding &amp; Prevent"),
-    ("Prevent duty guidance (2023) &amp; Working Together to Safeguard Children 2026", "Counter-radicalisation duty and multi-agency safeguarding action.", "Safeguarding &amp; Prevent, breaches"),
-    ("Academy Trust Handbook / scheme for financing schools / Schools Financial Value Standard", "The financial governance framework that applies to procurement and oversight.", "Roles &amp; oversight, the approval gate"),
+    ("Keeping Children Safe in Education 2026", U['kcsie'], "Statutory safeguarding baseline from 1 September 2026; addresses AI within its four areas of online risk.", "Safeguarding, pupil use, filtering &amp; monitoring, breaches"),
+    ("UK GDPR &amp; Data Protection Act 2018 — as amended by the Data (Use and Access) Act 2025", U['ukgdpr'], "The core data protection law: lawful basis, roles, transfers, retention, automated decision-making, breach reporting.", "Data protection, impact assessment, acceptable use"),
+    ("ICO guidance on AI &amp; the AI and data protection risk toolkit", U['ico_ai'], "How the regulator expects AI risk to data to be assessed and mitigated.", "Data protection, impact assessment"),
+    ("ICO Children’s Code", U['childrens'], "Applies wherever children’s data is processed: best interests first, high-privacy defaults, profiling off by default.", "Pupil use, data protection"),
+    ("Equality Act 2010 &amp; the public sector equality duty", U['equality'], "Applies to AI-assisted activity as to everything else; bias and discrimination duties.", "Accuracy &amp; oversight, acceptable use"),
+    ("DfE position on generative AI &amp; the DfE generative AI product safety standards (January 2026)", U['dfe_safety'], "The Department’s expectations for safe AI products in education, including on training on personal data.", "The approval gate, impact assessment, product safety"),
+    ("JCQ guidance on AI use in assessments", U['jcq'], "Where qualifications are involved: malpractice, disclosure, and not relying on AI as sole marker.", "Acceptable use, accuracy &amp; oversight"),
+    ("DfE filtering &amp; monitoring, cyber security, and digital &amp; governance standards", U['dfe_stds'], "The technical and governance standards that make the approval gate enforceable and assured.", "Filtering &amp; monitoring, roles &amp; oversight"),
+    ("Online Safety Act 2023 &amp; Ofcom Protection of Children code", U['osa'], "Illegal and harmful content duties, including AI-generated sexual imagery of children.", "Safeguarding &amp; Prevent"),
+    ("Prevent duty guidance (2023) &amp; Working Together to Safeguard Children 2026", U['prevent'], "Counter-radicalisation duty and multi-agency safeguarding action.", "Safeguarding &amp; Prevent, breaches"),
+    ("Academy Trust Handbook / scheme for financing schools / Schools Financial Value Standard", U['ath'], "The financial governance framework that applies to procurement and oversight.", "Roles &amp; oversight, the approval gate"),
 ]
 rows_html = "\n".join(
-    f"<tr><th scope='row'>{n}</th><td>{w}</td><td>{s}</td></tr>" for n, w, s in gmap_rows)
+    f"<tr><th scope='row'>{link(n, u)}</th><td>{w}</td><td>{s}</td></tr>" for n, u, w, s in gmap_rows)
 PAGES.append(("guidance-map.html", "The guidance map", "Reference",
   "The guidance map",
   "Every framework the policy sits within, what each one requires, and the pages on this site that speak to it.",
