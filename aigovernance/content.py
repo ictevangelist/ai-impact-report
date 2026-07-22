@@ -62,7 +62,8 @@ home_body = f"""<section class="hero">
   <p class="lead section-intro">AI is already in your classrooms and your offices: inside the everyday software your staff use, and a browser tab away for anyone who wants it. Good governance makes sure your use of AI is <strong>safe, lawful and defensible</strong>, so you get the benefits without putting at risk the safety of children and adults, the privacy of their data, fairness, or professional integrity.</p>
 
   <h2 style="margin-top:2.4rem;">Where this work comes from</h2>
-  <p>This isn’t new ground for me. I published my first free {link("Use of AI in Education policy template", "https://ictevangelist.com/free-resource-use-of-artificial-intelligence-ai-in-education-school-policy-template/")} back in 2023, and schools right across the country downloaded it and put it to work. When Ofsted set out its approach to AI in 2024, I responded with {link("ten actionable insights to build on it", "https://ictevangelist.com/enhancing-ofsteds-policy-paper-on-ai-with-actionable-insights/")}. In 2025 I {link("updated the template", "https://ictevangelist.com/ai-policy-template-2025/")} against the DfE’s policy paper on generative AI. That work, alongside my years in the classroom, in school leadership, and supporting schools and trusts with digital strategy, governance, policy and training, is what this site builds on: everything I’ve learned about AI policy, rewritten for the framework that applies from September 2026.</p>
+  <p>Back in 2023 I published a free {link("Use of AI in Education policy template", "https://ictevangelist.com/free-resource-use-of-artificial-intelligence-ai-in-education-school-policy-template/")} that I hoped would be useful. What I didn’t expect was just how many schools would download it and put it to work. When Ofsted set out its approach to AI in 2024, I responded with {link("ten actionable insights to build on it", "https://ictevangelist.com/enhancing-ofsteds-policy-paper-on-ai-with-actionable-insights/")}, and in 2025 I {link("updated the template", "https://ictevangelist.com/ai-policy-template-2025/")} against the DfE’s policy paper on generative AI.</p>
+  <p>Over the last decade I’ve worked with hundreds of schools, trusts and organisations worldwide on digital strategy, governance, policy and training — and before I first published that template, I’d already helped dozens of schools develop their own. This site brings all of that together: everything I’ve learned about AI policy, rewritten for the framework that applies from September 2026.</p>
 
   <h2 class="mt-0" style="margin-top:2rem;">Start wherever suits you</h2>
   <div class="card-grid" style="margin-top:1.2rem;">
@@ -89,6 +90,9 @@ home_body = f"""<section class="hero">
     <a class="card card--link" href="policy-template.html"><h3>The policy template &darr;</h3><p>My completable <em>Use of AI Policy</em> for schools, trusts and colleges: a staff-use core, with optional modules for pupil use and governed exceptions.</p><span class="more">Download &rsaquo;</span></a>
     <a class="card card--link" href="dpia-tool.html"><h3>The DPIA screening tool &darr;</h3><p>A plain-English tool that runs in your browser, for any AI or digital product you’re thinking of buying. Complete it, save it, and send it to your DPO.</p><span class="more">Unlock &rsaquo;</span></a>
   </div>
+
+  <h2>Need more than a template?</h2>
+  <p>If your school or trust needs support writing or refining your AI policy, or training staff to use AI well, that’s exactly the work I do. <a href="mailto:mark@ictevangelist.com?subject=AI%20policy%20support">Get in touch</a> or find me at {link("ictevangelist.com", "https://ictevangelist.com/contact/")}. And if the template or the screening tool has helped you, I’d love to hear about it — feedback is always welcome.</p>
 
   <h2>Your questions, answered</h2>
   <div class="faq">
@@ -155,6 +159,7 @@ PAGES.append(("landscape.html", "The landscape", "Sections 1–2 of the template
 
   <h2>Why it’s important</h2>
   <p>AI rarely arrives through one obvious route. It turns up inside the platforms you already license, and it’s a browser tab away for any member of staff. If your policy only covers “the AI tool we bought”, it’ll miss most of your real exposure. The template therefore defines scope by what a tool <em>does</em>: does it generate content, or make or inform decisions about people? Scoped that way, your policy stays relevant as products change around you.</p>
+  <p>There’s an inspection angle too. When Ofsted visits, schools and trusts will increasingly need to show how they manage the risks that come with AI — data privacy, intellectual property, bias and ethics — how they comply with safeguarding and data governance duties, and how they use AI to support workload, accessibility and equity. Similar expectations apply to British Schools Overseas and to independent schools inspected by ISI, whose frameworks follow the same lines.</p>
   <p>If you’re a multi-academy trust, my advice is to adopt one policy centrally and hold school-level detail in local appendices. I’ve seen separate versions drift apart over time, and they become very hard to assure.</p>
 
   {keypoints("What you decide here", [

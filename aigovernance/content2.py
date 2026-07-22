@@ -116,8 +116,16 @@ tmpl_body = banner("Free resource", "Get the policy template",
 
   <div class="commentary">
     <h3>Licence &amp; attribution</h3>
-    <p>I share the template under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> licence: adapt it for non-commercial purposes, credit me — <strong>Mark Anderson, ICT Evangelist</strong> (ictevangelist.com) — and license any adapted versions you share under the same terms.</p>
+    <p>I share the template under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> licence. In simple terms, you’re free to:</p>
+    <ul style="margin:.5rem 0;">
+      <li>adapt it,</li>
+      <li>copy it, and</li>
+      <li>reuse it.</li>
+    </ul>
+    <p>What you can’t do is use it for commercial gain. And anything you adapt or share must credit me — <strong>Mark Anderson, ICT Evangelist</strong> (ictevangelist.com) — and carry the same licence.</p>
   </div>
+
+  <p>Feedback is always welcome — and I’d love to hear how the template has helped in your school or trust. If you need support writing or refining your AI policy, or training staff on AI, <a href="mailto:mark@ictevangelist.com?subject=AI%20policy%20support">get in touch</a>.</p>
 
   <p class="chart-note">This template is general information to support leaders in creating their own policy. It doesn’t constitute legal advice, responsibility for compliance and ratification rests with the adopting organisation, and I take no responsibility for what you take from the template and put into practice. Complete it for your context, and have it ratified, before you rely on it.</p>
 """ + pagenav(("dpia-tool.html", "DPIA screening tool"), ("privacy.html", "Privacy notice"))
