@@ -61,6 +61,9 @@ home_body = f"""<section class="hero">
 <section class="section"><div class="container">
   <p class="lead section-intro">AI is already in your classrooms and your offices: inside the everyday software your staff use, and a browser tab away for anyone who wants it. Good governance makes sure your use of AI is <strong>safe, lawful and defensible</strong>, so you get the benefits without putting at risk the safety of children and adults, the privacy of their data, fairness, or professional integrity.</p>
 
+  <h2 style="margin-top:2.4rem;">Where this work comes from</h2>
+  <p>This isn’t new ground for me. I published my first free {link("Use of AI in Education policy template", "https://ictevangelist.com/free-resource-use-of-artificial-intelligence-ai-in-education-school-policy-template/")} back in 2023, and schools right across the country downloaded it and put it to work. When Ofsted set out its approach to AI in 2024, I responded with {link("ten actionable insights to build on it", "https://ictevangelist.com/enhancing-ofsteds-policy-paper-on-ai-with-actionable-insights/")}. In 2025 I {link("updated the template", "https://ictevangelist.com/ai-policy-template-2025/")} against the DfE’s policy paper on generative AI. That work, alongside my years in the classroom, in school leadership, and supporting schools and trusts with their digital strategy, is what this site builds on: everything I’ve learned about AI policy, rewritten for the framework that applies from September 2026.</p>
+
   <h2 class="mt-0" style="margin-top:2rem;">Start wherever suits you</h2>
   <div class="card-grid" style="margin-top:1.2rem;">
     <a class="card card--link" href="landscape.html"><h3>The landscape</h3><p>Why you need a policy now, what counts as “AI”, and the law and guidance that applies to you.</p><span class="more">Read &rsaquo;</span></a>
