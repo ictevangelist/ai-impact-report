@@ -212,6 +212,9 @@ h1, h2 { font-family: var(--font-display); }
 .btn--ghost:hover { color:#fff; background: rgba(255,255,255,.12); }
 .btn--solid { background: var(--charcoal); color: #fff; border-color: rgba(255,255,255,.30); }
 .btn--solid:hover { color:#fff; background: var(--brand-deep); border-color: rgba(255,255,255,.45); }
+/* On the dark hero, accent the primary button with the brand green */
+.hero .btn--solid { border-color: var(--brand-green); }
+.hero .btn--solid:hover { border-color: var(--brand-green); }
 .btn-row { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.4rem; }
 
 /* ---------- Typography blocks ---------- */
