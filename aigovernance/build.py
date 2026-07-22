@@ -184,11 +184,28 @@ def tie_orphans(doc):
     and list items, so it can't wrap onto a line of its own."""
     return _re.sub(r'(\S) (\S{1,3})([.!?…]?)</(p|li)>', r'\1&nbsp;\2\3</\4>', doc)
 
+def clean_urls(doc):
+    """Rewrite internal links and asset paths for extensionless URLs.
+    Pages are emitted as <slug>/index.html and served at /<slug>/, so links
+    drop .html and assets become root-relative."""
+    doc = doc.replace('href="index.html"', 'href="/"')
+    doc = _re.sub(r'href="([a-z0-9-]+)\.html(#[^"]*)?"',
+                  lambda m: f'href="/{m.group(1)}/{m.group(2) or ""}"', doc)
+    doc = doc.replace('href="css/styles.css"', 'href="/css/styles.css"')
+    doc = _re.sub(r'src="(js|assets)/', r'src="/\1/', doc)
+    doc = _re.sub(r'href="(downloads|assets)/', r'href="/\1/', doc)
+    doc = doc.replace('href="favicon', 'href="/favicon')
+    doc = doc.replace('href="apple-touch-icon', 'href="/apple-touch-icon')
+    return doc
+
 def write(slug, title, desc, body, jsonld=None):
-    canonical = f"{SITE}/{slug}"
+    stem = slug[:-5] if slug.endswith(".html") else slug
+    canonical = f"{SITE}/{stem}/"
     doc = head(title, desc, canonical, jsonld).replace("{NAV_PLACEHOLDER}", nav_html(slug)) + body + "</div></section>\n" + FOOTER
-    (OUT / slug).write_text(tie_orphans(doc), encoding="utf-8")
-    print("wrote", slug)
+    outdir = OUT / stem
+    outdir.mkdir(exist_ok=True)
+    (outdir / "index.html").write_text(clean_urls(tie_orphans(doc)), encoding="utf-8")
+    print("wrote", stem + "/")
 
 # =====================================================================
 #  CONTENT

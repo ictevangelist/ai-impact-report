@@ -55,7 +55,7 @@
     '<div class="a11y-row"><span class="a11y-row__label">Listen to this page</span>' +
       '<button type="button" class="a11y-toggle" data-act="listen" aria-pressed="false">Play</button></div>' +
     '<button type="button" class="a11y-reset" data-act="reset">Reset all</button>' +
-    '<p class="a11y-note">Preferences are saved on your device only. <a href="privacy.html">Privacy notice</a>.</p>';
+    '<p class="a11y-note">Preferences are saved on your device only. <a href="/privacy/">Privacy notice</a>.</p>';
 
   var wrap = el('div', { 'class': 'a11y-widget' });
   wrap.appendChild(panel);
