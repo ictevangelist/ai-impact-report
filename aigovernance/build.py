@@ -17,7 +17,7 @@ OUT = pathlib.Path(__file__).parent
 NAV = [
     ("landscape.html",          "The landscape"),
     ("roles.html",              "Roles & oversight"),
-    ("approval-gate.html",      "The approval gate"),
+    ("approved-tools.html",     "Approved tools"),
     ("acceptable-use.html",     "Acceptable use"),
     ("data-protection.html",    "Data protection"),
     ("accuracy-oversight.html", "Accuracy & oversight"),
@@ -107,7 +107,7 @@ FOOTER = f"""</main>
         <h2>Sections</h2>
         <ul>
           <li><a href="landscape.html">The landscape</a></li>
-          <li><a href="approval-gate.html">The approval gate</a></li>
+          <li><a href="approved-tools.html">Approved tools</a></li>
           <li><a href="data-protection.html">Data protection</a></li>
           <li><a href="safeguarding.html">Safeguarding &amp; Prevent</a></li>
           <li><a href="guidance-map.html">The guidance map</a></li>

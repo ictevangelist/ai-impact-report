@@ -21,7 +21,7 @@ ICT Evangelist chevron brand, a WCAG-minded reading-controls widget, and no exte
 | `index.html` | Home — the pitch, the non-negotiables, both tools, FAQ |
 | `landscape.html` | Why govern AI + scope + the guidance stack (policy §1–2) |
 | `roles.html` | Roles, responsibilities & oversight (§3) |
-| `approval-gate.html` | The approval gate & approved tools (§4, 4a) |
+| `approved-tools.html` | Approved tools & how tools are approved (§4, 4a) |
 | `acceptable-use.html` | What staff may / must not do (§5–6) |
 | `data-protection.html` | Data protection & information security (§7) |
 | `accuracy-oversight.html` | Accuracy, bias & human oversight (§8) |

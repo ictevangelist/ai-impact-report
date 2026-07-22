@@ -100,7 +100,7 @@ tmpl_body = banner("Free resource", "Get the policy template",
 
   <h2>What is inside</h2>
   <div class="card-grid">
-    <div class="card"><h3>The spine</h3><p>Policy statement and scope; roles and oversight; the approval gate; what staff may and must not do; data protection; accuracy and human oversight; safeguarding; impact assessment; training; filtering and monitoring; breaches.</p></div>
+    <div class="card"><h3>The spine</h3><p>Policy statement and scope; roles and oversight; approved tools and how tools are approved; what staff may and must not do; data protection; accuracy and human oversight; safeguarding; impact assessment; training; filtering and monitoring; breaches.</p></div>
     <div class="card"><h3>Optional modules</h3><p>Pupil use (only once a DPIA and an age-appropriate AI education plan are in place) and governed exceptions for single, tightly-scoped purposes.</p></div>
     <div class="card"><h3>The non-negotiables</h3><p>The elements you may reword but must not weaken — because doing so would make the policy non-compliant.</p></div>
   </div>

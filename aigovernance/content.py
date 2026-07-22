@@ -64,7 +64,7 @@ home_body = f"""<section class="hero">
   <h2 class="mt-0" style="margin-top:2rem;">Start wherever suits you</h2>
   <div class="card-grid" style="margin-top:1.2rem;">
     <a class="card card--link" href="landscape.html"><h3>The landscape</h3><p>Why you need a policy now, what counts as “AI”, and the law and guidance that applies to you.</p><span class="more">Read &rsaquo;</span></a>
-    <a class="card card--link" href="approval-gate.html"><h3>The approval gate</h3><p>The heart of the policy: how a tool becomes approved, and why “not approved” is the starting point.</p><span class="more">Read &rsaquo;</span></a>
+    <a class="card card--link" href="approved-tools.html"><h3>Approved tools</h3><p>The heart of the policy: how a tool becomes approved, and why “not approved” is the starting point.</p><span class="more">Read &rsaquo;</span></a>
     <a class="card card--link" href="data-protection.html"><h3>Data protection</h3><p>The rule on personal data, your lawful basis, controllers and processors, and how long data is kept.</p><span class="more">Read &rsaquo;</span></a>
     <a class="card card--link" href="impact-assessment.html"><h3>Impact assessment</h3><p>When you need a DPIA, what a product-safety check covers, and a free tool to get you started.</p><span class="more">Read &rsaquo;</span></a>
     <a class="card card--link" href="safeguarding.html"><h3>Safeguarding &amp; Prevent</h3><p>Deepfakes, online-safety duties, and how an AI concern reaches your designated safeguarding lead.</p><span class="more">Read &rsaquo;</span></a>
@@ -74,10 +74,10 @@ home_body = f"""<section class="hero">
   <h2>The non-negotiables</h2>
   <p>As with many policies there need to be non-negotiables that help colleagues understand what they can and what they can’t do. In this AI policy there are 5 distinct areas which really must be non-negotiables. I’ve explained below what each of them are and why they are so important that they are, non-negotiable…</p>
   <div class="card-grid">
-    <div class="card"><h3>No personal data in</h3><p>Personal or special-category data doesn’t go into AI tools. The only exception is a tool that’s been approved, through the gate, for that exact processing. Once information about a real child or colleague is inside a tool you don’t control, you can’t get it back.</p></div>
+    <div class="card"><h3>No personal data in</h3><p>Personal or special-category data doesn’t go into AI tools. The only exception is a tool that’s been approved for that exact processing. Once information about a real child or colleague is inside a tool you don’t control, you can’t get it back.</p></div>
     <div class="card"><h3>A person always decides</h3><p>AI never makes a decision about a person. A named member of staff makes, and owns, any decision that affects someone. Accountability has to sit with a person; it can’t sit with a piece of software.</p></div>
     <div class="card"><h3>A DPIA before you deploy</h3><p>You complete a data protection impact assessment before deploying AI that processes personal data. An assessment completed after a tool is in use can’t change the decision to use it.</p></div>
-    <div class="card"><h3>The approval gate</h3><p>Approved tools only, through organisation accounts. Anything else, including public chatbots on a personal login, isn’t approved. Without the gate, none of the other rules in the policy can be enforced.</p></div>
+    <div class="card"><h3>Approved tools only</h3><p>Staff use approved tools only, through organisation accounts. Anything else, including public chatbots on a personal login, isn’t approved. Without that approval process, none of the other rules in the policy can be enforced.</p></div>
     <div class="card"><h3>Safeguarding duties hold</h3><p>Your Prevent, safeguarding and online-safety duties apply to AI-assisted work exactly as they do to everything else. New technology doesn’t change those duties.</p></div>
   </div>
 
@@ -91,7 +91,7 @@ home_body = f"""<section class="hero">
   <div class="faq">
     <details><summary>Does every school need its own AI policy?</summary><div class="faq__a"><p>You need a position that’s yours, and that your stakeholders have agreed. If you’re a multi-academy trust, adopt one policy centrally and hold school-level detail in local appendices rather than running separate versions. The template is written to be completed for your setting, not used as it stands.</p></div></details>
     <details><summary>Are pupils covered by the policy?</summary><div class="faq__a"><p>Not by default. Pupils come into scope only when you switch on the optional pupil-use module, and only once a DPIA and an age-appropriate AI education plan are both in place.</p></div></details>
-    <details><summary>Can staff just use ChatGPT for work?</summary><div class="faq__a"><p>Only if it’s been approved through the gate, and only through an organisation-provided account. Personal accounts aren’t used for work, and public consumer chatbots aren’t approved by default.</p></div></details>
+    <details><summary>Can staff just use ChatGPT for work?</summary><div class="faq__a"><p>Only if your organisation has approved it, and only through an organisation-provided account. Personal accounts aren’t used for work, and public consumer chatbots aren’t approved by default.</p></div></details>
     <details><summary>When do we need a DPIA?</summary><div class="faq__a"><p>Before you deploy AI that processes personal data, and wherever a tool is likely to create a high risk to people. Doing it early, before the decision is made, is what the DfE guidance expects. The <a href="dpia-tool.html">screening tool</a> helps you judge whether you’re ready.</p></div></details>
   </div>
 </div></section>"""
@@ -105,14 +105,14 @@ home_ld = {
         {"@type": "Question", "name": "Are pupils covered by the policy?",
          "acceptedAnswer": {"@type": "Answer", "text": "Not by default. Pupils come into scope only when you switch on the optional pupil-use module, and only once a DPIA and an age-appropriate AI education plan are both in place."}},
         {"@type": "Question", "name": "Can staff just use ChatGPT for work?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Only if it's been approved through the gate and used through an organisation-provided account. Personal accounts aren't used for work, and public consumer chatbots aren't approved by default."}},
+         "acceptedAnswer": {"@type": "Answer", "text": "Only if your organisation has approved it, and only through an organisation-provided account. Personal accounts aren't used for work, and public consumer chatbots aren't approved by default."}},
         {"@type": "Question", "name": "When do we need a DPIA?",
          "acceptedAnswer": {"@type": "Answer", "text": "Before you deploy AI that processes personal data, and wherever a tool is likely to create a high risk to people. Doing it early, before the decision is made, is what DfE guidance expects."}},
     ],
 }
 
 home_doc = head(BRAND_TITLE + " — a companion to the Use of AI Policy template",
-                "Plain-English guidance on AI governance for schools, trusts and colleges: the approval gate, data protection, safeguarding, DPIAs and a free policy template. Written for September 2026.",
+                "Plain-English guidance on AI governance for schools, trusts and colleges: tool approval, data protection, safeguarding, DPIAs and a free policy template. Written for September 2026.",
                 SITE + "/", home_ld).replace("{NAV_PLACEHOLDER}", nav_html("index.html")) + home_body + FOOTER
 (__import__("pathlib").Path(__file__).parent / "index.html").write_text(home_doc, encoding="utf-8")
 print("wrote index.html")
@@ -178,7 +178,7 @@ PAGES.append(("roles.html", "Roles & oversight", "Section 3 of the template",
   <ul>
     <li><strong>Trustees or the governing board</strong> — strategic oversight and assurance; making sure AI is on the risk register; receiving regular reporting on adoption, incidents, breaches and changes to the approved list.</li>
     <li><strong>Senior leadership</strong> — approving the policy and any material changes; approving tools where named as the approver; commissioning the periodic AI risk review.</li>
-    <li><strong>AI or digital lead</strong> — owning the approved list and the approval gate; keeping the policy and staff guidance current; being the first point of contact for questions.</li>
+    <li><strong>AI or digital lead</strong> — owning the approved list and the approval process; keeping the policy and staff guidance current; being the first point of contact for questions.</li>
     <li><strong>Data protection officer or lead</strong> — coordinating impact assessments; advising on lawful basis and processing agreements; receiving reports of data entered in error.</li>
     <li><strong>Designated safeguarding lead</strong> — receiving safeguarding and Prevent concerns that involve AI; advising on the safeguarding implications of proposed uses.</li>
     <li><strong>Filtering and monitoring lead</strong> — the senior named owner of your filtering and monitoring arrangements.</li>
@@ -196,22 +196,22 @@ PAGES.append(("roles.html", "Roles & oversight", "Section 3 of the template",
 
   {guidance_box([G_STANDARDS, G_DP, link("Academy Trust Handbook", U['ath']) + ", and your wider financial governance framework, for oversight and assurance duties."])}
   """,
-  None, None, ("landscape.html", "The landscape"), ("approval-gate.html", "The approval gate")))
+  None, None, ("landscape.html", "The landscape"), ("approved-tools.html", "Approved tools")))
 
-PAGES.append(("approval-gate.html", "The approval gate", "Sections 4 &amp; 4a of the template",
-  "The approval gate &amp; approved tools",
+PAGES.append(("approved-tools.html", "Approved tools", "Sections 4 &amp; 4a of the template",
+  "Approved tools &amp; how tools are approved",
   "The heart of the whole policy. If you keep only one thing intact, keep this.",
   f"""
   <p class="lead">Staff may use AI for work only through tools your organisation has approved, and only through organisation-provided accounts. Everything else is off-limits by default. That starting point is deliberate.</p>
 
   <h2>What it is</h2>
-  <p>A single, clear gate that every tool passes through before it’s used for work. The approved list names each tool and what it’s approved <em>for</em>. Anything not on that list, including public consumer chatbots and anything reached through a personal login, isn’t approved and isn’t used. One point catches people out: <strong>a new AI feature that appears inside a product you already approve isn’t approved by default</strong>. It goes back through the gate before anyone uses it.</p>
+  <p>A single, clear approval process that every tool goes through before it’s used for work. The approved list names each tool and what it’s approved <em>for</em>. Anything not on that list, including public consumer chatbots and anything reached through a personal login, isn’t approved and isn’t used. One point catches people out: <strong>a new AI feature that appears inside a product you already approve isn’t approved by default</strong>. It goes back through the same process before anyone uses it. (The policy template refers to this process as the approval gate.)</p>
   <p><strong>Governed exceptions (section 4a, optional).</strong> Include these only if you choose to permit named tools for single, tightly-defined purposes, with the same scrutiny applied and the exception written down rather than assumed.</p>
 
   <h2>Why it’s important</h2>
-  <p>Without the gate, rules like “no personal data into AI” or “a DPIA before deployment” can’t be enforced. With it, the important questions — what data the tool uses, your lawful basis for it, and what the supplier does with it — are answered before the tool is in daily use, not discovered afterwards. The DfE product safety standards and the ICO’s audit findings both point the same way: assess before you adopt.</p>
+  <p>Without an approval process, rules like “no personal data into AI” or “a DPIA before deployment” can’t be enforced. With one, the important questions — what data the tool uses, your lawful basis for it, and what the supplier does with it — are answered before the tool is in daily use, not discovered afterwards. The DfE product safety standards and the ICO’s audit findings both point the same way: assess before you adopt.</p>
 
-  {nonneg("The approval gate is a non-negotiable, and so is the rule that a new AI feature inside an existing product comes back through it. “We already use this supplier” isn’t the same as approval.")}
+  {nonneg("Tool approval is a non-negotiable, and so is the rule that a new AI feature inside an existing product comes back through it. “We already use this supplier” isn’t the same as approval.")}
 
   {keypoints("What you decide here", [
     "Which tools you approve, and the specific purpose each one is approved for.",
@@ -220,7 +220,7 @@ PAGES.append(("approval-gate.html", "The approval gate", "Sections 4 &amp; 4a of
     "How the approved list is published, and how staff know what’s blocked.",
   ])}
 
-  <p>Assessing a particular product? The <a href="dpia-tool.html">DPIA screening tool</a> takes you through the questions the gate should be asking.</p>
+  <p>Assessing a particular product? The <a href="dpia-tool.html">DPIA screening tool</a> takes you through the questions your approval process should be asking.</p>
 
   {guidance_box([G_DFE_SAFETY, G_DP, G_STANDARDS, link("DfE guidance on procuring edtech and data protection in schools", U['dp_schools']) + "."])}
   """,
@@ -237,7 +237,7 @@ PAGES.append(("acceptable-use.html", "Acceptable use", "Sections 5 &amp; 6 of th
 
   <h2>What staff must not do</h2>
   <ul>
-    <li>Use AI tools other than those approved under the gate, or try to get around filtering or monitoring to reach a blocked service.</li>
+    <li>Use AI tools that haven’t been approved, or try to get around filtering or monitoring to reach a blocked service.</li>
     <li>Enter personal or special-category data, meaning information about real, identifiable people, into an AI tool, unless it’s been approved for that specific purpose.</li>
     <li>Let AI make a decision about a person. In sensitive areas, even assistive use is prohibited unless it’s been expressly authorised, with a named person making and owning the decision.</li>
     <li>Pass off AI-generated material as their own unaided work where that would mislead, or break the JCQ rules on AI in assessments (which also rule out relying on AI as the sole marker of a student’s work).</li>
@@ -252,7 +252,7 @@ PAGES.append(("acceptable-use.html", "Acceptable use", "Sections 5 &amp; 6 of th
   {guidance_box([G_DP, G_JCQ, G_EQ, "Copyright and licensing law, for third-party materials.",
                  "Your acceptable-use, data protection and academic-integrity policies, read alongside this one."])}
   """,
-  None, None, ("approval-gate.html", "The approval gate"), ("data-protection.html", "Data protection")))
+  None, None, ("approved-tools.html", "Approved tools"), ("data-protection.html", "Data protection")))
 
 PAGES.append(("data-protection.html", "Data protection", "Section 7 of the template",
   "Data protection &amp; information security",
@@ -333,7 +333,7 @@ PAGES.append(("impact-assessment.html", "Impact assessment", "Section 10 of the 
   <p class="lead">A DPIA, or Data Protection Impact Assessment, is simply the structured assessment the law requires whenever a tool is likely to create a high risk to people. Done early, before decisions are made, it’s exactly what the DfE guidance expects.</p>
 
   <h2>What it is</h2>
-  <p>The trigger and the process: a DPIA before you deploy AI that processes personal data; the product-safety checks that align to the DfE generative AI product safety standards; and the point in procurement where these happen, which is at the approval gate, not after go-live. It sets out who coordinates the assessment (your DPO or data protection lead) and who signs it off.</p>
+  <p>The trigger and the process: a DPIA before you deploy AI that processes personal data; the product-safety checks that align to the DfE generative AI product safety standards; and the point in procurement where these happen, which is during tool approval, not after go-live. It sets out who coordinates the assessment (your DPO or data protection lead) and who signs it off.</p>
 
   <h2>Why it’s important</h2>
   <p>A DPIA completed after a tool is already embedded changes very little; the decisions have been made. Completed early, it brings the controller and processor question, international transfers, retention, sub-processors, and any training on your data into view before you’re committed. A tool that lacks a particular compliance feature isn’t ruled out automatically: the question is whether you can put sensible operational safeguards around it, and record them.</p>
@@ -356,7 +356,7 @@ PAGES.append(("training.html", "Training", "Section 11 of the template",
   <p class="lead">Colleagues follow rules they understand and, in my experience, work around the ones they don’t. Training moves the policy off the page and into everyday practice.</p>
 
   <h2>What it is</h2>
-  <p>The training expectation for everyone in scope: the AI literacy staff need, how the rule on data input and the approval gate are explained, and how understanding is refreshed as tools and guidance change. Where pupil use is permitted, it also calls for an age-appropriate AI education plan.</p>
+  <p>The training expectation for everyone in scope: the AI literacy staff need, how the rule on data input and the approval process are explained, and how understanding is refreshed as tools and guidance change. Where pupil use is permitted, it also calls for an age-appropriate AI education plan.</p>
 
   <h2>Why it’s important</h2>
   <p>Most AI mishaps in schools aren’t deliberate. They come from a well-meaning member of staff who didn’t know where the line was. Short, concrete training on the few things that matter most — no personal data in, approved tools only, and a person always checks and owns the output — repeated regularly, does more to prevent harm than any block list. It also gives you evidence of the “meaningful human involvement” the law expects.</p>
@@ -373,7 +373,7 @@ PAGES.append(("training.html", "Training", "Section 11 of the template",
 
 PAGES.append(("filtering-monitoring.html", "Filtering & monitoring", "Section 12 of the template",
   "Filtering, monitoring &amp; assurance",
-  "The controls that make the approval gate real, and the senior named owner accountable for them.",
+  "The controls that make tool approval real, and the senior named owner accountable for them.",
   f"""
   <p class="lead">The policy sets the rules; filtering and monitoring enforce them. This section names who owns those arrangements, and how assurance reaches your leadership.</p>
 
@@ -441,12 +441,12 @@ gmap_rows = [
     ("ICO guidance on AI &amp; the AI and data protection risk toolkit", U['ico_ai'], "How the regulator expects AI risk to data to be assessed and managed.", "Data protection, impact assessment"),
     ("ICO Children’s Code", U['childrens'], "Applies wherever children’s data is processed: best interests first, high-privacy defaults, profiling off by default.", "Pupil use, data protection"),
     ("Equality Act 2010 &amp; the public sector equality duty", U['equality'], "Applies to AI-assisted work as to everything else; bias and discrimination duties.", "Accuracy &amp; oversight, acceptable use"),
-    ("DfE position on generative AI &amp; the DfE generative AI product safety standards (January 2026)", U['dfe_safety'], "The Department’s expectations for safe AI products in education, including on training on personal data.", "The approval gate, impact assessment, product safety"),
+    ("DfE position on generative AI &amp; the DfE generative AI product safety standards (January 2026)", U['dfe_safety'], "The Department’s expectations for safe AI products in education, including on training on personal data.", "Approved tools, impact assessment, product safety"),
     ("JCQ guidance on AI use in assessments", U['jcq'], "Where qualifications are involved: malpractice, disclosure, and not relying on AI as the sole marker.", "Acceptable use, accuracy &amp; oversight"),
-    ("DfE filtering &amp; monitoring, cyber security, and digital leadership &amp; governance standards", U['dfe_stds'], "The technical and governance standards that make the approval gate enforceable and assured.", "Filtering &amp; monitoring, roles &amp; oversight"),
+    ("DfE filtering &amp; monitoring, cyber security, and digital leadership &amp; governance standards", U['dfe_stds'], "The technical and governance standards that make tool approval enforceable and assured.", "Filtering &amp; monitoring, roles &amp; oversight"),
     ("Online Safety Act 2023 &amp; the Ofcom Protection of Children code", U['osa'], "Illegal and harmful content duties, including AI-generated sexual imagery of children.", "Safeguarding &amp; Prevent"),
     ("Prevent duty guidance (2023) &amp; Working Together to Safeguard Children 2026", U['prevent'], "The counter-radicalisation duty and multi-agency safeguarding action.", "Safeguarding &amp; Prevent, breaches"),
-    ("Academy Trust Handbook / scheme for financing schools / Schools Financial Value Standard", U['ath'], "The financial governance framework that applies to procurement and oversight.", "Roles &amp; oversight, the approval gate"),
+    ("Academy Trust Handbook / scheme for financing schools / Schools Financial Value Standard", U['ath'], "The financial governance framework that applies to procurement and oversight.", "Roles &amp; oversight, approved tools"),
 ]
 rows_html = "\n".join(
     f"<tr><th scope='row'>{link(n, u)}</th><td>{w}</td><td>{s}</td></tr>" for n, u, w, s in gmap_rows)
