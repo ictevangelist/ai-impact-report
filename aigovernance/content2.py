@@ -96,7 +96,7 @@ tmpl_body = banner("Free resource", "Get the policy template",
   </div>
 
   <h2>What it is</h2>
-  <p>A template — not a finished policy. It can’t be used as it stands: it needs completing for your context, aligning with your existing policies, agreeing with the right stakeholders, and formally ratifying. Placeholders in <strong>[BOLD BRACKETS]</strong> mark what you must decide; “HOW TO COMPLETE THIS SECTION” boxes explain what to insert; “OPTIONAL MODULE” boxes mark parts to switch on or delete.</p>
+  <p>A template — not a finished policy. It can’t be used as it stands: it needs completing for your context, aligning with your existing policies so it doesn’t contradict what you say elsewhere, agreeing with the right stakeholders, and formally ratifying. Placeholders in <strong>[BOLD BRACKETS]</strong> mark what you must decide; “HOW TO COMPLETE THIS SECTION” boxes explain what to insert; “OPTIONAL MODULE” boxes mark parts to switch on or delete.</p>
 
   <h2>What is inside</h2>
   <div class="card-grid">
@@ -119,7 +119,7 @@ tmpl_body = banner("Free resource", "Get the policy template",
     <p>I share the template under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> licence: adapt it for non-commercial purposes, credit me — <strong>Mark Anderson, ICT Evangelist</strong> (ictevangelist.com) — and license any adapted versions you share under the same terms.</p>
   </div>
 
-  <p class="chart-note">This template is general information to support leaders in creating their own policy. It does not constitute legal advice, and responsibility for compliance and ratification rests with the adopting organisation.</p>
+  <p class="chart-note">This template is general information to support leaders in creating their own policy. It doesn’t constitute legal advice, responsibility for compliance and ratification rests with the adopting organisation, and I take no responsibility for what you take from the template and put into practice. Complete it for your context, and have it ratified, before you rely on it.</p>
 """ + pagenav(("dpia-tool.html", "DPIA screening tool"), ("privacy.html", "Privacy notice"))
 
 write("policy-template.html", "Get the policy template — " + build.BRAND_TITLE,
