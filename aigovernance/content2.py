@@ -163,8 +163,14 @@ priv_body = banner("Legal", '<span class="accent">Privacy notice</span>',
   <p class="lead">This is a site about data protection, so it ought to hold itself to the same standard. In plain terms, here’s what I do and don’t collect.</p>
 
   <h2>The site itself</h2>
-  <p>These pages are plain, self-contained static files. They set <strong>no cookies</strong>, run <strong>no analytics or tracking</strong>, and make no advertising or profiling calls. Your reading-controls preferences (text size, contrast, spacing) are stored only in your own browser’s local storage, on your device, and are never sent anywhere.</p>
+  <p>These pages are plain, self-contained static files. They make no advertising or profiling calls. Your reading-controls preferences (text size, contrast, spacing) are stored only in your own browser’s local storage, on your device, and are never sent anywhere.</p>
   <p>The <strong>DPIA screening tool</strong> you download runs entirely in your browser. Nothing you type into it is transmitted to me or anyone else; it stays on your device unless you choose to save, print or send it.</p>
+
+  <h2>Analytics — only with your agreement</h2>
+  <p>I use <strong>Google Analytics</strong> to understand how the site is being used: how many people visit, which pages they read, and roughly where in the world they’re reading from. It doesn’t run by default. On your first visit you’re asked whether you’re happy for it to, and <strong>nothing loads, and no cookies are set, unless you say yes</strong>. Saying no thanks changes nothing about what you can read or download.</p>
+  <p>If you do agree, Google Analytics sets cookies in your browser and sends usage data to Google, which processes it on my behalf. What I see is aggregated — page views, visit counts, general location, device type — and I can’t identify you from it. Google Analytics 4 doesn’t log or store visitors’ IP addresses. Your choice, whichever way you make it, is kept in your browser’s local storage so you aren’t asked again on every visit.</p>
+  <p id="consent-status">With JavaScript switched off, analytics never loads at all.</p>
+  <p><button type="button" id="consent-manage" class="btn btn--solid">Change my analytics choice</button></p>
 
   <h2>The sign-up form</h2>
   <p>To unlock the DPIA screening tool I ask you to complete a short form. That form is a <strong>Google Form</strong>, and the information you enter is processed by Google on my behalf as a data processor. Here’s the detail:</p>
@@ -185,11 +191,11 @@ priv_body = banner("Legal", '<span class="accent">Privacy notice</span>',
   <h2>Contact &amp; complaints</h2>
   <p>To exercise any right, or to ask a question about this notice, contact me — <strong>Mark Anderson (ICT Evangelist)</strong> — via <a href="https://ictevangelist.com">ictevangelist.com</a>. If you’re unhappy with how I’ve handled your information, you can complain to the Information Commissioner’s Office (ICO) at <a href="https://ico.org.uk">ico.org.uk</a>.</p>
 
-  <p class="chart-note">This notice covers this website and its sign-up form. It was last reviewed when the sign-up form went live, and will be updated whenever what the form collects, or how it’s processed, changes.</p>
+  <p class="chart-note">This notice covers this website, its analytics and its sign-up form. It was last reviewed when analytics was added, and will be updated whenever what’s collected, or how it’s processed, changes.</p>
 """ + pagenav(("policy-template.html", "Get the template"), None)
 
 write("privacy.html", "Privacy notice — " + build.BRAND_TITLE,
-      "How this site handles information: no cookies or tracking on the pages, and a plain-English notice for the Google Form sign-up used to unlock the DPIA tool.",
+      "How this site handles information: analytics that only runs with your agreement, and a plain-English notice for the Google Form sign-up used to unlock the DPIA tool.",
       priv_body, ORG_LD)
 
 print("Tool, template and privacy pages written.")

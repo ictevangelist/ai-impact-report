@@ -494,3 +494,30 @@ h1, h2, h3 { text-wrap: balance; }
 .step-list a:hover::before { background: var(--charcoal); color: #FEAE00; }
 @media (max-width: 640px) { .step-list { grid-template-columns: 1fr; } }
 html.a11y-contrast .step-list a { border-color: #8fa2ac; }
+
+/* ---- Analytics consent banner (injected by js/consent.js) ---- */
+.consent-banner {
+  position: fixed; left: 1.1rem; bottom: 1.1rem; z-index: 140;
+  max-width: 380px; width: calc(100% - 2.2rem);
+  background: var(--charcoal); color: #eef3f6;
+  border-radius: 12px; padding: 1.1rem 1.25rem 1.2rem;
+  box-shadow: 0 12px 34px rgba(0,0,0,.35);
+  border-top: 4px solid #FEAE00;
+}
+.consent-banner h2 {
+  font-family: var(--font-head); font-size: 1.02rem; color: #fff;
+  margin: 0 0 .45rem;
+}
+.consent-banner p { font-size: .9rem; line-height: 1.55; margin: 0 0 .85rem; color: #d5dde3; }
+.consent-banner a { color: #ffd056; }
+.consent-actions { display: flex; gap: .6rem; flex-wrap: wrap; }
+.consent-actions button {
+  font-family: var(--font-head); font-weight: 600; font-size: .88rem;
+  border-radius: 999px; padding: .5rem 1.1rem; cursor: pointer;
+  transition: background .12s, color .12s, transform .12s;
+}
+#consent-accept { background: #FEAE00; color: var(--charcoal); border: 1px solid #e8a000; }
+#consent-accept:hover { background: #ffbe2e; transform: translateY(-1px); }
+#consent-decline { background: transparent; color: #eef3f6; border: 1px solid rgba(255,255,255,.5); }
+#consent-decline:hover { background: rgba(255,255,255,.12); }
+@media (max-width: 480px) { .consent-banner { left: .6rem; bottom: .6rem; width: calc(100% - 1.2rem); } }
