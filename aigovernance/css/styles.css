@@ -452,3 +452,7 @@ html.a11y-contrast .reflist li { border-color: #8fa2ac; }
 /* ---------- Typography: no single-word orphan lines ---------- */
 p, li, dd, figcaption, .ref-desc { text-wrap: pretty; }
 h1, h2, h3 { text-wrap: balance; }
+
+/* ---------- Embedded sign-up form ---------- */
+.form-embed { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: #fff; }
+.form-embed iframe { display: block; width: 100%; border: 0; }
