@@ -46,8 +46,8 @@ ORG_LD = {
 home_body = f"""<section class="hero">
   <div class="container">
     <p class="eyebrow">AI governance in education</p>
-    <h1>Get AI governance right in your school or trust.</h1>
-    <p class="lede">I’ve put this site together as a plain-English companion to my <strong>Use of Artificial Intelligence (AI) Policy</strong> template. It walks you through what you’ll need to decide, why each decision matters, and the law and guidance that sits behind it all. Written for adoption from <strong>September 2026</strong>.</p>
+    <h1>Get <span class="accent-teal">AI governance</span> right in your school or trust.</h1>
+    <p class="lede">I’ve put this site together as a plain-English companion to my <strong class="accent-teal">Use of Artificial Intelligence (AI) Policy</strong> template. It walks you through what you’ll need to decide, why each decision matters, and the law and guidance that sits behind it all. Written for adoption from <strong>September 2026</strong>.</p>
     <div class="btn-row">
       <a class="btn btn--solid" href="policy-template.html">Get the policy template</a>
       <a class="btn btn--ghost" href="dpia-tool.html">Unlock the DPIA screening tool</a>
