@@ -143,7 +143,7 @@ FOOTER = f"""</main>
 """
 
 def banner(kicker, title, sub, crumbs=True):
-    c = '<p class="crumbs"><a href="index.html">Home</a> &rsaquo; ' + html.escape(title) + '</p>' if crumbs else ''
+    c = '<p class="crumbs"><a href="index.html">Home</a> &rsaquo; ' + title + '</p>' if crumbs else ''
     return f"""<section class="page-banner">
   <div class="container">
     <p class="kicker">{html.escape(kicker)}</p>
