@@ -67,8 +67,8 @@ home_body = f"""<section class="hero">
   <p>Over the last decade I’ve worked with hundreds of schools, trusts and organisations worldwide on digital strategy, governance, policy and training — and before I first published that template, I’d already helped dozens of schools and trusts develop their own. This site brings all of that together: everything I’ve learned about AI policy, rewritten for the framework that applies from September 2026.</p>
 
   <h2>How to use this site</h2>
-  <p>Every section of the policy template has a page of its own here, and the pages run in the same order as the template itself. If you’re writing your policy, my advice is to work through them in order with the template open alongside — each page explains what that section is, why it’s important, and the law and guidance it speaks to. Start at <a href="landscape.html">The landscape</a> and use the <strong>Next</strong> button at the bottom of each page to move through:</p>
-  <ol style="columns:2;column-gap:2.5rem;">
+  <p>Every section of the policy template has a page of its own here, and the pages run in the same order as the template itself. If you’re writing your policy, my advice is to work through them in order with the template open alongside — each page explains what that section is, why it’s important, and the law and guidance it speaks to. Start at the beginning and use the ‘Next’ button at the bottom of each page to move through:</p>
+  <ol class="step-list">
     <li><a href="landscape.html">The landscape</a></li>
     <li><a href="roles.html">Roles &amp; oversight</a></li>
     <li><a href="approved-tools.html">Approved tools</a></li>

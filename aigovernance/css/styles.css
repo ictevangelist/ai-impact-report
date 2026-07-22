@@ -465,3 +465,28 @@ h1, h2, h3 { text-wrap: balance; }
 
 /* Amber accent for key phrases on the dark hero */
 .accent { color: #FEAE00; }
+
+/* ---------- Reading-order list (home page) ---------- */
+.step-list {
+  list-style: none; counter-reset: step; padding: 0; margin: 1.3rem 0 1.5rem;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem 1.4rem;
+}
+.step-list li { counter-increment: step; }
+.step-list a {
+  display: flex; align-items: center; gap: .85rem;
+  border: 1px solid var(--border); border-radius: 10px; padding: .55rem .9rem;
+  text-decoration: none; color: var(--ink); font-weight: 500; font-size: .98rem;
+  background: var(--surface); box-shadow: var(--shadow);
+  transition: border-color .12s, transform .12s, background .12s;
+}
+.step-list a::before {
+  content: counter(step);
+  width: 30px; height: 30px; border-radius: 50%; flex: 0 0 auto;
+  background: var(--charcoal); color: #fff;
+  display: grid; place-items: center; font-weight: 700; font-size: .88rem;
+  font-family: var(--font-head);
+}
+.step-list a:hover { border-color: var(--brand-teal); background: var(--surface-2); transform: translateY(-1px); color: var(--ink); }
+.step-list a:hover::before { background: var(--brand-deep); }
+@media (max-width: 640px) { .step-list { grid-template-columns: 1fr; } }
+html.a11y-contrast .step-list a { border-color: #8fa2ac; }
