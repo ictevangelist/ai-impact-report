@@ -155,7 +155,7 @@ h1, h2 { font-family: var(--font-display); }
   background: radial-gradient(closest-side, rgba(23,171,206,.20), rgba(69,184,74,.10) 60%, transparent 75%);
   pointer-events: none;
 }
-.hero .container { max-width: 940px; position: relative; z-index: 1; }
+.hero .container { max-width: var(--maxw); position: relative; z-index: 1; }
 .hero .eyebrow {
   text-transform: uppercase; letter-spacing: 2.5px; font-size: .78rem; font-weight: 600;
   color: #7fdcea; margin: 0 0 .8rem;
@@ -190,7 +190,7 @@ h1, h2 { font-family: var(--font-display); }
   background: radial-gradient(closest-side, rgba(23,171,206,.16), rgba(69,184,74,.08) 60%, transparent 75%);
   pointer-events: none;
 }
-.page-banner .container { max-width: 900px; position: relative; z-index: 1; }
+.page-banner .container { max-width: var(--maxw); position: relative; z-index: 1; }
 .page-banner .kicker {
   text-transform: uppercase; letter-spacing: 2px; font-size: .74rem; font-weight: 600;
   color: #7fdcea; margin: 0 0 .55rem;
