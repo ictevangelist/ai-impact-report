@@ -19,8 +19,8 @@ ORG_LD = {"@context": "https://schema.org", "@type": "Organization",
 
 # ------------------------------------------------ DPIA SCREENING TOOL (value exchange)
 dpia_body = banner("Free resource", "The DPIA screening tool",
-  "A plain-English tool that runs in your browser, for any AI or digital product you are thinking of buying. Tell us where to send it, and it is yours to keep.") + f"""
-  <p class="lead">Assessing an AI tool before you buy it should not need a law degree. This screening tool asks the right questions in plain English, then tells you whether your answers are detailed enough to send to your Data Protection Officer for sign-off.</p>
+  "A plain-English tool that runs in your browser, for any AI or digital product you’re thinking of buying. Tell me who you are, and it’s yours to keep.") + f"""
+  <p class="lead">Assessing an AI tool before you buy it shouldn’t need a law degree. I’ve built this screening tool to ask the right questions in plain English, then tell you whether your answers are detailed enough to send to your Data Protection Officer for sign-off.</p>
 
   <div class="chart-figure">
     <div>
@@ -35,14 +35,14 @@ dpia_body = banner("Free resource", "The DPIA screening tool",
         <li>Automated decisions, biometrics and emotion inference.</li>
         <li>What the supplier does with the data — AI training, product development, analytics and logs.</li>
       </ul>
-      <p>Each section has an <em>i</em> button that explains what it is for and what a good answer looks like. When you have finished, <strong>Check readiness</strong> tells you whether it is ready for your DPO. It runs entirely in your browser, so nothing you type is sent anywhere, and it prints cleanly for your records.</p>
+      <p>Each section has an <em>i</em> button that explains what it’s for and what a good answer looks like. When you’ve finished, <strong>Check readiness</strong> tells you whether it’s ready for your DPO. It runs entirely in your browser, so nothing you type is sent anywhere, and it prints cleanly for your records.</p>
       <p class="chart-note">It reflects the UK GDPR and Data Protection Act 2018 as amended by the Data (Use and Access) Act 2025, the DfE generative AI product safety standards (January 2026), DfE guidance on procuring edtech, the ICO Children’s Code and edtech guidance, and the ICO’s <em>Edtech examined</em> audit findings. It is a template to support a context-specific assessment; it is not legal advice and does not replace your DPO’s sign-off.</p>
     </div>
 
     <div>
       <div class="card" style="border-top:4px solid var(--brand-teal);">
         <h3 class="mt-0">Get your copy</h3>
-        <p>Tell us who you are and where you work, and the download unlocks. It is free, and shared under a Creative&nbsp;Commons&nbsp;BY-NC-SA&nbsp;4.0 licence.</p>
+        <p>Tell me who you are and where you work, and the download unlocks. It’s free, and shared under a Creative&nbsp;Commons&nbsp;BY-NC-SA&nbsp;4.0 licence.</p>
 
         <!-- =====================================================================
              GOOGLE FORM GOES HERE.
@@ -74,7 +74,7 @@ dpia_body = banner("Free resource", "The DPIA screening tool",
     <li>Save the file, open it, and complete a screening for any tool you are considering.</li>
     <li>Print or save the finished assessment, and send it to your DPO for approval.</li>
   </ol>
-  <p>We only hold your details as set out in the <a href="privacy.html">privacy notice</a>.</p>
+  <p>I only hold your details as set out in the <a href="privacy.html">privacy notice</a>.</p>
 
   {guidance_box([link("UK GDPR", U['ukgdpr']) + " &amp; " + link("Data Protection Act 2018", U['dpa2018']) + " (as amended by the " + link("Data (Use and Access) Act 2025", U['duaa']) + "); " + link("ICO AI &amp; data protection risk toolkit", U['ico_toolkit']) + ".",
                  link("DfE generative AI product safety standards", U['dfe_safety']) + " (January 2026) and " + link("DfE guidance on procuring edtech", U['dp_schools']) + ".",
@@ -88,7 +88,7 @@ write("dpia-tool.html", "DPIA screening tool — " + build.BRAND_TITLE,
 # ------------------------------------------------ POLICY TEMPLATE (download)
 tmpl_body = banner("Free resource", "Get the policy template",
   "A completable Use of Artificial Intelligence (AI) Policy for schools, trusts and colleges — a staff-use spine with optional modules for pupil use and governed exceptions.") + f"""
-  <p class="lead">This is the document the whole site is built around: a full, completable AI policy template, written for adoption from <strong>September 2026</strong> against the current framework of law and guidance.</p>
+  <p class="lead">This is the document this whole site is built around: my full, completable AI policy template, written for adoption from <strong>September 2026</strong> against the current framework of law and guidance.</p>
 
   <div style="margin:1.8rem 0;">
     <a class="btn btn--solid" href="downloads/Use-of-AI-Policy-Template.docx" download style="font-size:1.05rem;padding:.9rem 1.8rem;">Download the template (Word .docx)</a>
@@ -96,7 +96,7 @@ tmpl_body = banner("Free resource", "Get the policy template",
   </div>
 
   <h2>What it is</h2>
-  <p>A template — not a finished policy. It cannot be used as it stands: it requires completion for your context, alignment with your existing policies, agreement by the right stakeholders, and formal ratification. Placeholders in <strong>[BOLD BRACKETS]</strong> mark what you must decide; “HOW TO COMPLETE THIS SECTION” boxes explain what to insert; “OPTIONAL MODULE” boxes mark parts to switch on or delete.</p>
+  <p>A template — not a finished policy. It can’t be used as it stands: it needs completing for your context, aligning with your existing policies, agreeing with the right stakeholders, and formally ratifying. Placeholders in <strong>[BOLD BRACKETS]</strong> mark what you must decide; “HOW TO COMPLETE THIS SECTION” boxes explain what to insert; “OPTIONAL MODULE” boxes mark parts to switch on or delete.</p>
 
   <h2>What is inside</h2>
   <div class="card-grid">
@@ -110,13 +110,13 @@ tmpl_body = banner("Free resource", "Get the policy template",
     <li>Read the <a href="landscape.html">landscape</a> and the <a href="guidance-map.html">guidance map</a> first, so the choices make sense.</li>
     <li>Work through the template in order; each step has a “how to complete” box.</li>
     <li>Keep the non-negotiables intact. Tailor the wording to your own voice, but leave the substance alone.</li>
-    <li>If you are a multi-academy trust, adopt it once, centrally, with school-level detail in local appendices.</li>
+    <li>If you’re a multi-academy trust, adopt it once, centrally, with school-level detail in local appendices.</li>
     <li>Delete every guidance and optional-flag box, and the front cover, before publishing.</li>
   </ol>
 
   <div class="commentary">
     <h3>Licence &amp; attribution</h3>
-    <p>Shared under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> licence: adapt it for non-commercial purposes, credit <strong>Mark Anderson, ICT Evangelist</strong> (ictevangelist.com), and license adapted versions you share under the same terms.</p>
+    <p>I share the template under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> licence: adapt it for non-commercial purposes, credit me — <strong>Mark Anderson, ICT Evangelist</strong> (ictevangelist.com) — and license any adapted versions you share under the same terms.</p>
   </div>
 
   <p class="chart-note">This template is general information to support leaders in creating their own policy. It does not constitute legal advice, and responsibility for compliance and ratification rests with the adopting organisation.</p>
@@ -129,30 +129,30 @@ write("policy-template.html", "Get the policy template — " + build.BRAND_TITLE
 # ------------------------------------------------ PRIVACY NOTICE
 priv_body = banner("Legal", "Privacy notice",
   "How this site handles information, including the sign-up you complete to unlock the DPIA screening tool.", crumbs=True) + f"""
-  <p class="lead">This is a site about data protection, so it ought to hold itself to the same standard. In plain terms, here is what we do and do not collect.</p>
+  <p class="lead">This is a site about data protection, so it ought to hold itself to the same standard. In plain terms, here’s what I do and don’t collect.</p>
 
   <h2>The site itself</h2>
   <p>These pages are plain, self-contained static files. They set <strong>no cookies</strong>, run <strong>no analytics or tracking</strong>, and make no advertising or profiling calls. Your reading-controls preferences (text size, contrast, spacing) are stored only in your own browser’s local storage, on your device, and are never sent anywhere.</p>
-  <p>The <strong>DPIA screening tool</strong> you download runs entirely in your browser. Nothing you type into it is transmitted to us or anyone else; it stays on your device unless you choose to save, print or send it.</p>
+  <p>The <strong>DPIA screening tool</strong> you download runs entirely in your browser. Nothing you type into it is transmitted to me or anyone else; it stays on your device unless you choose to save, print or send it.</p>
 
   <h2>The sign-up form</h2>
-  <p>To unlock the DPIA screening tool we ask you to complete a short form. That form is a <strong>Google Form</strong>, and the information you enter is processed by Google on our behalf as a data processor. Here is the detail:</p>
+  <p>To unlock the DPIA screening tool I ask you to complete a short form. That form is a <strong>Google Form</strong>, and the information you enter is processed by Google on my behalf as a data processor. Here’s the detail:</p>
   <div class="data-table-wrap">
   <table class="data">
     <tbody>
-      <tr><th scope="row">Who is responsible (controller)</th><td>Mark Anderson, ICT Evangelist — the data controller for sign-ups.</td></tr>
-      <tr><th scope="row">What we collect</th><td>Only what the form asks — typically your name, work email and organisation. We do not ask for special-category data; please do not enter any.</td></tr>
-      <tr><th scope="row">Why (purpose)</th><td>To provide the resource you requested and, where you have agreed, to contact you about related AI-in-education resources.</td></tr>
+      <tr><th scope="row">Who is responsible (controller)</th><td>Me — Mark Anderson, ICT Evangelist — the data controller for sign-ups.</td></tr>
+      <tr><th scope="row">What I collect</th><td>Only what the form asks — typically your name, work email and organisation. I don’t ask for special-category data; please don’t enter any.</td></tr>
+      <tr><th scope="row">Why (purpose)</th><td>To provide the resource you requested and, where you’ve agreed, to contact you about related AI-in-education resources.</td></tr>
       <tr><th scope="row">Lawful basis</th><td>Consent, which you give by submitting the form. You can withdraw it at any time (see below).</td></tr>
-      <tr><th scope="row">Who processes it</th><td>Google (Google Forms) as our processor. Data may be handled under Google’s standard data-processing terms and approved international-transfer safeguards.</td></tr>
-      <tr><th scope="row">How long we keep it</th><td>No longer than we need it for the purpose above; you may ask us to delete it sooner.</td></tr>
-      <tr><th scope="row">Your rights</th><td>Access, correction, deletion, objection, and withdrawal of consent. Contact us and we will action it.</td></tr>
+      <tr><th scope="row">Who processes it</th><td>Google (Google Forms) as my processor. Data may be handled under Google’s standard data-processing terms and approved international-transfer safeguards.</td></tr>
+      <tr><th scope="row">How long I keep it</th><td>No longer than I need it for the purpose above; you can ask me to delete it sooner.</td></tr>
+      <tr><th scope="row">Your rights</th><td>Access, correction, deletion, objection, and withdrawal of consent. Contact me and I’ll action it.</td></tr>
     </tbody>
   </table>
   </div>
 
   <h2>Contact &amp; complaints</h2>
-  <p>To exercise any right, or to ask a question about this notice, contact <strong>Mark Anderson (ICT Evangelist)</strong> via <a href="https://ictevangelist.com">ictevangelist.com</a>. If you are unhappy with how we have handled your information, you can complain to the Information Commissioner’s Office (ICO) at <a href="https://ico.org.uk">ico.org.uk</a>.</p>
+  <p>To exercise any right, or to ask a question about this notice, contact me — <strong>Mark Anderson (ICT Evangelist)</strong> — via <a href="https://ictevangelist.com">ictevangelist.com</a>. If you’re unhappy with how I’ve handled your information, you can complain to the Information Commissioner’s Office (ICO) at <a href="https://ico.org.uk">ico.org.uk</a>.</p>
 
   <p class="chart-note">This notice covers this website and its sign-up form. The exact fields, retention period and contact route should be confirmed by the site owner before launch — the placeholders here reflect the intended, privacy-first design.</p>
 """ + pagenav(("policy-template.html", "Get the template"), None)

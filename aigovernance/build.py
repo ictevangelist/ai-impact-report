@@ -101,7 +101,7 @@ FOOTER = f"""</main>
     <div class="footer-grid">
       <div>
         <h2>About this site</h2>
-        <p style="color:#c4cfd8;font-size:.9rem;max-width:52ch;margin:0;">A plain-language companion to the <em>Use of Artificial Intelligence (AI) Policy</em> template — breaking down what schools, trusts and colleges need to decide, why it matters, and the law and guidance it speaks to. Written for adoption from September 2026.</p>
+        <p style="color:#c4cfd8;font-size:.9rem;max-width:52ch;margin:0;">My plain-English companion to the <em>Use of Artificial Intelligence (AI) Policy</em> template — breaking down what schools, trusts and colleges need to decide, why it matters, and the law and guidance it speaks to. Written for adoption from September 2026.</p>
       </div>
       <div>
         <h2>Sections</h2>
