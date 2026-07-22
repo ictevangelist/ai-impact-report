@@ -448,3 +448,7 @@ html.a11y-contrast .reflist li { border-color: #8fa2ac; }
 .cta-band .btn-row { margin-top: 1.2rem; }
 .cta-band .btn { border-color: var(--brand-deep); }
 .cta-band + .site-footer { margin-top: 0; border-top: 1px solid rgba(255,255,255,.18); border-image: none; }
+
+/* ---------- Typography: no single-word orphan lines ---------- */
+p, li, dd, figcaption, .ref-desc { text-wrap: pretty; }
+h1, h2, h3 { text-wrap: balance; }

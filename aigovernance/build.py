@@ -96,7 +96,7 @@ FOOTER = f"""</main>
 <section class="cta-band">
   <div class="container">
     <h2>Working on your AI policy?</h2>
-    <p>Support with writing or refining it, and with training your staff, is exactly the work I do. And if the template or the screening tool has helped in your school or trust, I’d love to hear about it.</p>
+    <p>Support with writing or refining it, and with training your staff, is exactly the work I do. And if the template or the screening tool has helped in your school or trust, I’d love to hear&nbsp;about&nbsp;it.</p>
     <div class="btn-row">
       <a class="btn" href="mailto:mark@ictevangelist.com?subject=AI%20policy%20support">Email me</a>
       <a class="btn btn--ghost" href="https://ictevangelist.com/contact/" target="_blank" rel="noopener noreferrer">More at ictevangelist.com</a>
@@ -130,7 +130,7 @@ FOOTER = f"""</main>
     </div>
     <div class="footer-credit">
       <p>Produced by <strong>{html.escape(AUTHOR)}</strong>. The policy template and DPIA screening tool are shared under a
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color:#cfe0ea;">Creative Commons BY-NC-SA 4.0</a> licence.</p>
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color:#cfe0ea;">Creative Commons BY-NC-SA 4.0</a>&nbsp;licence.</p>
       <p class="footer-legal">This site offers general information, not legal advice. Responsibility for compliance rests with the adopting organisation.
       <a href="privacy.html">Privacy notice</a>.</p>
     </div>
@@ -177,10 +177,17 @@ def pagenav(prev, nxt):
     n = f'<a class="next" href="{nxt[0]}"><span class="dir">Next</span><span class="ttl">{nxt[1]}</span></a>' if nxt else ''
     return f'<nav class="page-nav" aria-label="Between sections">{p}{n}</nav>'
 
+import re as _re
+
+def tie_orphans(doc):
+    """Join a short final word (<=3 letters) to the word before it in paragraphs
+    and list items, so it can't wrap onto a line of its own."""
+    return _re.sub(r'(\S) (\S{1,3})([.!?…]?)</(p|li)>', r'\1&nbsp;\2\3</\4>', doc)
+
 def write(slug, title, desc, body, jsonld=None):
     canonical = f"{SITE}/{slug}"
     doc = head(title, desc, canonical, jsonld).replace("{NAV_PLACEHOLDER}", nav_html(slug)) + body + "</div></section>\n" + FOOTER
-    (OUT / slug).write_text(doc, encoding="utf-8")
+    (OUT / slug).write_text(tie_orphans(doc), encoding="utf-8")
     print("wrote", slug)
 
 # =====================================================================

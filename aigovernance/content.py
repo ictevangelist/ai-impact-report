@@ -2,7 +2,7 @@
 # Content + page assembly for aigovernance.ictevangelist.com
 # Run: python3 content.py   (imports the engine in build.py, writes all pages)
 from build import (write, banner, guidance_box, keypoints, nonneg, pagenav,
-                   FOOTER, head, nav_html, SITE, BRAND_TITLE, AUTHOR, link)
+                   FOOTER, head, nav_html, SITE, BRAND_TITLE, AUTHOR, link, tie_orphans)
 import html as _h
 
 # ---- Verified official source URLs (open in a new tab via build.link) ----
@@ -121,7 +121,7 @@ home_ld = {
 home_doc = head(BRAND_TITLE + " — a companion to the Use of AI Policy template",
                 "Plain-English guidance on AI governance for schools, trusts and colleges: tool approval, data protection, safeguarding, DPIAs and a free policy template. Written for September 2026.",
                 SITE + "/", home_ld).replace("{NAV_PLACEHOLDER}", nav_html("index.html")) + home_body + FOOTER
-(__import__("pathlib").Path(__file__).parent / "index.html").write_text(home_doc, encoding="utf-8")
+(__import__("pathlib").Path(__file__).parent / "index.html").write_text(tie_orphans(home_doc), encoding="utf-8")
 print("wrote index.html")
 
 # ---------------------------------------------------------------- TOPIC PAGES
