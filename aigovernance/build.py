@@ -13,6 +13,13 @@ BRAND_SUB = "ICT Evangelist"
 AUTHOR = "Mark Anderson (ICT Evangelist)"
 OUT = pathlib.Path(__file__).parent
 
+# Content fingerprint for cache-busting: changes whenever css/js change, so
+# GitHub Pages' 10-minute asset cache can never serve stale styles.
+import hashlib as _hashlib
+ASSET_V = _hashlib.md5(b"".join(
+    (OUT / p).read_bytes() for p in ("css/styles.css", "js/nav.js", "js/a11y.js")
+)).hexdigest()[:8]
+
 # ---- Navigation: the waffle grid (topic pages, in reading order) ----
 NAV = [
     ("landscape.html",          "The landscape"),
@@ -64,7 +71,7 @@ def head(title, desc, canonical, jsonld=None):
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="css/styles.css">{ld}
+<link rel="stylesheet" href="css/styles.css?v={ASSET_V}">{ld}
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -136,8 +143,8 @@ FOOTER = f"""</main>
     </div>
   </div>
 </footer>
-<script src="js/nav.js" defer></script>
-<script src="js/a11y.js" defer></script>
+<script src="js/nav.js?v={ASSET_V}" defer></script>
+<script src="js/a11y.js?v={ASSET_V}" defer></script>
 </body>
 </html>
 """
@@ -193,7 +200,7 @@ def clean_urls(doc):
     doc = doc.replace('href="index.html"', 'href="/"')
     doc = _re.sub(r'href="([a-z0-9-]+)\.html(#[^"]*)?"',
                   lambda m: f'href="/{m.group(1)}/{m.group(2) or ""}"', doc)
-    doc = doc.replace('href="css/styles.css"', 'href="/css/styles.css"')
+    doc = doc.replace('href="css/styles.css', 'href="/css/styles.css')
     doc = _re.sub(r'src="(js|assets)/', r'src="/\1/', doc)
     doc = _re.sub(r'href="(downloads|assets)/', r'href="/\1/', doc)
     doc = doc.replace('href="favicon', 'href="/favicon')
