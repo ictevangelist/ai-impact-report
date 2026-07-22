@@ -45,15 +45,15 @@ dpia_body = banner("Free resource", "The DPIA screening tool",
               width="100%" height="1350" frameborder="0" marginheight="0" marginwidth="0"
               loading="lazy" title="Sign up to unlock the DPIA screening tool">Loading&hellip;</iframe>
     </div>
-    <p style="font-size:.85rem;color:var(--ink-soft);margin:.8rem 0 0;"><strong>One important step:</strong> the link on the confirmation screen takes you to the tool on Google Drive. It must be <strong>downloaded</strong> (the ↓ icon, top right) and opened on your own device — Drive’s preview can’t run it. Once downloaded, it works in any browser, no internet connection needed.</p>
+    <p style="font-size:.85rem;color:var(--ink-soft);margin:.8rem 0 0;"><strong>One important step:</strong> the link on the confirmation screen downloads the tool straight to your device. Save the file, then open it in any browser — that’s how it runs. It needs no internet connection, and nothing you type into it is sent anywhere.</p>
   </div>
 
   <h2>How it works</h2>
   <ol>
     <li>Complete the short sign-up form above.</li>
-    <li>When you submit it, the confirmation screen shows a link to the tool on Google Drive.</li>
-    <li><strong>Download the file from Drive</strong> using the ↓ icon — the tool must be downloaded and run from your own device; Drive’s preview can’t run it.</li>
-    <li>Open the saved file in any browser, and complete a screening for any tool you’re considering.</li>
+    <li>When you submit it, the confirmation screen shows your download link — clicking it downloads the tool straight to your device.</li>
+    <li>Save the file, then open it in any browser on your own device — that’s how the tool runs. No internet connection needed.</li>
+    <li>Complete a screening for any tool you’re considering.</li>
     <li>Print or save the finished assessment, and send it to your DPO for approval.</li>
   </ol>
   <p>I only hold your details as set out in the <a href="privacy.html">privacy notice</a>.</p>
@@ -64,7 +64,7 @@ dpia_body = banner("Free resource", "The DPIA screening tool",
 """ + pagenav(("references.html", "References"), ("policy-template.html", "Get the template"))
 
 write("dpia-tool.html", "DPIA screening tool — " + build.BRAND_TITLE,
-      "Unlock a free, plain-language, browser-based DPIA screening tool for assessing any AI or digital product before you procure it.",
+      "Unlock a free, plain-English, browser-based DPIA screening tool for assessing any AI or digital product before you procure it.",
       dpia_body, ORG_LD)
 
 # ------------------------------------------------ POLICY TEMPLATE (download)
@@ -135,7 +135,7 @@ priv_body = banner("Legal", "Privacy notice",
       <tr><th scope="row">Why (purpose)</th><td>To provide the resource you requested and, where you’ve agreed, to contact you about related AI-in-education resources.</td></tr>
       <tr><th scope="row">Lawful basis</th><td>Consent, which you give by submitting the form. You can withdraw it at any time (see below).</td></tr>
       <tr><th scope="row">Who processes it</th><td>Google (Google Forms) as my processor. Data may be handled under Google’s standard data-processing terms and approved international-transfer safeguards.</td></tr>
-      <tr><th scope="row">How long I keep it</th><td>No longer than I need it for the purpose above; you can ask me to delete it sooner.</td></tr>
+      <tr><th scope="row">How long I keep it</th><td>The list is reviewed annually and details no longer needed are deleted. You can ask me to delete yours sooner at any time.</td></tr>
       <tr><th scope="row">Your rights</th><td>Access, correction, deletion, objection, and withdrawal of consent. Contact me and I’ll action it.</td></tr>
     </tbody>
   </table>
@@ -148,7 +148,7 @@ priv_body = banner("Legal", "Privacy notice",
 """ + pagenav(("policy-template.html", "Get the template"), None)
 
 write("privacy.html", "Privacy notice — " + build.BRAND_TITLE,
-      "How this site handles information: no cookies or tracking on the pages, and a plain-language notice for the Google Form sign-up used to unlock the DPIA tool.",
+      "How this site handles information: no cookies or tracking on the pages, and a plain-English notice for the Google Form sign-up used to unlock the DPIA tool.",
       priv_body, ORG_LD)
 
 print("Tool, template and privacy pages written.")
