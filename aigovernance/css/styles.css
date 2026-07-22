@@ -474,23 +474,23 @@ h1, h2, h3 { text-wrap: balance; }
 .step-list li { counter-increment: step; }
 .step-list a {
   display: flex; align-items: center; gap: .85rem;
-  border: 1px solid #e8a000; border-radius: 10px; padding: .55rem .9rem;
-  text-decoration: none; color: var(--charcoal); font-weight: 600; font-size: .98rem;
-  background: #FEAE00; box-shadow: var(--shadow);
+  border: 1px solid var(--border); border-radius: 10px; padding: .55rem .9rem;
+  text-decoration: none; color: var(--ink); font-weight: 500; font-size: .98rem;
+  background: var(--surface); box-shadow: var(--shadow);
   transition: background .12s, color .12s, border-color .12s, transform .12s;
 }
 .step-list a::before {
   content: counter(step);
   width: 30px; height: 30px; border-radius: 50%; flex: 0 0 auto;
-  background: var(--charcoal); color: #FEAE00;
+  background: #FEAE00; color: var(--charcoal);
   display: grid; place-items: center; font-weight: 700; font-size: .88rem;
   font-family: var(--font-head);
   transition: background .12s, color .12s;
 }
 .step-list a:hover {
-  background: var(--charcoal); color: #FEAE00; border-color: var(--charcoal);
-  transform: translateY(-1px);
+  background: #FEAE00; color: var(--charcoal); border-color: #e8a000;
+  font-weight: 600; transform: translateY(-1px);
 }
-.step-list a:hover::before { background: #FEAE00; color: var(--charcoal); }
+.step-list a:hover::before { background: var(--charcoal); color: #FEAE00; }
 @media (max-width: 640px) { .step-list { grid-template-columns: 1fr; } }
-html.a11y-contrast .step-list a { border-color: #8a5f00; }
+html.a11y-contrast .step-list a { border-color: #8fa2ac; }
