@@ -45,14 +45,14 @@ dpia_body = banner("Free resource", "The DPIA screening tool",
               width="100%" height="1350" frameborder="0" marginheight="0" marginwidth="0"
               loading="lazy" title="Sign up to unlock the DPIA screening tool">Loading&hellip;</iframe>
     </div>
-    <p style="font-size:.85rem;color:var(--ink-soft);margin:.8rem 0 0;"><strong>One important step:</strong> the link on the confirmation screen downloads the tool straight to your device. Save the file, then open it in any browser — that’s how it runs. It needs no internet connection, and nothing you type into it is sent anywhere.</p>
+    <p style="font-size:.85rem;color:var(--ink-soft);margin:.8rem 0 0;"><strong>One important step:</strong> the link on the confirmation screen opens your download page, and the file saves straight to your device. Open the saved file in any browser — that’s how it runs. It needs no internet connection, and nothing you type into it is sent anywhere.</p>
   </div>
 
   <h2>How it works</h2>
   <ol>
     <li>Complete the short sign-up form above.</li>
-    <li>When you submit it, the confirmation screen shows your download link — clicking it downloads the tool straight to your device.</li>
-    <li>Save the file, then open it in any browser on your own device — that’s how the tool runs. No internet connection needed.</li>
+    <li>When you submit it, the confirmation screen links to your download page — the file saves straight to your device.</li>
+    <li>Open the saved file in any browser on your own device — that’s how the tool runs. No internet connection needed.</li>
     <li>Complete a screening for any tool you’re considering.</li>
     <li>Print or save the finished assessment, and send it to your DPO for approval.</li>
   </ol>
@@ -66,6 +66,47 @@ dpia_body = banner("Free resource", "The DPIA screening tool",
 write("dpia-tool.html", "DPIA screening tool — " + build.BRAND_TITLE,
       "Unlock a free, plain-English, browser-based DPIA screening tool for assessing any AI or digital product before you procure it.",
       dpia_body, ORG_LD)
+
+# ------------------------------------------------ DOWNLOAD PAGE (reward delivery)
+# Linked from the Google Form's confirmation message. Breaks out of the embedded
+# iframe, then auto-starts the download from this domain. Kept out of the
+# sitemap and marked noindex so search engines don't offer a form bypass.
+download_body = banner("Free resource", "Your download",
+  "The DPIA screening tool is on its way to your device.", crumbs=False) + f"""
+  <p class="lead">Thanks for signing up. Your download should start automatically — if it doesn’t, use the button below.</p>
+
+  <p><a id="dl" class="btn btn--solid" href="downloads/AI-DPIA-Screening-Tool.html" download="AI-DPIA-Screening-Tool.html">Download the DPIA screening tool</a></p>
+
+  <h2>What to do next</h2>
+  <ol>
+    <li>Save the file somewhere you’ll find it again.</li>
+    <li>Open it in any browser on your own device — that’s how the tool runs. It needs no internet connection, and nothing you type into it is sent anywhere.</li>
+    <li>Work through a screening for the tool you’re considering; the <em>i</em> buttons explain each section as you go.</li>
+    <li>Use <strong>Check readiness</strong>, then print or save the finished assessment and send it to your DPO for approval.</li>
+  </ol>
+  <p>Wondering what the tool covers? It’s all on the <a href="dpia-tool.html">DPIA screening tool</a> page.</p>
+
+  <script>
+  (function () {{
+    // If we've been opened inside the embedded form's iframe, break out to a full tab.
+    if (window.top !== window.self) {{
+      try {{ window.top.location.replace(window.location.href); return; }} catch (e) {{}}
+    }}
+    // Auto-start the download shortly after load; the button remains as fallback.
+    setTimeout(function () {{
+      var a = document.getElementById('dl');
+      if (a) a.click();
+    }}, 700);
+  }})();
+  </script>
+"""
+write("download.html", "Your download — " + build.BRAND_TITLE,
+      "Your DPIA screening tool download.", download_body, ORG_LD)
+# Mark this page noindex: it's the reward step, not a landing page.
+_dl = build.OUT / "download" / "index.html"
+_dl.write_text(_dl.read_text(encoding="utf-8").replace(
+    '<meta name="robots" content="index, follow">',
+    '<meta name="robots" content="noindex, nofollow">'), encoding="utf-8")
 
 # ------------------------------------------------ POLICY TEMPLATE (download)
 tmpl_body = banner("Free resource", "Get the policy template",
