@@ -436,3 +436,15 @@ html.a11y-spacing li { margin-bottom: .75em; }
 .reflist .ref-title { font-weight: 600; color: var(--ink); }
 .reflist .ref-desc { display: block; color: var(--ink-soft); font-size: .92rem; margin-top: .25rem; }
 html.a11y-contrast .reflist li { border-color: #8fa2ac; }
+
+/* ---------- Contact band (above the footer on every page) ---------- */
+.cta-band {
+  background: linear-gradient(150deg, var(--charcoal) 0%, var(--charcoal-2) 100%);
+  color: #fff; margin-top: 3rem; padding: 2.4rem 0 2.6rem;
+  border-top: 4px solid transparent; border-image: var(--brand-grad) 1;
+}
+.cta-band h2 { font-family: var(--font-display); color: #fff; margin: 0 0 .6rem; font-size: 1.5rem; letter-spacing: -.3px; }
+.cta-band p { color: #dfe7ec; margin: 0; max-width: 72ch; }
+.cta-band .btn-row { margin-top: 1.2rem; }
+.cta-band .btn { border-color: var(--brand-deep); }
+.cta-band + .site-footer { margin-top: 0; border-top: 1px solid rgba(255,255,255,.18); border-image: none; }

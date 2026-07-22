@@ -93,6 +93,16 @@ def head(title, desc, canonical, jsonld=None):
 """
 
 FOOTER = f"""</main>
+<section class="cta-band">
+  <div class="container">
+    <h2>Working on your AI policy?</h2>
+    <p>Support with writing or refining it, and with training your staff, is exactly the work I do. And if the template or the screening tool has helped in your school or trust, I’d love to hear about it.</p>
+    <div class="btn-row">
+      <a class="btn" href="mailto:mark@ictevangelist.com?subject=AI%20policy%20support">Email me</a>
+      <a class="btn btn--ghost" href="https://ictevangelist.com/contact/" target="_blank" rel="noopener noreferrer">More at ictevangelist.com</a>
+    </div>
+  </div>
+</section>
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">

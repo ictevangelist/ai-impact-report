@@ -63,7 +63,7 @@ home_body = f"""<section class="hero">
 
   <h2 style="margin-top:2.4rem;">Where this work comes from</h2>
   <p>Back in 2023 I published a free {link("Use of AI in Education policy template", "https://ictevangelist.com/free-resource-use-of-artificial-intelligence-ai-in-education-school-policy-template/")} that I hoped would be useful. What I didn’t expect was just how many schools would download it and put it to work. When Ofsted set out its approach to AI in 2024, I responded with {link("ten actionable insights to build on it", "https://ictevangelist.com/enhancing-ofsteds-policy-paper-on-ai-with-actionable-insights/")}, and in 2025 I {link("updated the template", "https://ictevangelist.com/ai-policy-template-2025/")} against the DfE’s policy paper on generative AI.</p>
-  <p>Over the last decade I’ve worked with hundreds of schools, trusts and organisations worldwide on digital strategy, governance, policy and training — and before I first published that template, I’d already helped dozens of schools develop their own. This site brings all of that together: everything I’ve learned about AI policy, rewritten for the framework that applies from September 2026.</p>
+  <p>Over the last decade I’ve worked with hundreds of schools, trusts and organisations worldwide on digital strategy, governance, policy and training — and before I first published that template, I’d already helped dozens of schools and trusts develop their own. This site brings all of that together: everything I’ve learned about AI policy, rewritten for the framework that applies from September 2026.</p>
 
   <h2 class="mt-0" style="margin-top:2rem;">Start wherever suits you</h2>
   <div class="card-grid" style="margin-top:1.2rem;">
