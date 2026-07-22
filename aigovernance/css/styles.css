@@ -218,11 +218,11 @@ h1, h2 { font-family: var(--font-display); }
 .prose h2 { font-size: 1.6rem; color: var(--ink); margin: 2.3rem 0 .8rem; line-height: 1.18; font-weight: 600; }
 .prose h2::after { content:""; display:block; width:52px; height:3px; margin-top:.55rem; border-radius:3px; background: var(--brand-grad); }
 .prose h3 { font-size: 1.2rem; color: var(--brand-deep); margin: 1.7rem 0 .5rem; font-weight: 600; }
-.prose p { margin: 0 0 1.1rem; max-width: 72ch; }
-.prose ul, .prose ol { max-width: 72ch; margin: 0 0 1.2rem; padding-left: 1.3rem; }
+.prose p { margin: 0 0 1.1rem; }
+.prose ul, .prose ol { margin: 0 0 1.2rem; padding-left: 1.3rem; }
 .prose li { margin-bottom: .5rem; }
-.lead { font-size: 1.2rem; color: var(--ink-soft); max-width: 70ch; }
-.section-intro { max-width: 72ch; }
+.lead { font-size: 1.2rem; color: var(--ink-soft); }
+.section-intro { max-width: none; }
 .section > .container > h2:first-child, .container > h2.mt-0 { font-family: var(--font-display); }
 
 /* ---------- Cards ---------- */

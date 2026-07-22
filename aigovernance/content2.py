@@ -90,7 +90,7 @@ tmpl_body = banner("Free resource", "Get the policy template",
   "A completable Use of Artificial Intelligence (AI) Policy for schools, trusts and colleges — a staff-use spine with optional modules for pupil use and governed exceptions.") + f"""
   <p class="lead">This is the document the whole site is built around: a full, completable AI policy template, written for adoption from <strong>September 2026</strong> against the current framework of law and guidance.</p>
 
-  <div style="text-align:center;margin:1.8rem 0;">
+  <div style="margin:1.8rem 0;">
     <a class="btn btn--solid" href="downloads/Use-of-AI-Policy-Template.docx" download style="font-size:1.05rem;padding:.9rem 1.8rem;">Download the template (Word .docx)</a>
     <p style="font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;">Free · Creative Commons BY-NC-SA 4.0 · complete it for your context before publishing</p>
   </div>
