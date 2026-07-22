@@ -66,7 +66,25 @@ home_body = f"""<section class="hero">
   <p>Back in 2023 I published a free {link("Use of AI in Education policy template", "https://ictevangelist.com/free-resource-use-of-artificial-intelligence-ai-in-education-school-policy-template/")} that I hoped would be useful. What I didn’t expect was just how many schools would download it and put it to work. When Ofsted set out its approach to AI in 2024, I responded with {link("ten actionable insights to build on it", "https://ictevangelist.com/enhancing-ofsteds-policy-paper-on-ai-with-actionable-insights/")}, and in 2025 I {link("updated the template", "https://ictevangelist.com/ai-policy-template-2025/")} against the DfE’s policy paper on generative AI.</p>
   <p>Over the last decade I’ve worked with hundreds of schools, trusts and organisations worldwide on digital strategy, governance, policy and training — and before I first published that template, I’d already helped dozens of schools and trusts develop their own. This site brings all of that together: everything I’ve learned about AI policy, rewritten for the framework that applies from September 2026.</p>
 
-  <h2 class="mt-0" style="margin-top:2rem;">Start wherever suits you</h2>
+  <h2>How to use this site</h2>
+  <p>Every section of the policy template has a page of its own here, and the pages run in the same order as the template itself. If you’re writing your policy, my advice is to work through them in order with the template open alongside — each page explains what that section is, why it’s important, and the law and guidance it speaks to. Start at <a href="landscape.html">The landscape</a> and use the <strong>Next</strong> button at the bottom of each page to move through:</p>
+  <ol style="columns:2;column-gap:2.5rem;">
+    <li><a href="landscape.html">The landscape</a></li>
+    <li><a href="roles.html">Roles &amp; oversight</a></li>
+    <li><a href="approved-tools.html">Approved tools</a></li>
+    <li><a href="acceptable-use.html">Acceptable use</a></li>
+    <li><a href="data-protection.html">Data protection</a></li>
+    <li><a href="accuracy-oversight.html">Accuracy &amp; oversight</a></li>
+    <li><a href="safeguarding.html">Safeguarding &amp; Prevent</a></li>
+    <li><a href="impact-assessment.html">Impact assessment</a></li>
+    <li><a href="training.html">Training</a></li>
+    <li><a href="filtering-monitoring.html">Filtering &amp; monitoring</a></li>
+    <li><a href="breaches.html">Breaches</a></li>
+    <li><a href="pupil-use.html">Pupil use</a></li>
+  </ol>
+  <p>By the time you’ve worked through them all, you’ll have everything you need to complete, agree and ratify your policy. The <a href="guidance-map.html">guidance map</a> and <a href="references.html">references</a> sit at the end for checking sources, and the <a href="policy-template.html">policy template</a> and <a href="dpia-tool.html">DPIA screening tool</a> are yours to download at any point along the way.</p>
+
+  <h2 class="mt-0" style="margin-top:2rem;">Or dip straight into a section</h2>
   <div class="card-grid" style="margin-top:1.2rem;">
     <a class="card card--link" href="landscape.html"><h3>The landscape</h3><p>Why you need a policy now, what counts as “AI”, and the law and guidance that applies to you.</p><span class="more">Read &rsaquo;</span></a>
     <a class="card card--link" href="approved-tools.html"><h3>Approved tools</h3><p>The heart of the policy: how a tool becomes approved, and why “not approved” is the starting point.</p><span class="more">Read &rsaquo;</span></a>
@@ -102,6 +120,8 @@ home_body = f"""<section class="hero">
     <details><summary>Can staff just use ChatGPT for work?</summary><div class="faq__a"><p>Only if your organisation has approved it, and only through an organisation-provided account. Personal accounts aren’t used for work, and public consumer chatbots aren’t approved by default.</p></div></details>
     <details><summary>When do we need a DPIA?</summary><div class="faq__a"><p>Before you deploy AI that processes personal data, and wherever a tool is likely to create a high risk to people. Doing it early, before the decision is made, is what the DfE guidance expects. The <a href="dpia-tool.html">screening tool</a> helps you judge whether you’re ready.</p></div></details>
   </div>
+
+  {pagenav(None, ("landscape.html", "The landscape"))}
 </div></section>"""
 
 home_ld = {
