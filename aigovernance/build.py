@@ -143,7 +143,9 @@ FOOTER = f"""</main>
 """
 
 def banner(kicker, title, sub, crumbs=True):
-    c = '<p class="crumbs"><a href="index.html">Home</a> &rsaquo; ' + title + '</p>' if crumbs else ''
+    import re as _re2
+    plain = _re2.sub(r'<[^>]+>', '', title)   # crumbs carry no accent markup
+    c = '<p class="crumbs"><a href="index.html">Home</a> &rsaquo; ' + plain + '</p>' if crumbs else ''
     return f"""<section class="page-banner">
   <div class="container">
     <p class="kicker">{kicker}</p>

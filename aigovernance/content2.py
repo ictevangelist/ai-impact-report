@@ -18,7 +18,7 @@ ORG_LD = {"@context": "https://schema.org", "@type": "Organization",
           "name": "ICT Evangelist", "url": "https://ictevangelist.com", "founder": "Mark Anderson"}
 
 # ------------------------------------------------ DPIA SCREENING TOOL (value exchange)
-dpia_body = banner("Free resource", "The DPIA screening tool",
+dpia_body = banner("Free resource", 'The <span class="accent">DPIA screening tool</span>',
   "A plain-English tool that runs in your browser, for any AI or digital product you’re thinking of buying. Tell me who you are, and it’s yours to keep.") + f"""
   <p class="lead">Assessing an AI tool before you buy it shouldn’t need a law degree. I’ve built this screening tool to ask the right questions in plain English, then tell you whether your answers are detailed enough to send to your Data Protection Officer for sign-off.</p>
 
@@ -71,7 +71,7 @@ write("dpia-tool.html", "DPIA screening tool — " + build.BRAND_TITLE,
 # Linked from the Google Form's confirmation message. Breaks out of the embedded
 # iframe, then auto-starts the download from this domain. Kept out of the
 # sitemap and marked noindex so search engines don't offer a form bypass.
-download_body = banner("Free resource", "Your download",
+download_body = banner("Free resource", 'Your <span class="accent">download</span>',
   "The DPIA screening tool is on its way to your device.", crumbs=False) + f"""
   <p class="lead">Thanks for signing up. Your download should start automatically — if it doesn’t, use the button below.</p>
 
@@ -109,7 +109,7 @@ _dl.write_text(_dl.read_text(encoding="utf-8").replace(
     '<meta name="robots" content="noindex, nofollow">'), encoding="utf-8")
 
 # ------------------------------------------------ POLICY TEMPLATE (download)
-tmpl_body = banner("Free resource", "Get the policy template",
+tmpl_body = banner("Free resource", 'Get the <span class="accent">policy template</span>',
   "A completable Use of Artificial Intelligence (AI) Policy for schools, trusts and colleges — a staff-use spine with optional modules for pupil use and governed exceptions.") + f"""
   <p class="lead">This is the document this whole site is built around: my full, completable AI policy template, written for adoption from <strong>September 2026</strong> against the current framework of law and guidance.</p>
 
@@ -158,7 +158,7 @@ write("policy-template.html", "Get the policy template — " + build.BRAND_TITLE
       tmpl_body, ORG_LD)
 
 # ------------------------------------------------ PRIVACY NOTICE
-priv_body = banner("Legal", "Privacy notice",
+priv_body = banner("Legal", '<span class="accent">Privacy</span> notice',
   "How this site handles information, including the sign-up you complete to unlock the DPIA screening tool.", crumbs=True) + f"""
   <p class="lead">This is a site about data protection, so it ought to hold itself to the same standard. In plain terms, here’s what I do and don’t collect.</p>
 

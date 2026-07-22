@@ -545,7 +545,7 @@ LEGAL = [
 ]
 _legal_items = "\n".join(
     f'<li><span class="ref-title">{t}</span><span class="ref-desc">{d}</span></li>' for t, d in LEGAL)
-references_body = banner("Reference list", "References",
+references_body = banner("Reference list", '<span class="accent">References</span>',
   "Every source cited by the Use of AI Policy template, at its current version, in one place, each linked to the official document.") + f"""
   <p class="lead">The <em>Use of AI Policy</em> template sits within a body of statute, statutory guidance and sector standards. These are the sources it draws on, listed in the order they appear in the template’s opening section. Each link opens the official document in a new tab.</p>
   <ol class="reflist">
@@ -568,8 +568,28 @@ write("references.html", "References — " + BRAND_TITLE,
       references_body, ORG_LD)
 
 # ---- Build the standard topic pages ----
+# Key phrase per heading, picked out in the amber accent on the dark banner.
+ACCENT = {
+    'landscape.html':           'landscape',
+    'roles.html':               '&amp; oversight',
+    'approved-tools.html':      'Approved tools',
+    'acceptable-use.html':      'Acceptable use',
+    'data-protection.html':     'Data protection',
+    'accuracy-oversight.html':  'human oversight',
+    'safeguarding.html':        'Safeguarding',
+    'impact-assessment.html':   'Impact assessment',
+    'training.html':            'Training',
+    'filtering-monitoring.html':'Filtering, monitoring',
+    'breaches.html':            'serious incidents',
+    'pupil-use.html':           'Pupil use',
+    'guidance-map.html':        'guidance map',
+}
 for slug, navt, kicker, h1, sub, body, _gi, _extra, prev, nxt in PAGES:
-    inner = banner(kicker, h1, sub) + body + pagenav(prev, nxt)
+    disp_h1 = h1
+    if slug in ACCENT:
+        ph = ACCENT[slug]
+        disp_h1 = h1.replace(ph, f'<span class="accent">{ph}</span>', 1)
+    inner = banner(kicker, disp_h1, sub) + body + pagenav(prev, nxt)
     write(slug, f"{h1.replace('&amp;','&')} — {BRAND_TITLE}",
           sub.replace('“','').replace('”','')[:180], inner, ORG_LD)
 
