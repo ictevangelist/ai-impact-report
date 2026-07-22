@@ -463,5 +463,5 @@ h1, h2, h3 { text-wrap: balance; }
 .signup-card > p { max-width: 800px; margin-left: auto; margin-right: auto; }
 .signup-card h3 { text-align: center; }
 
-/* Teal accent for key phrases on the dark hero */
-.accent-teal { color: var(--brand-teal); }
+/* Amber accent for key phrases on the dark hero */
+.accent { color: #FEAE00; }
