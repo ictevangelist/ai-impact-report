@@ -98,7 +98,7 @@ home_body = f"""<section class="hero">
   <h2>Your questions, answered</h2>
   <div class="faq">
     <details><summary>Does every school need its own AI policy?</summary><div class="faq__a"><p>You need a position that’s yours, and that your stakeholders have agreed. If you’re a multi-academy trust, adopt one policy centrally and hold school-level detail in local appendices rather than running separate versions. The template is written to be completed for your setting, not used as it stands.</p></div></details>
-    <details><summary>Are pupils covered by the policy?</summary><div class="faq__a"><p>Not by default. Pupils come into scope only when you switch on the optional pupil-use module, and only once a DPIA and an age-appropriate AI education plan are both in place.</p></div></details>
+    <details><summary>Are pupils covered by the policy?</summary><div class="faq__a"><p>Not by default. Pupils come into scope only when you switch on the optional pupil-use module, and only once a DPIA is complete and age-appropriate teaching about AI is in place.</p></div></details>
     <details><summary>Can staff just use ChatGPT for work?</summary><div class="faq__a"><p>Only if your organisation has approved it, and only through an organisation-provided account. Personal accounts aren’t used for work, and public consumer chatbots aren’t approved by default.</p></div></details>
     <details><summary>When do we need a DPIA?</summary><div class="faq__a"><p>Before you deploy AI that processes personal data, and wherever a tool is likely to create a high risk to people. Doing it early, before the decision is made, is what the DfE guidance expects. The <a href="dpia-tool.html">screening tool</a> helps you judge whether you’re ready.</p></div></details>
   </div>
@@ -111,7 +111,7 @@ home_ld = {
         {"@type": "Question", "name": "Does every school need its own AI policy?",
          "acceptedAnswer": {"@type": "Answer", "text": "You need a position that's yours and that your stakeholders have agreed. If you're a multi-academy trust, adopt one policy centrally and hold school-level detail in local appendices. The template is completed for your setting, not used as it stands."}},
         {"@type": "Question", "name": "Are pupils covered by the policy?",
-         "acceptedAnswer": {"@type": "Answer", "text": "Not by default. Pupils come into scope only when you switch on the optional pupil-use module, and only once a DPIA and an age-appropriate AI education plan are both in place."}},
+         "acceptedAnswer": {"@type": "Answer", "text": "Not by default. Pupils come into scope only when you switch on the optional pupil-use module, and only once a DPIA is complete and age-appropriate teaching about AI is in place."}},
         {"@type": "Question", "name": "Can staff just use ChatGPT for work?",
          "acceptedAnswer": {"@type": "Answer", "text": "Only if your organisation has approved it, and only through an organisation-provided account. Personal accounts aren't used for work, and public consumer chatbots aren't approved by default."}},
         {"@type": "Question", "name": "When do we need a DPIA?",
@@ -155,8 +155,8 @@ PAGES.append(("landscape.html", "The landscape", "Sections 1–2 of the template
   <p class="lead">A good AI policy starts with why you’re adopting AI in the first place: what it’s there to help with in your setting, whether that’s teaching, workload or inclusion. Set that out before any rule appears. The governance is there to serve that purpose, not to get in its way.</p>
 
   <h2>What it is</h2>
-  <p>The policy statement sets out how your organisation uses AI: by whom, for what, and within what limits, so you get the benefits without putting at risk the safety of children and adults, data security and privacy, fairness, or professional and academic integrity. It sits within your wider digital strategy. You should review it on a set cycle, and again whenever the law, the guidance, or your own use of AI changes in any material way. AI develops at pace, so treat that cycle as a minimum rather than a formality.</p>
-  <p><strong>What counts as AI here.</strong> Generative AI tools, and any software feature that creates content, or that makes or informs decisions or predictions about people. That holds whether the feature is a standalone product, built into software you already approve, or reached through a browser. In practice, it means chatbots, image and content generators, and the AI features now appearing inside everyday software. Long-established automation such as spellcheck or predictive text is out of scope, unless it starts doing one of those things.</p>
+  <p>The policy statement sets out how your organisation uses AI: by whom, for what, and within what limits, so you get the benefits without putting at risk the safety of children and adults, data security and privacy, fairness, or professional and academic integrity. It sits within your wider digital strategy. You should review it on a set cycle, and again whenever the law, the guidance, or your own use of AI changes in any material way. AI develops at pace, so treat that cycle as a minimum rather than a formality. At the time of writing, amendments to bring AI chatbots within the Online Safety Act are expected; treat their passage, or any change to KCSIE or the DfE’s AI guidance, as a trigger for review ahead of your normal cycle.</p>
+  <p><strong>What counts as AI here.</strong> Generative AI tools, and any software feature that creates content, or that makes or informs decisions or predictions about people. That holds whether the feature is a standalone product, built into software you already approve, or reached through a browser. In practice, it means chatbots, image and content generators, and the AI features now appearing inside everyday software. It also includes AI reached through personal and wearable devices — smart glasses and other recording-capable kit — whenever it’s used in connection with the organisation’s work. Long-established automation such as spellcheck or predictive text is out of scope, unless it starts doing one of those things.</p>
 
   <h2>Why it’s important</h2>
   <p>AI rarely arrives through one obvious route. It turns up inside the platforms you already license, and it’s a browser tab away for any member of staff. If your policy only covers “the AI tool we bought”, it’ll miss most of your real exposure. The template therefore defines scope by what a tool <em>does</em>: does it generate content, or make or inform decisions about people? Scoped that way, your policy stays relevant as products change around you.</p>
@@ -279,6 +279,7 @@ PAGES.append(("data-protection.html", "Data protection", "Section 7 of the templ
   <p><strong>Controller or processor is the sector’s most common failing.</strong> Normally your school or trust decides why and how data is used (the controller) and the supplier only acts on your instructions (the processor). But the label in the contract doesn’t settle it; what the supplier actually does settles it. If a supplier uses the data for its own purposes, such as product development, analytics or improving its AI, it’s acting as a controller for that use, extra rules apply (including the Children’s Code where pupils are involved), and you should be asking why it needs to do this at all.</p>
   <p><strong>Your lawful basis is rarely consent.</strong> For most of what a school does, the basis is public task: part of running the school and educating pupils. Don’t confuse a tool’s terms requiring parent or guardian agreement with your lawful basis. They’re two different things.</p>
   <p><strong>Free text is easy to overlook.</strong> A tool that only asks for a name and email can still process sensitive information the moment someone types into a free-text box. The protection comes from the rule on what staff may enter, not from the sign-up form.</p>
+  <p><strong>Recording and transcription need their own rules.</strong> AI note-takers and meeting transcription features capture people’s words and voices: personal data gathered at source, and often special category data in pastoral, SEND or safeguarding discussions. The policy permits them only where approved for that purpose, expects everyone present to be told before recording begins, offers an alternative to anyone who objects, and treats transcripts as organisational records held under your retention arrangements — not left sitting on the provider’s platform.</p>
 
   {keypoints("What good looks like", [
     "Personal data stays out of AI tools by default; any exception is approved and written down.",
@@ -328,6 +329,9 @@ PAGES.append(("safeguarding.html", "Safeguarding & Prevent", "Section 9 of the t
   <h2>What it is</h2>
   <p>The section that connects AI to your existing safeguarding framework: KCSIE’s four areas of online risk, the Prevent duty, and the Online Safety Act. It names the AI-specific behaviours that are prohibited and treats them as conduct matters, and, where relevant, as safeguarding matters.</p>
   <p><strong>Fabricated media and deepfakes.</strong> Creating or sharing fabricated media intended to mislead, harass, distress or harm anyone in the community is prohibited. Where such material is sexual it may be criminal, and <strong>AI-generated sexual imagery of a child is a criminal matter in every circumstance</strong>. It’s reported to the designated safeguarding lead, handled under the child protection policy, and referred to the police where required, in line with the Online Safety Act 2023 and the Ofcom Protection of Children code. Multi-agency action follows Working Together to Safeguard Children 2026.</p>
+  <p><strong>Nudification tools.</strong> Making, adapting, supplying or offering nudification tools — tools designed to remove clothing from images of real people — is a criminal offence under the {link("Crime and Policing Act 2026", "https://www.legislation.gov.uk/ukpga/2026/20/contents")}. Any encounter with such a tool involving a member of the community is a safeguarding matter, reported by the usual route.</p>
+  <p><strong>Voice cloning and fraud.</strong> Staff must not use AI to clone or simulate the voice or likeness of any pupil, parent or colleague. And because cloned voices and fabricated messages are increasingly used in fraud, any unusual or urgent request — particularly one involving payments, credentials or personal data — is verified through a known channel before anyone acts on it, in line with the DfE cyber security standards.</p>
+  <p><strong>Published images of pupils.</strong> Automated tools can harvest photographs of children from public webpages and social media, including your own, for use in fabricated or abusive material. The policy expects you to keep your publication of identifiable pupil images, and the consent behind it, under review with that risk in mind.</p>
 
   <h2>Why it’s important</h2>
   <p>The tools to fabricate convincing images, audio and video are now widely available and simple to use. The schools that struggle most when this lands are the ones that never named the risk in their policy. Making the reporting route explicit, and the same one staff already use, means an AI-enabled incident is dealt with as quickly, and as seriously, as any other.</p>
@@ -368,7 +372,7 @@ PAGES.append(("training.html", "Training", "Section 11 of the template",
   <p class="lead">Colleagues follow rules they understand and, in my experience, work around the ones they don’t. Training moves the policy off the page and into everyday practice.</p>
 
   <h2>What it is</h2>
-  <p>The training expectation for everyone in scope: the AI literacy staff need, how the rule on data input and the approval process are explained, and how understanding is refreshed as tools and guidance change. Where pupil use is permitted, it also calls for an age-appropriate AI education plan.</p>
+  <p>The training expectation for everyone in scope: the AI literacy staff need, how the rule on data input and the approval process are explained, and how understanding is refreshed as tools and guidance change. Where pupil use is permitted, it also calls for age-appropriate teaching about AI within the curriculum.</p>
 
   <h2>Why it’s important</h2>
   <p>Most AI mishaps in schools aren’t deliberate. They come from a well-meaning member of staff who didn’t know where the line was. Short, concrete training on the few things that matter most — no personal data in, approved tools only, and a person always checks and owns the output — repeated regularly, does more to prevent harm than any block list. It also gives you evidence of the “meaningful human involvement” the law expects.</p>
@@ -376,7 +380,7 @@ PAGES.append(("training.html", "Training", "Section 11 of the template",
   {keypoints("What you decide here", [
     "The training your staff complete, and how often it’s refreshed.",
     "How you tell people when the approved list changes, or a new AI feature appears.",
-    "For pupil use: the age-appropriate AI education plan covering literacy, misinformation, deepfakes and responsible use.",
+    "For pupil use: age-appropriate teaching about AI, covering literacy, misinformation, deepfakes and responsible use.",
   ])}
 
   {guidance_box([G_KCSIE, G_DFE_SAFETY, G_STANDARDS])}
@@ -390,7 +394,7 @@ PAGES.append(("filtering-monitoring.html", "Filtering & monitoring", "Section 12
   <p class="lead">The policy sets the rules; filtering and monitoring enforce them. This section names who owns those arrangements, and how assurance reaches your leadership.</p>
 
   <h2>What it is</h2>
-  <p>Your filtering and monitoring arrangements as they apply to AI: blocking unapproved services, monitoring in line with your existing duties, and the senior named owner accountable for all of it. It ties into the DfE filtering and monitoring standard and your wider cyber-security position, and it feeds the assurance reporting that trustees or governors receive.</p>
+  <p>Your filtering and monitoring arrangements as they apply to AI: blocking unapproved services, monitoring in line with your existing duties, and the senior named owner accountable for all of it. The annual review also considers access routes that bypass network controls altogether — personal devices with their own connectivity, including smart glasses and other wearables. It ties into the DfE filtering and monitoring standard and your wider cyber-security position, and it feeds the assurance reporting that trustees or governors receive.</p>
 
   <h2>Why it’s important</h2>
   <p>If unapproved services aren’t actually blocked, the approved list becomes advisory and unofficial use gradually becomes the norm. Blocking and monitoring, in line with your existing duties, prevent that. The DfE standards expect a senior named owner, rather than a shared inbox, so that filtering and monitoring is somebody’s clear responsibility, reviewed and reported, rather than an assumption.</p>
@@ -434,13 +438,13 @@ PAGES.append(("pupil-use.html", "Pupil use", "Optional module",
   <p class="lead">Pupils aren’t covered by the staff policy. Bringing them into scope is a deliberate, carefully guarded decision. It shouldn’t happen by default, and it shouldn’t be allowed to creep in.</p>
 
   <h2>What it is</h2>
-  <p>An optional module that extends the policy to pupil use of AI, but only once <strong>both</strong> conditions are in place: first, a DPIA completed for the specific tools and processing; and second, an age-appropriate AI education plan covering AI literacy, misinformation, deepfakes and responsible use. If pupil use isn’t permitted, you should delete the module, and pupils stay out of scope.</p>
+  <p>An optional module that extends the policy to pupil use of AI, but only once <strong>both</strong> conditions are in place: first, a DPIA completed for the specific tools and processing; and second, age-appropriate teaching about AI within your curriculum and online safety provision, covering AI literacy, misinformation, deepfakes and responsible use, in line with the whole-school approach to online safety in KCSIE 2026. If pupil use isn’t permitted, you should delete the module, and pupils stay out of scope.</p>
 
   <h2>Why it’s important</h2>
   <p>Two things are easy to confuse, and mustn’t be. A tool’s terms may require parent or guardian agreement for younger users; a named person obtains and records that. Separately, your UK GDPR lawful basis for processing pupils’ data comes from the DPIA, and will rarely be consent. Where a pupil-facing tool processes children’s data, the ICO Children’s Code applies: the child’s best interests come first, settings default to high privacy, and profiling is off by default. Using a tool below its stated minimum age, or without the agreement it requires, is likely to breach both the tool’s terms and data protection law.</p>
-  <p>Pupils are taught what AI can and can’t do: how to recognise deepfakes, misinformation and impersonation, and how to avoid over-reliance, including on tools that simulate conversation or companionship. Declining pupil use, where meeting these conditions isn’t practical, is a perfectly reasonable and defensible choice.</p>
+  <p>Pupils are taught what AI can and can’t do: how to recognise deepfakes, misinformation and impersonation, and how to avoid over-reliance, including on tools that simulate conversation or companionship. Web-enabled or recording-capable devices, including smart glasses and earpieces, must not be taken into examinations or controlled assessments, in line with JCQ regulations. Declining pupil use, where meeting these conditions isn’t practical, is a perfectly reasonable and defensible choice.</p>
 
-  {nonneg("Don’t bring pupils into scope until a DPIA and an age-appropriate AI education plan are both in place. Enabling pupil use without them is the most common way a sound policy becomes indefensible.")}
+  {nonneg("Don’t bring pupils into scope until a DPIA is complete and age-appropriate teaching about AI is embedded in your curriculum. Enabling pupil use without them is the most common way a sound policy becomes indefensible.")}
 
   {guidance_box([G_CC, G_KCSIE, G_DP, G_OSA, G_DFE_SAFETY])}
   """,
@@ -519,11 +523,39 @@ REFS = [
 ]
 _ref_items = "\n".join(
     f'<li><span class="ref-title">{t}</span><span class="ref-desc">{d}</span></li>' for t, d in REFS)
+
+# ---- The wider legal framework (from the template's appendix) ----
+LEGAL = [
+ (link("Crime and Policing Act 2026", "https://www.legislation.gov.uk/ukpga/2026/20/contents"),
+  "Creates the offence of making, adapting, supplying or offering nudification tools. Royal Assent 29 April 2026; commencement is staged."),
+ (link("Sexual Offences Act 2003", "https://www.legislation.gov.uk/ukpga/2003/42/contents"),
+  "The intimate image offences, including — from 6 February 2026 — creating, or requesting the creation of, purported intimate images."),
+ (link("Protection of Children Act 1978", "https://www.legislation.gov.uk/ukpga/1978/37/contents") + " and the " + link("Coroners and Justice Act 2009", "https://www.legislation.gov.uk/ukpga/2009/25/contents"),
+  "Together make indecent and prohibited images of children criminal in all forms, including pseudo-photographs and AI-generated imagery."),
+ (link("Counter-Terrorism and Security Act 2015", "https://www.legislation.gov.uk/ukpga/2015/6/contents"),
+  "Places the Prevent duty on schools and colleges; the Prevent duty guidance is issued under it."),
+ (link("Protection of Freedoms Act 2012", "https://www.legislation.gov.uk/ukpga/2012/9/contents"),
+  "Requires written parental consent before processing a child’s biometric information, with an alternative for those who refuse."),
+ (link("Freedom of Information Act 2000", "https://www.legislation.gov.uk/ukpga/2000/36/contents"),
+  "AI prompts, outputs and interaction logs held by the organisation are potentially disclosable."),
+ (link("Copyright, Designs and Patents Act 1988", "https://www.legislation.gov.uk/ukpga/1988/48/contents"),
+  "The framework for the third-party rights engaged when material is entered into, or produced by, an AI tool."),
+ (link("UK Safer Internet Centre: appropriate filtering and monitoring definitions", "https://saferinternet.org.uk/guide-and-resource/teachers-and-school-staff/appropriate-filtering-and-monitoring"),
+  "The definitions the annual filtering and monitoring review is checked against."),
+]
+_legal_items = "\n".join(
+    f'<li><span class="ref-title">{t}</span><span class="ref-desc">{d}</span></li>' for t, d in LEGAL)
 references_body = banner("Reference list", "References",
   "Every source cited by the Use of AI Policy template, at its current version, in one place, each linked to the official document.") + f"""
   <p class="lead">The <em>Use of AI Policy</em> template sits within a body of statute, statutory guidance and sector standards. These are the sources it draws on, listed in the order they appear in the template’s opening section. Each link opens the official document in a new tab.</p>
   <ol class="reflist">
   {_ref_items}
+  </ol>
+
+  <h2>The wider legal framework</h2>
+  <p>The template also carries an appendix setting out the full range of legislation behind the policy, including the criminal law behind its safeguarding section. Those instruments are:</p>
+  <ol class="reflist">
+  {_legal_items}
   </ol>
   <div class="commentary">
     <h3>A note on versions</h3>
