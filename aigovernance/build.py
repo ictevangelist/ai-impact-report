@@ -199,7 +199,10 @@ def clean_urls(doc):
     Pages are emitted as <slug>/index.html and served at /<slug>/, so links
     drop .html and assets become root-relative."""
     doc = doc.replace('href="index.html"', 'href="/"')
+    doc = doc.replace("href='index.html'", 'href="/"')
     doc = _re.sub(r'href="([a-z0-9-]+)\.html(#[^"]*)?"',
+                  lambda m: f'href="/{m.group(1)}/{m.group(2) or ""}"', doc)
+    doc = _re.sub(r"href='([a-z0-9-]+)\.html(#[^']*)?'",
                   lambda m: f'href="/{m.group(1)}/{m.group(2) or ""}"', doc)
     doc = doc.replace('href="css/styles.css', 'href="/css/styles.css')
     doc = _re.sub(r'src="(js|assets)/', r'src="/\1/', doc)
