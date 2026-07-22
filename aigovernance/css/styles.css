@@ -482,11 +482,11 @@ h1, h2, h3 { text-wrap: balance; }
 .step-list a::before {
   content: counter(step);
   width: 30px; height: 30px; border-radius: 50%; flex: 0 0 auto;
-  background: var(--charcoal); color: #fff;
+  background: #FEAE00; color: var(--charcoal);
   display: grid; place-items: center; font-weight: 700; font-size: .88rem;
   font-family: var(--font-head);
 }
-.step-list a:hover { border-color: var(--brand-teal); background: var(--surface-2); transform: translateY(-1px); color: var(--ink); }
-.step-list a:hover::before { background: var(--brand-deep); }
+.step-list a:hover { border-color: #FEAE00; background: var(--surface-2); transform: translateY(-1px); color: var(--ink); }
+.step-list a:hover::before { background: var(--charcoal); color: #FEAE00; }
 @media (max-width: 640px) { .step-list { grid-template-columns: 1fr; } }
 html.a11y-contrast .step-list a { border-color: #8fa2ac; }
