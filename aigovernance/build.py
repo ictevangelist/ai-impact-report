@@ -77,7 +77,7 @@ def head(title, desc, canonical, jsonld=None):
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="index.html" aria-label="{html.escape(BRAND_TITLE)} — home">
+    <a class="brand" href="index.html" aria-label="{html.escape(BRAND_TITLE)}, home">
       <img class="brand__logo" src="assets/ict-evangelist-logo.png" alt="ICT Evangelist">
       <span class="brand__divider" aria-hidden="true"></span>
       <span class="brand__text">
@@ -118,7 +118,7 @@ FOOTER = f"""</main>
     <div class="footer-grid">
       <div>
         <h2>About this site</h2>
-        <p style="color:#c4cfd8;font-size:.9rem;max-width:52ch;margin:0;">My plain-English companion to the <em>Use of Artificial Intelligence (AI) Policy</em> template — breaking down what schools, trusts and colleges need to decide, why it matters, and the law and guidance it speaks to. Written for adoption from September 2026.</p>
+        <p style="color:#c4cfd8;font-size:.9rem;max-width:52ch;margin:0;">My plain-English companion to the <em>Use of Artificial Intelligence (AI) Policy</em> template, breaking down what schools, trusts and colleges need to decide, why it matters, and the law and guidance it speaks to. Written for adoption from September 2026.</p>
       </div>
       <div>
         <h2>Sections</h2>
