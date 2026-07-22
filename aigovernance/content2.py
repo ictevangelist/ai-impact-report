@@ -158,7 +158,7 @@ write("policy-template.html", "Get the policy template — " + build.BRAND_TITLE
       tmpl_body, ORG_LD)
 
 # ------------------------------------------------ PRIVACY NOTICE
-priv_body = banner("Legal", '<span class="accent">Privacy</span> notice',
+priv_body = banner("Legal", '<span class="accent">Privacy notice</span>',
   "How this site handles information, including the sign-up you complete to unlock the DPIA screening tool.", crumbs=True) + f"""
   <p class="lead">This is a site about data protection, so it ought to hold itself to the same standard. In plain terms, here’s what I do and don’t collect.</p>
 
