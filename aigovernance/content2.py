@@ -44,33 +44,7 @@ dpia_body = banner("Free resource", "The DPIA screening tool",
         <h3 class="mt-0">Get your copy</h3>
         <p>Tell me who you are and where you work, and the download unlocks. It’s free, and shared under a Creative&nbsp;Commons&nbsp;BY-NC-SA&nbsp;4.0 licence.</p>
 
-        <!-- =====================================================================
-             GOOGLE FORM GOES HERE.
-             Replace this placeholder with your Google Form embed, e.g.:
-             <iframe src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true"
-                     width="100%" height="720" frameborder="0" marginheight="0" marginwidth="0"
-                     title="Sign up to unlock the DPIA screening tool">Loading…</iframe>
-
-             SUGGESTED FORM FIELDS (keep it short — every extra field costs sign-ups):
-               1. Name                          (short answer, required)
-               2. Work email                    (short answer, required)
-               3. School / trust / organisation (short answer, required)
-               4. Role                          (short answer, optional)
-               5. Consent (tick box, required): "I'm happy for Mark to email me
-                  about related AI-in-education resources. I can unsubscribe at
-                  any time."
-               6. Cohort interest (tick box, OPTIONAL — market test): "I'd be
-                  interested in a small-group cohort working through the policy
-                  template with Mark — tell me more."
-             Field 6 is the demand test for a paid policy-sprint cohort: judge the
-             tick rate only once a reasonable number of people have been through
-             the form. The privacy notice describes fields 1-5; if the form ever
-             collects more than that, update privacy.html to match.
-
-             In the Google Form's *confirmation message*, paste the download link so it
-             appears the moment someone submits:
-             https://aigovernance.ictevangelist.com/downloads/AI-DPIA-Screening-Tool.html
-             ===================================================================== -->
+        <!-- Google Form embed replaces the placeholder div below. --->
         <div style="border:2px dashed var(--brand-teal);border-radius:10px;padding:1.2rem;background:var(--surface-2);text-align:center;">
           <p style="margin:.2rem 0;font-weight:600;color:var(--brand-deep);">[ Google Form embeds here ]</p>
           <p style="margin:.2rem 0;font-size:.9rem;color:var(--ink-soft);">Send Mark the form’s embed link and this placeholder is replaced with the live sign-up form.</p>
