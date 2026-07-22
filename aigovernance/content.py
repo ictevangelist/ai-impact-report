@@ -76,7 +76,7 @@ home_body = f"""<section class="hero">
   <div class="card-grid">
     <div class="card"><h3>No personal data in</h3><p>Personal or special-category data doesn’t go into AI tools. The only exception is a tool that’s been approved for that exact processing. Once information about a real child or colleague is inside a tool you don’t control, you can’t get it back.</p></div>
     <div class="card"><h3>A person always decides</h3><p>AI never makes a decision about a person. A named member of staff makes, and owns, any decision that affects someone. Accountability has to sit with a person; it can’t sit with a piece of software.</p></div>
-    <div class="card"><h3>A DPIA before you deploy</h3><p>You complete a data protection impact assessment before deploying AI that processes personal data. An assessment completed after a tool is in use can’t change the decision to use it.</p></div>
+    <div class="card"><h3>A DPIA before you deploy</h3><p>You should complete a data protection impact assessment before deploying AI that processes personal data. An assessment completed after a tool is in use can’t change the decision to use it.</p></div>
     <div class="card"><h3>Approved tools only</h3><p>Staff use approved tools only, through organisation accounts. Anything else, including public chatbots on a personal login, isn’t approved. Without that approval process, none of the other rules in the policy can be enforced.</p></div>
     <div class="card"><h3>Safeguarding duties hold</h3><p>Your Prevent, safeguarding and online-safety duties apply to AI-assisted work exactly as they do to everything else. New technology doesn’t change those duties.</p></div>
   </div>
@@ -147,7 +147,7 @@ PAGES.append(("landscape.html", "The landscape", "Sections 1–2 of the template
   <p class="lead">A good AI policy starts with why you’re adopting AI in the first place: what it’s there to help with in your setting, whether that’s teaching, workload or inclusion. Set that out before any rule appears. The governance is there to serve that purpose, not to get in its way.</p>
 
   <h2>What it is</h2>
-  <p>The policy statement sets out how your organisation uses AI: by whom, for what, and within what limits, so you get the benefits without putting at risk the safety of children and adults, data security and privacy, fairness, or professional and academic integrity. It sits within your wider digital strategy. You review it on a set cycle, and again whenever the law, the guidance, or your own use of AI changes in any material way.</p>
+  <p>The policy statement sets out how your organisation uses AI: by whom, for what, and within what limits, so you get the benefits without putting at risk the safety of children and adults, data security and privacy, fairness, or professional and academic integrity. It sits within your wider digital strategy. You should review it on a set cycle, and again whenever the law, the guidance, or your own use of AI changes in any material way.</p>
   <p><strong>What counts as AI here.</strong> Generative AI tools, and any software feature that creates content, or that makes or informs decisions or predictions about people. That holds whether the feature is a standalone product, built into software you already approve, or reached through a browser. In practice, it means chatbots, image and content generators, and the AI features now appearing inside everyday software. Long-established automation such as spellcheck or predictive text is out of scope, unless it starts doing one of those things.</p>
 
   <h2>Why it’s important</h2>
@@ -422,7 +422,7 @@ PAGES.append(("pupil-use.html", "Pupil use", "Optional module",
   <p class="lead">Pupils aren’t covered by the staff policy. Bringing them into scope is a deliberate, carefully guarded decision. It shouldn’t happen by default, and it shouldn’t be allowed to creep in.</p>
 
   <h2>What it is</h2>
-  <p>An optional module that extends the policy to pupil use of AI, but only once <strong>both</strong> conditions are in place: first, a DPIA completed for the specific tools and processing; and second, an age-appropriate AI education plan covering AI literacy, misinformation, deepfakes and responsible use. If pupil use isn’t permitted, you delete the module and pupils stay out of scope.</p>
+  <p>An optional module that extends the policy to pupil use of AI, but only once <strong>both</strong> conditions are in place: first, a DPIA completed for the specific tools and processing; and second, an age-appropriate AI education plan covering AI literacy, misinformation, deepfakes and responsible use. If pupil use isn’t permitted, you should delete the module, and pupils stay out of scope.</p>
 
   <h2>Why it’s important</h2>
   <p>Two things are easy to confuse, and mustn’t be. A tool’s terms may require parent or guardian agreement for younger users; a named person obtains and records that. Separately, your UK GDPR lawful basis for processing pupils’ data comes from the DPIA, and will rarely be consent. Where a pupil-facing tool processes children’s data, the ICO Children’s Code applies: the child’s best interests come first, settings default to high privacy, and profiling is off by default. Using a tool below its stated minimum age, or without the agreement it requires, is likely to breach both the tool’s terms and data protection law.</p>
