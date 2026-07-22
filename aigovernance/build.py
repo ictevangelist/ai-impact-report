@@ -146,7 +146,7 @@ def banner(kicker, title, sub, crumbs=True):
     c = '<p class="crumbs"><a href="index.html">Home</a> &rsaquo; ' + title + '</p>' if crumbs else ''
     return f"""<section class="page-banner">
   <div class="container">
-    <p class="kicker">{html.escape(kicker)}</p>
+    <p class="kicker">{kicker}</p>
     <h1>{title}</h1>
     <p>{sub}</p>
   </div>
