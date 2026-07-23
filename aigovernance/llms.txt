@@ -1,0 +1,38 @@
+# AI Governance in Education
+
+> A plain-English companion to the free Use of Artificial Intelligence (AI) Policy template for schools, trusts and colleges, written by Mark Anderson (ICT Evangelist) for policies adopted from September 2026 in the UK. Every section of the template has a page explaining what it is, why it matters, and the law and guidance it speaks to, with every source linked to the official document.
+
+Author: Mark Anderson (ICT Evangelist), https://ictevangelist.com
+Licence: the policy template and DPIA screening tool are free under Creative Commons BY-NC-SA 4.0. The site is general information, not legal advice; adopting organisations must complete and ratify the policy in their own context.
+
+## Start here
+
+- [Home](https://aigovernance.ictevangelist.com/): what the site covers, the five non-negotiables, and how to work through it
+- [The landscape](https://aigovernance.ictevangelist.com/landscape/): why AI needs governing in schools, what counts as AI, and which law and guidance applies
+- [Get the policy template](https://aigovernance.ictevangelist.com/policy-template/): the completable Word template, free to download
+- [DPIA screening tool](https://aigovernance.ictevangelist.com/dpia-tool/): a free browser-based screening tool for assessing AI products before procurement, unlocked by a short sign-up
+
+## The policy, section by section
+
+- [Roles and oversight](https://aigovernance.ictevangelist.com/roles/): who is responsible for what, from trustees to the IT lead
+- [Approved tools](https://aigovernance.ictevangelist.com/approved-tools/): how AI tools are assessed and approved before use
+- [Acceptable use](https://aigovernance.ictevangelist.com/acceptable-use/): what staff may and must not do, including why personal data stays out of AI tools
+- [Data protection](https://aigovernance.ictevangelist.com/data-protection/): lawful basis, supplier roles, retention, and recording and transcription rules
+- [Accuracy and oversight](https://aigovernance.ictevangelist.com/accuracy-oversight/): accountability, bias and meaningful human involvement
+- [Safeguarding and Prevent](https://aigovernance.ictevangelist.com/safeguarding/): AI risks within safeguarding duties, including deepfakes, nudification tools and voice cloning
+- [Impact assessment](https://aigovernance.ictevangelist.com/impact-assessment/): DPIAs and product safety checks before deployment
+- [Training](https://aigovernance.ictevangelist.com/training/): staff training and awareness expectations
+- [Filtering and monitoring](https://aigovernance.ictevangelist.com/filtering-monitoring/): enforcement, assurance, and the problem of shadow AI
+- [Breaches](https://aigovernance.ictevangelist.com/breaches/): what happens when things go wrong, and statutory reporting routes
+- [Pupil use](https://aigovernance.ictevangelist.com/pupil-use/): the optional module governing pupils' use of AI
+
+## Sources
+
+- [The guidance map](https://aigovernance.ictevangelist.com/guidance-map/): which framework governs what, mapped to the policy
+- [References](https://aigovernance.ictevangelist.com/references/): all seventeen cited sources plus the legislation in the policy's appendix, linked at current versions
+
+## Key facts
+
+- Written for adoption from September 2026, drafted against KCSIE 2026, the UK GDPR as amended by the Data (Use and Access) Act 2025 (including Articles 22A to 22D on automated decision-making), the DfE generative AI product safety standards (January 2026), the JCQ AI guidance, the Online Safety Act 2023, Ofcom's Protection of Children codes, and the Prevent duty.
+- The five non-negotiables: no personal data into AI tools; a person always decides; a DPIA before deployment; approved tools only; safeguarding duties hold.
+- The DPIA screening tool runs entirely in the user's browser; nothing typed into it is transmitted anywhere.

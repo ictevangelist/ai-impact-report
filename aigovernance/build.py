@@ -20,6 +20,57 @@ ASSET_V = _hashlib.md5(b"".join(
     (OUT / p).read_bytes() for p in ("css/styles.css", "js/nav.js", "js/a11y.js", "js/consent.js")
 )).hexdigest()[:8]
 
+# ---- Structured data shared by every page (AEO/GEO) ----
+REVIEWED = "2026-07-23"   # bump when site content is materially updated
+
+PERSON_LD = {
+    "@type": "Person",
+    "@id": "https://ictevangelist.com/#mark-anderson",
+    "name": "Mark Anderson",
+    "url": "https://ictevangelist.com",
+    "jobTitle": "Education technology consultant, trainer and author",
+    "sameAs": ["https://x.com/ICTEvangelist"],
+}
+ORG_NODE = {
+    "@type": "Organization",
+    "@id": "https://ictevangelist.com/#org",
+    "name": "ICT Evangelist",
+    "url": "https://ictevangelist.com",
+    "founder": {"@id": "https://ictevangelist.com/#mark-anderson"},
+}
+WEBSITE_NODE = {
+    "@type": "WebSite",
+    "@id": SITE + "/#website",
+    "url": SITE + "/",
+    "name": BRAND_TITLE,
+    "inLanguage": "en-GB",
+    "publisher": {"@id": "https://ictevangelist.com/#org"},
+    "author": {"@id": "https://ictevangelist.com/#mark-anderson"},
+}
+
+def page_graph(canonical, name, desc, extra=None, crumbs=True):
+    """One JSON-LD graph per page: site, publisher, author, the page itself
+    (with review date), breadcrumbs, plus any page-specific node (e.g. FAQ)."""
+    nodes = [WEBSITE_NODE, ORG_NODE, PERSON_LD, {
+        "@type": "WebPage", "@id": canonical, "url": canonical,
+        "name": name, "description": desc, "inLanguage": "en-GB",
+        "isPartOf": {"@id": SITE + "/#website"},
+        "author": {"@id": "https://ictevangelist.com/#mark-anderson"},
+        "publisher": {"@id": "https://ictevangelist.com/#org"},
+        "dateModified": REVIEWED,
+    }]
+    if crumbs and canonical != SITE + "/":
+        nodes.append({
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
+                {"@type": "ListItem", "position": 2, "name": name, "item": canonical},
+            ],
+        })
+    if extra:
+        nodes.append({k: v for k, v in extra.items() if k != "@context"})
+    return {"@context": "https://schema.org", "@graph": nodes}
+
 # ---- Navigation: the waffle grid (topic pages, in reading order) ----
 NAV = [
     ("landscape.html",          "The landscape"),
@@ -214,7 +265,10 @@ def clean_urls(doc):
 def write(slug, title, desc, body, jsonld=None):
     stem = slug[:-5] if slug.endswith(".html") else slug
     canonical = f"{SITE}/{stem}/"
-    doc = head(title, desc, canonical, jsonld).replace("{NAV_PLACEHOLDER}", nav_html(slug)) + body + "</div></section>\n" + FOOTER
+    name = title.split(" | ")[0]
+    extra = jsonld if jsonld and jsonld.get("@type") != "Organization" else None
+    graph = page_graph(canonical, name, desc, extra)
+    doc = head(title, desc, canonical, graph).replace("{NAV_PLACEHOLDER}", nav_html(slug)) + body + "</div></section>\n" + FOOTER
     outdir = OUT / stem
     outdir.mkdir(exist_ok=True)
     (outdir / "index.html").write_text(clean_urls(tie_orphans(doc)), encoding="utf-8")
