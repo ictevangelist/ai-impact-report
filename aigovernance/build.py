@@ -29,7 +29,8 @@ PERSON_LD = {
     "name": "Mark Anderson",
     "url": "https://ictevangelist.com",
     "jobTitle": "Education technology consultant, trainer and author",
-    "sameAs": ["https://x.com/ICTEvangelist"],
+    "sameAs": ["https://www.linkedin.com/in/themarkanderson/",
+               "https://x.com/ICTEvangelist"],
 }
 ORG_NODE = {
     "@type": "Organization",
