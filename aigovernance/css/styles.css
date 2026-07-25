@@ -501,15 +501,22 @@ html.a11y-contrast .step-list a { border-color: #8fa2ac; }
   margin: 2.6rem 0; padding: 2.3rem 0 2.4rem;
   border-top: 4px solid transparent; border-image: var(--brand-grad) 1;
 }
+.quote-band { position: relative; overflow: hidden; }
 .quote-band .container { max-width: var(--maxw); }
-.quote-band blockquote { margin: 0; position: relative; padding-left: 2.7rem; }
+.quote-band blockquote { margin: 0; position: relative; padding-left: 3rem; }
 .quote-band blockquote::before {
-  content: "\201C"; position: absolute; left: 0; top: -.4rem;
-  font-family: var(--font-display); font-size: 3.6rem; line-height: 1; color: #FEAE00;
+  content: "\201C"; position: absolute; left: -1.4rem; top: -4.6rem;
+  font-family: var(--font-display); font-size: 14.5rem; line-height: 1;
+  color: #FEAE00; opacity: .32; pointer-events: none;
 }
 .quote-band blockquote p {
   margin: 0; color: #eef3f6; font-size: 1.16rem; line-height: 1.65;
-  max-width: 58ch; text-wrap: pretty;
+  max-width: 58ch; text-wrap: pretty; position: relative;
+}
+@media (max-width: 640px) {
+  .quote-band blockquote { padding-left: 1.6rem; }
+  .quote-band blockquote::before { font-size: 9rem; top: -3rem; left: -1rem; }
+  .quote-band .quote-attr { margin-left: 1.6rem; }
 }
 .quote-band .quote-attr {
   margin: .95rem 0 0 2.7rem; font-family: var(--font-head);
