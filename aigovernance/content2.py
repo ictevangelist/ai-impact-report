@@ -154,9 +154,6 @@ tmpl_body = banner("Free resource", 'Get the <span class="accent">policy templat
     <p>What you can’t do is use it for commercial gain. And anything you adapt or share must credit me, <strong>Mark Anderson, ICT Evangelist</strong> (ictevangelist.com), and carry the same licence.</p>
   </div>
 
-  {quote_band("He isn’t just an advocate of tech for tech’s sake. It always has to fit the pedagogy, and that makes him a respected source of knowledge that schools can trust.",
-              "Al Kingsley MBE", "Multi-academy trust chair and author")}
-
   <p>Feedback is always welcome, and I’d love to hear how the template has helped in your school or trust. If you need support writing or refining your AI policy, or training staff on AI, <a href="mailto:mark@ictevangelist.com?subject=AI%20policy%20support">get in touch</a>.</p>
 
   <p class="chart-note">This template is general information to support leaders in creating their own policy. It doesn’t constitute legal advice, responsibility for compliance and ratification rests with the adopting organisation, and I take no responsibility for what you take from the template and put into practice. Complete it for your context, and have it ratified, before you rely on it.</p>

@@ -231,6 +231,9 @@ PAGES.append(("roles.html", "Roles & oversight", "Section 3 of the template",
   <h2>Why it’s important</h2>
   <p>The DfE governance standards expect clear lines of accountability, and the ICO’s edtech audits found, time and again, responsibilities that everyone assumed somebody else was holding. Putting a name against each line means you can assure it properly, and report on it to your board with confidence.</p>
 
+  {quote_band("That digital needs to be a strategy strand in everything, not separate.",
+              "Robbie McGrath", "Director of School Improvement (Primary), Nova Education Trust")}
+
   {keypoints("What you decide here", [
     "A named owner for every responsibility you keep.",
     "Your reporting cycle to trustees or governors, for example each term.",
@@ -253,6 +256,9 @@ PAGES.append(("approved-tools.html", "Approved tools", "Sections 4 &amp; 4a of t
 
   <h2>Why it’s important</h2>
   <p>Without an approval process, rules like “no personal data into AI” or “a DPIA before deployment” can’t be enforced. With one, the important questions (what data the tool uses, your lawful basis for it, and what the supplier does with it) are answered before the tool is in daily use, not discovered afterwards. The DfE product safety standards and the ICO’s audit findings both point the same way: assess before you adopt.</p>
+
+  {quote_band("Mark makes sure that his work is truly collaborative from start to finish.",
+              "Julie Carson", "Deputy CEO, Woodland Academy Trust")}
 
   {nonneg("Tool approval is a non-negotiable, and so is the rule that a new AI feature inside an existing product comes back through it. “We already use this supplier” isn’t the same as approval.")}
 
@@ -293,6 +299,9 @@ PAGES.append(("acceptable-use.html", "Acceptable use", "Sections 5 &amp; 6 of th
   <p>And the reasons for keeping personal information out go well beyond compliance. A name on its own can skew what a model produces: names carry signals about gender, ethnicity, religion and background, and outputs can shift with them. That’s a difference in treatment nobody would accept from a member of staff, and no more acceptable from a tool. Then the data protection problems stack on top: once information about a real person is inside a tool you don’t control, you can’t reliably retrieve or delete it, you may have no lawful basis for putting it there, and the person it describes has no idea it’s happened.</p>
   <p>So the working rule is simple, and worth teaching explicitly: no personal information goes in. Draft with initials, pseudonyms or placeholders, and add the personal detail after the output comes back. That’s why the rule on what goes in is the one boundary you shouldn’t soften locally, and why the high-risk prohibitions exist: these are the decisions where an automated shortcut can cause the biggest problems.</p>
 
+  {quote_band("He shared a lot of practical resources, and ways to embed them without it being too showy.",
+              "Workshop attendee", "Marches Academy Trust")}
+
   {nonneg("The rule against entering personal or special-category data into AI tools, and the principle that a person always decides, are non-negotiable. Tailor the examples around them; don’t remove the substance.")}
 
   {guidance_box([G_DP, G_JCQ, G_EQ, "Copyright and licensing law, for third-party materials.",
@@ -314,6 +323,9 @@ PAGES.append(("data-protection.html", "Data protection", "Section 7 of the templ
   <p><strong>Your lawful basis is rarely consent.</strong> For most of what a school does, the basis is public task: part of running the school and educating pupils. Don’t confuse a tool’s terms requiring parent or guardian agreement with your lawful basis. They’re two different things.</p>
   <p><strong>Free text is easy to overlook.</strong> A tool that only asks for a name and email can still process sensitive information the moment someone types into a free-text box. The protection comes from the rule on what staff may enter, not from the sign-up form.</p>
   <p><strong>Recording and transcription need their own rules.</strong> AI note-takers and meeting transcription features capture people’s words and voices: personal data gathered at source, and often special category data in pastoral, SEND or safeguarding discussions. The policy permits them only where approved for that purpose, expects everyone present to be told before recording begins, offers an alternative to anyone who objects, and treats transcripts as organisational records held under your retention arrangements, not left sitting on the provider’s platform.</p>
+
+  {quote_band("Collaborative and knowledgeable, and always walking the talk.",
+              "Jo Fletcher-Saxon", "Assistant Principal, Ashton Sixth Form College")}
 
   {keypoints("What good looks like", [
     "Personal data stays out of AI tools by default; any exception is approved and written down.",
@@ -342,6 +354,9 @@ PAGES.append(("accuracy-oversight.html", "Accuracy & oversight", "Section 8 of t
 
   <h2>Why it’s important</h2>
   <p>“Meaningful human involvement” is a legal test. If a member of staff genuinely reads what a tool suggests and is free to change it, then it’s the member of staff who’s deciding, and that’s fine. If the output is waved through unread, it’s really the tool deciding, and the law treats it accordingly. The Equality Act and the public sector equality duty apply to AI-assisted work just as they do to everything else, so bias that would be unlawful coming from a person is no more acceptable coming from a model.</p>
+
+  {quote_band("Big shifts in staff and student attitudes, and meaningful changes in the ways they approach the use of AI and digital learning more broadly.",
+              "Andrew Gilday", "Teaching &amp; Learning Mentor, Stamford Park Trust")}
 
   {keypoints("What good looks like", [
     "A competent person reviews AI output before it’s used or shared.",
@@ -391,6 +406,9 @@ PAGES.append(("impact-assessment.html", "Impact assessment", "Section 10 of the 
   <h2>Why it’s important</h2>
   <p>A DPIA completed after a tool is already embedded changes very little; the decisions have been made. Completed early, it brings the controller and processor question, international transfers, retention, sub-processors, and any training on your data into view before you’re committed. A tool that lacks a particular compliance feature isn’t ruled out automatically: the question is whether you can put sensible operational safeguards around it, and record them.</p>
 
+  {quote_band("Mark is very knowledgeable and open to feedback to make sure his sessions meet your exact need and philosophy.",
+              "James Tucker", "Professional Learning Lead, Diocese of Salisbury Academy Trust")}
+
   <div class="commentary" style="border-left-color:#0ea3ab;">
     <h3>Get the screening tool</h3>
     <p>The <a href="dpia-tool.html">AI &amp; Digital Tool DPIA Screening Tool</a> is a plain-English questionnaire that runs in your browser, for any AI or digital product you’re thinking of buying. It works through purpose, data, roles, transfers, retention, automated decisions and what the supplier does with the data, then tells you whether your answers are detailed enough to send to your DPO for sign-off. Unlock a copy to keep and reuse.</p>
@@ -413,9 +431,6 @@ PAGES.append(("training.html", "Training", "Section 11 of the template",
 
   <h2>Why it’s important</h2>
   <p>Most AI mishaps in schools aren’t deliberate. They come from a well-meaning member of staff who didn’t know where the line was. Short, concrete training on the few things that matter most (no personal data in, approved tools only, and a person always checks and owns the output), repeated regularly, does more to prevent harm than any block list. It also gives you evidence of the “meaningful human involvement” the law expects.</p>
-
-  {quote_band("Mark is very knowledgeable and open to feedback to make sure his sessions meet your exact need and philosophy.",
-              "James Tucker", "Professional Learning Lead, Diocese of Salisbury Academy Trust")}
 
   {keypoints("What you decide here", [
     "The training your staff complete, and how often it’s refreshed.",
@@ -443,6 +458,9 @@ PAGES.append(("filtering-monitoring.html", "Filtering & monitoring", "Section 12
   <p>There’s a name for what happens when this slips: <strong>shadow AI</strong>. Staff, usually with the best of intentions, start using unapproved tools through personal accounts and devices because the approved route feels slow or unclear. The problems it brings are serious. Personal data ends up in tools nobody has assessed, with no DPIA, no contract and no way of getting it back or deleting it. Outputs feed into planning, reports and decisions with nobody accountable for checking them. And because the activity never touches your systems, the risks are invisible to the very monitoring that’s supposed to catch them.</p>
   <p>If unapproved services aren’t actually blocked, the approved list becomes advisory and shadow AI gradually becomes the norm. Blocking and monitoring, in line with your existing duties, prevent that. The DfE standards expect a senior named owner, rather than a shared inbox, so that filtering and monitoring is somebody’s clear responsibility, reviewed and reported, rather than an assumption.</p>
 
+  {quote_band("I found Mark Anderson’s workshop really informative. There were so many useful tips given and things to try.",
+              "Deputy Head of Post 16", "Marches Academy Trust")}
+
   {keypoints("What you decide here", [
     "Your named filtering and monitoring lead.",
     "How unapproved AI services are blocked, and how those blocks are reviewed.",
@@ -464,6 +482,9 @@ PAGES.append(("breaches.html", "Breaches", "Section 13 of the template",
 
   <h2>Why it’s important</h2>
   <p>Personal-data breaches carry statutory reporting deadlines, and safeguarding incidents carry duties of their own. Deciding the routes now (who’s told, in what order, and within what time) means a stressful event is handled as a process you already have, rather than one you invent on the day. It also makes clear to staff that the rules are real, which is a deterrent in itself.</p>
+
+  {quote_band("Much more confidence with use of AI and other digital platforms.",
+              "Rob Murray-Green", "Ashton Sixth Form College")}
 
   {keypoints("What you decide here", [
     "Your disciplinary route for the misuse of AI.",

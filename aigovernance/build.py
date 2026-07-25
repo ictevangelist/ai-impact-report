@@ -152,6 +152,12 @@ def head(title, desc, canonical, jsonld=None):
 """
 
 FOOTER = f"""</main>
+<section class="quote-band">
+  <div class="container">
+    <blockquote><p>He isn’t just an advocate of tech for tech’s sake. It always has to fit the pedagogy, and that makes him a respected source of knowledge that schools can trust.</p></blockquote>
+    <p class="quote-attr">Al Kingsley MBE <span>&middot; Multi-academy trust chair and author</span></p>
+  </div>
+</section>
 <section class="cta-band">
   <div class="container">
     <h2>Working on your AI policy?</h2>

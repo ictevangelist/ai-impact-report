@@ -505,7 +505,7 @@ html.a11y-contrast .step-list a { border-color: #8fa2ac; }
 .quote-band .container { max-width: var(--maxw); }
 .quote-band blockquote { margin: 0; position: relative; padding-left: 7.5rem; }
 .quote-band blockquote::before {
-  content: "\201C"; position: absolute; left: 0; top: -1.6rem;
+  content: "\201C"; position: absolute; left: 0; top: -2.4rem;
   font-family: var(--font-display); font-size: 14.5rem; line-height: 1;
   color: #FEAE00; opacity: .55; pointer-events: none;
 }
@@ -515,7 +515,7 @@ html.a11y-contrast .step-list a { border-color: #8fa2ac; }
 }
 @media (max-width: 640px) {
   .quote-band blockquote { padding-left: 3.4rem; }
-  .quote-band blockquote::before { font-size: 6.5rem; top: -.9rem; left: 0; }
+  .quote-band blockquote::before { font-size: 6.5rem; top: -1.2rem; left: 0; }
   .quote-band .quote-attr { margin-left: 3.4rem; }
 }
 .quote-band .quote-attr {
