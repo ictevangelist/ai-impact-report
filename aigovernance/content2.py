@@ -158,7 +158,7 @@ tmpl_body = banner("Free resource", 'Get the <span class="accent">policy templat
     ("The fact you’ve been with us all year has shown that we <em>are</em> embedding AI, not just having a one-off session to tick a box.",
      "Sydney Jones-Jackson", "Digital Teaching &amp; Learning Mentor, Ashton Sixth Form College"),
     ("He isn’t just an advocate of tech for tech’s sake. It always has to fit the pedagogy, and that makes him a respected source of knowledge that schools can trust.",
-     "Al Kingsley", "Multi-academy trust chair and author"),
+     "Al Kingsley MBE", "Multi-academy trust chair and author"),
     ("Mark always starts with pedagogy!",
      "Emma Ledger", "Headteacher, Ranches Primary School, Dubai"),
     ("Ask questions. He always has the answers.",
