@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Tool, download and privacy pages. Run: python3 content2.py
-from build import (write, banner, guidance_box, keypoints, nonneg, pagenav, link)
+from build import (write, banner, guidance_box, keypoints, nonneg, pagenav, link, quote_grid)
 import build
 
 U = {
@@ -57,6 +57,11 @@ dpia_body = banner("Free resource", 'The <span class="accent">DPIA screening too
     <li>Print or save the finished assessment, and send it to your DPO for approval.</li>
   </ol>
   <p>I only hold your details as set out in the <a href="privacy.html">privacy notice</a>.</p>
+
+  {quote_grid([
+    ("He works with you to shape sessions as you need and gives you confidence. I have recommended you already.",
+     "Jo Fletcher-Saxon", "Assistant Principal, Ashton Sixth Form College"),
+  ])}
 
   {guidance_box([link("UK GDPR", U['ukgdpr']) + " &amp; " + link("Data Protection Act 2018", U['dpa2018']) + " (as amended by the " + link("Data (Use and Access) Act 2025", U['duaa']) + "); " + link("ICO AI &amp; data protection risk toolkit", U['ico_toolkit']) + ".",
                  link("DfE generative AI product safety standards", U['dfe_safety']) + " (January 2026) and " + link("DfE guidance on procuring edtech", U['dp_schools']) + ".",
@@ -147,6 +152,18 @@ tmpl_body = banner("Free resource", 'Get the <span class="accent">policy templat
     </ul>
     <p>What you can’t do is use it for commercial gain. And anything you adapt or share must credit me, <strong>Mark Anderson, ICT Evangelist</strong> (ictevangelist.com), and carry the same licence.</p>
   </div>
+
+  <h2>From the schools and trusts I’ve worked with</h2>
+  {quote_grid([
+    ("The fact you’ve been with us all year has shown that we <em>are</em> embedding AI, not just having a one-off session to tick a box.",
+     "Sydney Jones-Jackson", "Digital Teaching &amp; Learning Mentor, Ashton Sixth Form College"),
+    ("He isn’t just an advocate of tech for tech’s sake. It always has to fit the pedagogy, and that makes him a respected source of knowledge that schools can trust.",
+     "Al Kingsley", "Multi-academy trust chair and author"),
+    ("Mark always starts with pedagogy!",
+     "Emma Ledger", "Headteacher, Ranches Primary School, Dubai"),
+    ("Ask questions. He always has the answers.",
+     "Rob Murray-Green", "Ashton Sixth Form College"),
+  ])}
 
   <p>Feedback is always welcome, and I’d love to hear how the template has helped in your school or trust. If you need support writing or refining your AI policy, or training staff on AI, <a href="mailto:mark@ictevangelist.com?subject=AI%20policy%20support">get in touch</a>.</p>
 

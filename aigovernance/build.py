@@ -234,6 +234,14 @@ def keypoints(title, items):
 def nonneg(text):
     return f'<div class="commentary" style="border-left-color:#c0392b;"><h3 style="color:#a04000;">A non-negotiable</h3><p>{text}</p></div>'
 
+def quote(text, name, role):
+    return (f'<figure class="quote-card"><blockquote><p>{text}</p></blockquote>'
+            f'<figcaption>{name}<span>{role}</span></figcaption></figure>')
+
+def quote_grid(items):
+    cards = "\n".join(quote(t, n, r) for t, n, r in items)
+    return f'<div class="quote-grid">{cards}</div>'
+
 def pagenav(prev, nxt):
     p = f'<a href="{prev[0]}"><span class="dir">Previous</span><span class="ttl">{prev[1]}</span></a>' if prev else '<span></span>'
     n = f'<a class="next" href="{nxt[0]}"><span class="dir">Next</span><span class="ttl">{nxt[1]}</span></a>' if nxt else ''

@@ -3,7 +3,7 @@
 # Run: python3 content.py   (imports the engine in build.py, writes all pages)
 from build import (write, banner, guidance_box, keypoints, nonneg, pagenav,
                    FOOTER, head, nav_html, SITE, BRAND_TITLE, AUTHOR, link,
-                   tie_orphans, clean_urls, page_graph)
+                   tie_orphans, clean_urls, page_graph, quote_grid)
 import html as _h
 
 # ---- Verified official source URLs (open in a new tab via build.link) ----
@@ -109,6 +109,16 @@ home_body = f"""<section class="hero">
     <a class="card card--link" href="policy-template.html"><h3>The policy template &darr;</h3><p>My completable <em>Use of AI Policy</em> for schools, trusts and colleges: a staff-use core, with optional modules for pupil use and governed exceptions.</p><span class="more">Download &rsaquo;</span></a>
     <a class="card card--link" href="dpia-tool.html"><h3>The DPIA screening tool &darr;</h3><p>A plain-English tool that runs in your browser, for any AI or digital product you’re thinking of buying. Complete it, save it, and send it to your DPO.</p><span class="more">Unlock &rsaquo;</span></a>
   </div>
+
+  <h2>What school and trust leaders say</h2>
+  {quote_grid([
+    ("Really engaged a set of leaders, giving them confidence to explore the art of the possible, reassured they are working in a safe environment.",
+     "Paul Rickeard", "CEO, DND Learning Trust"),
+    ("Don’t think twice about it. Mark has a significant amount of expertise, and is incredibly generous with sharing it. His values are clear and shine through in all his interactions.",
+     "Julie Carson", "Deputy CEO, Woodland Academy Trust"),
+    ("Don’t just book a one-off. The magic comes from building a relationship over time, where he can understand your needs as an organisation and help you develop digital strategy in a sustainable way.",
+     "Robbie McGrath", "Director of School Improvement (Primary), Nova Education Trust"),
+  ])}
 
   <h2>Need more than a template?</h2>
   <p>If your school or trust needs support writing or refining your AI policy, or training staff to use AI well, that’s exactly the work I do. <a href="mailto:mark@ictevangelist.com?subject=AI%20policy%20support">Get in touch</a> or find me at {link("ictevangelist.com", "https://ictevangelist.com/contact/")}. And if the template or the screening tool has helped you, I’d love to hear about it. Feedback is always welcome.</p>
@@ -360,6 +370,11 @@ PAGES.append(("safeguarding.html", "Safeguarding & Prevent", "Section 9 of the t
 
   {nonneg("Your Prevent, safeguarding and online-safety duties are non-negotiable, and apply to AI exactly as they apply to everything else.")}
 
+  {quote_grid([
+    ("Mark took time to understand the brief and created a package to engage and support both DSLs and SENCos: an open forum to discuss the challenges students face and how we can all work together to safeguard all.",
+     "Rachel Mousley", "Lead SENCo, Nova Education Trust"),
+  ])}
+
   {guidance_box([G_KCSIE, G_OSA, G_PREVENT])}
   """,
   None, None, ("accuracy-oversight.html", "Accuracy & oversight"), ("impact-assessment.html", "Impact assessment")))
@@ -403,6 +418,13 @@ PAGES.append(("training.html", "Training", "Section 11 of the template",
     "The training your staff complete, and how often it’s refreshed.",
     "How you tell people when the approved list changes, or a new AI feature appears.",
     "For pupil use: age-appropriate teaching about AI, covering literacy, misinformation, deepfakes and responsible use.",
+  ])}
+
+  {quote_grid([
+    ("Mark is very knowledgeable and open to feedback to make sure his sessions meet your exact need and philosophy.",
+     "James Tucker", "Professional Learning Lead, Diocese of Salisbury Academy Trust"),
+    ("Mark was a great addition to our conference and would definitely be a positive addition to other trusts for a keynote, CPD or twilight session.",
+     "Helen Lloyd", "Marches Academy Trust"),
   ])}
 
   {guidance_box([G_KCSIE, G_DFE_SAFETY, G_STANDARDS])}
