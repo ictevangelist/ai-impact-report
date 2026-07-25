@@ -3,7 +3,7 @@
 # Run: python3 content.py   (imports the engine in build.py, writes all pages)
 from build import (write, banner, guidance_box, keypoints, nonneg, pagenav,
                    FOOTER, head, nav_html, SITE, BRAND_TITLE, AUTHOR, link,
-                   tie_orphans, clean_urls, page_graph, quote_grid)
+                   tie_orphans, clean_urls, page_graph, quote_band)
 import html as _h
 
 # ---- Verified official source URLs (open in a new tab via build.link) ----
@@ -66,6 +66,9 @@ home_body = f"""<section class="hero">
   <p>Back in 2023 I published a free {link("Use of AI in Education policy template", "https://ictevangelist.com/free-resource-use-of-artificial-intelligence-ai-in-education-school-policy-template/")} that I hoped would be useful. What I didn’t expect was just how many schools would download it and put it to work. When Ofsted set out its approach to AI in 2024, I responded with {link("ten actionable insights to build on it", "https://ictevangelist.com/enhancing-ofsteds-policy-paper-on-ai-with-actionable-insights/")}, and in 2025 I {link("updated the template", "https://ictevangelist.com/ai-policy-template-2025/")} against the DfE’s policy paper on generative AI.</p>
   <p>Over the last decade I’ve worked with hundreds of schools, trusts and organisations worldwide on digital strategy, governance, policy and training, and before I first published that template, I’d already helped dozens of schools and trusts develop their own. This site brings all of that together: everything I’ve learned about AI policy, rewritten for the framework that applies from September 2026.</p>
 
+  {quote_band("Really engaged a set of leaders, giving them confidence to explore the art of the possible, reassured they are working in a safe environment.",
+              "Paul Rickeard", "CEO, DND Learning Trust", reopen="container")}
+
   <h2>How to use this site</h2>
   <p>Every section of the policy template has a page of its own here, and the pages run in the same order as the template itself. If you’re writing your policy, my advice is to work through them in order with the template open alongside. Each page explains what that section is, why it’s important, and the law and guidance it speaks to. Start at the beginning and use the ‘Next’ button at the bottom of each page to move through:</p>
   <ol class="step-list">
@@ -83,6 +86,9 @@ home_body = f"""<section class="hero">
     <li><a href="pupil-use.html">Pupil use</a></li>
   </ol>
   <p>By the time you’ve worked through them all, you’ll have everything you need to complete, agree and ratify your policy. The <a href="guidance-map.html">guidance map</a> and <a href="references.html">references</a> sit at the end for checking sources, and the <a href="policy-template.html">policy template</a> and <a href="dpia-tool.html">DPIA screening tool</a> are yours to download at any point along the way.</p>
+
+  {quote_band("Don’t think twice about it. Mark has a significant amount of expertise, and is incredibly generous with sharing it. His values are clear and shine through in all his interactions.",
+              "Julie Carson", "Deputy CEO, Woodland Academy Trust", reopen="container")}
 
   <h2 class="mt-0" style="margin-top:2rem;">Or dip straight into a section</h2>
   <div class="card-grid" style="margin-top:1.2rem;">
@@ -110,15 +116,8 @@ home_body = f"""<section class="hero">
     <a class="card card--link" href="dpia-tool.html"><h3>The DPIA screening tool &darr;</h3><p>A plain-English tool that runs in your browser, for any AI or digital product you’re thinking of buying. Complete it, save it, and send it to your DPO.</p><span class="more">Unlock &rsaquo;</span></a>
   </div>
 
-  <h2>What school and trust leaders say</h2>
-  {quote_grid([
-    ("Really engaged a set of leaders, giving them confidence to explore the art of the possible, reassured they are working in a safe environment.",
-     "Paul Rickeard", "CEO, DND Learning Trust"),
-    ("Don’t think twice about it. Mark has a significant amount of expertise, and is incredibly generous with sharing it. His values are clear and shine through in all his interactions.",
-     "Julie Carson", "Deputy CEO, Woodland Academy Trust"),
-    ("Don’t just book a one-off. The magic comes from building a relationship over time, where he can understand your needs as an organisation and help you develop digital strategy in a sustainable way.",
-     "Robbie McGrath", "Director of School Improvement (Primary), Nova Education Trust"),
-  ])}
+  {quote_band("Don’t just book a one-off. The magic comes from building a relationship over time, where he can understand your needs as an organisation and help you develop digital strategy in a sustainable way.",
+              "Robbie McGrath", "Director of School Improvement (Primary), Nova Education Trust", reopen="container")}
 
   <h2>Need more than a template?</h2>
   <p>If your school or trust needs support writing or refining your AI policy, or training staff to use AI well, that’s exactly the work I do. <a href="mailto:mark@ictevangelist.com?subject=AI%20policy%20support">Get in touch</a> or find me at {link("ictevangelist.com", "https://ictevangelist.com/contact/")}. And if the template or the screening tool has helped you, I’d love to hear about it. Feedback is always welcome.</p>
@@ -193,6 +192,9 @@ PAGES.append(("landscape.html", "The landscape", "Sections 1–2 of the template
   <h2>Why it’s important</h2>
   <p>AI rarely arrives through one obvious route. It turns up inside the platforms you already license, and it’s a browser tab away for any member of staff. If your policy only covers “the AI tool we bought”, it’ll miss most of your real exposure. The template therefore defines scope by what a tool <em>does</em>: does it generate content, or make or inform decisions about people? Scoped that way, your policy stays relevant as products change around you.</p>
   <p>There’s an inspection angle too. When Ofsted visits, schools and trusts will increasingly need to show how they manage the risks that come with AI (data privacy, intellectual property, bias and ethics), how they comply with safeguarding and data governance duties, and how they use AI to support workload, accessibility and equity. Similar expectations apply to British Schools Overseas and to independent schools inspected by ISI, whose frameworks follow the same lines.</p>
+
+  {quote_band("Mark was a great addition to our conference and would definitely be a positive addition to other trusts for a keynote, CPD or twilight session.",
+              "Helen Lloyd", "Marches Academy Trust")}
   <p>If you’re a multi-academy trust, my advice is to adopt one policy centrally and hold school-level detail in local appendices. I’ve seen separate versions drift apart over time, and they become very hard to assure.</p>
 
   {keypoints("What you decide here", [
@@ -370,10 +372,8 @@ PAGES.append(("safeguarding.html", "Safeguarding & Prevent", "Section 9 of the t
 
   {nonneg("Your Prevent, safeguarding and online-safety duties are non-negotiable, and apply to AI exactly as they apply to everything else.")}
 
-  {quote_grid([
-    ("Mark took time to understand the brief and created a package to engage and support both DSLs and SENCos: an open forum to discuss the challenges students face and how we can all work together to safeguard all.",
-     "Rachel Mousley", "Lead SENCo, Nova Education Trust"),
-  ])}
+  {quote_band("Mark took time to understand the brief and created a package to engage and support both DSLs and SENCos: an open forum to discuss the challenges students face and how we can all work together to safeguard all.",
+              "Rachel Mousley", "Lead SENCo, Nova Education Trust")}
 
   {guidance_box([G_KCSIE, G_OSA, G_PREVENT])}
   """,
@@ -414,17 +414,13 @@ PAGES.append(("training.html", "Training", "Section 11 of the template",
   <h2>Why it’s important</h2>
   <p>Most AI mishaps in schools aren’t deliberate. They come from a well-meaning member of staff who didn’t know where the line was. Short, concrete training on the few things that matter most (no personal data in, approved tools only, and a person always checks and owns the output), repeated regularly, does more to prevent harm than any block list. It also gives you evidence of the “meaningful human involvement” the law expects.</p>
 
+  {quote_band("Mark is very knowledgeable and open to feedback to make sure his sessions meet your exact need and philosophy.",
+              "James Tucker", "Professional Learning Lead, Diocese of Salisbury Academy Trust")}
+
   {keypoints("What you decide here", [
     "The training your staff complete, and how often it’s refreshed.",
     "How you tell people when the approved list changes, or a new AI feature appears.",
     "For pupil use: age-appropriate teaching about AI, covering literacy, misinformation, deepfakes and responsible use.",
-  ])}
-
-  {quote_grid([
-    ("Mark is very knowledgeable and open to feedback to make sure his sessions meet your exact need and philosophy.",
-     "James Tucker", "Professional Learning Lead, Diocese of Salisbury Academy Trust"),
-    ("Mark was a great addition to our conference and would definitely be a positive addition to other trusts for a keynote, CPD or twilight session.",
-     "Helen Lloyd", "Marches Academy Trust"),
   ])}
 
   {guidance_box([G_KCSIE, G_DFE_SAFETY, G_STANDARDS])}
@@ -489,6 +485,9 @@ PAGES.append(("pupil-use.html", "Pupil use", "Optional module",
   <p>Two things are easy to confuse, and mustn’t be. A tool’s terms may require parent or guardian agreement for younger users; a named person obtains and records that. Separately, your UK GDPR lawful basis for processing pupils’ data comes from the DPIA, and will rarely be consent. Where a pupil-facing tool processes children’s data, the ICO Children’s Code applies: the child’s best interests come first, settings default to high privacy, and profiling is off by default. Using a tool below its stated minimum age, or without the agreement it requires, is likely to breach both the tool’s terms and data protection law.</p>
   <p>Pupils are taught what AI can and can’t do: how to recognise deepfakes, misinformation and impersonation, and how to avoid over-reliance, including on tools that simulate conversation or companionship. Web-enabled or recording-capable devices, including smart glasses and earpieces, must not be taken into examinations or controlled assessments, in line with JCQ regulations. Declining pupil use, where meeting these conditions isn’t practical, is a perfectly reasonable and defensible choice.</p>
 
+  {quote_band("Mark always starts with pedagogy!",
+              "Emma Ledger", "Headteacher, Ranches Primary School, Dubai")}
+
   {nonneg("Don’t bring pupils into scope until a DPIA is complete and age-appropriate teaching about AI is embedded in your curriculum. Enabling pupil use without them is the most common way a sound policy becomes indefensible.")}
 
   {guidance_box([G_CC, G_KCSIE, G_DP, G_OSA, G_DFE_SAFETY])}
@@ -526,6 +525,9 @@ PAGES.append(("guidance-map.html", "The guidance map", "Reference",
   </table>
   </div>
   <p class="chart-note">Frameworks and their commencement dates change. Confirm the current version of each one before you rely on it, and take your own professional or legal advice where there’s any doubt. This map is a signpost, not a statement of the law.</p>
+
+  {quote_band("Ask questions. He always has the answers.",
+              "Rob Murray-Green", "Ashton Sixth Form College")}
   """,
   None, None, ("pupil-use.html", "Pupil use"), ("references.html", "References")))
 

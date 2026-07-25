@@ -234,13 +234,18 @@ def keypoints(title, items):
 def nonneg(text):
     return f'<div class="commentary" style="border-left-color:#c0392b;"><h3 style="color:#a04000;">A non-negotiable</h3><p>{text}</p></div>'
 
-def quote(text, name, role):
-    return (f'<figure class="quote-card"><blockquote><p>{text}</p></blockquote>'
-            f'<figcaption>{name}<span>{role}</span></figcaption></figure>')
-
-def quote_grid(items):
-    cards = "\n".join(quote(t, n, r) for t, n, r in items)
-    return f'<div class="quote-grid">{cards}</div>'
+def quote_band(text, name, role, reopen="container prose"):
+    """A full-width charcoal pull-quote band. Closes the current content
+    section, emits the band edge-to-edge, then reopens a matching section."""
+    return f'''</div></section>
+<section class="quote-band">
+  <div class="container">
+    <blockquote><p>{text}</p></blockquote>
+    <p class="quote-attr">{name} <span>&middot; {role}</span></p>
+  </div>
+</section>
+<section class="section"><div class="{reopen}">
+'''
 
 def pagenav(prev, nxt):
     p = f'<a href="{prev[0]}"><span class="dir">Previous</span><span class="ttl">{prev[1]}</span></a>' if prev else '<span></span>'

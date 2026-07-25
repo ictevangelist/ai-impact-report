@@ -495,27 +495,27 @@ h1, h2, h3 { text-wrap: balance; }
 @media (max-width: 640px) { .step-list { grid-template-columns: 1fr; } }
 html.a11y-contrast .step-list a { border-color: #8fa2ac; }
 
-/* ---- Testimonial quote cards ---- */
-.quote-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.1rem; margin: 1.3rem 0 0;
+/* ---- Full-width testimonial bands (charcoal, like the hero/CTA band) ---- */
+.quote-band {
+  background: linear-gradient(150deg, var(--charcoal) 0%, var(--charcoal-2) 100%);
+  margin: 2.6rem 0; padding: 2.3rem 0 2.4rem;
+  border-top: 4px solid transparent; border-image: var(--brand-grad) 1;
 }
-.quote-card {
-  margin: 0; position: relative;
-  background: var(--surface); border: 1px solid var(--border);
-  border-left: 4px solid #FEAE00; border-radius: 12px;
-  padding: 1.35rem 1.4rem 1.2rem; box-shadow: var(--shadow);
+.quote-band .container { max-width: var(--maxw); }
+.quote-band blockquote { margin: 0; position: relative; padding-left: 2.7rem; }
+.quote-band blockquote::before {
+  content: "\201C"; position: absolute; left: 0; top: -.4rem;
+  font-family: var(--font-display); font-size: 3.6rem; line-height: 1; color: #FEAE00;
 }
-.quote-card::before {
-  content: "\201C"; position: absolute; top: .15rem; right: .85rem;
-  font-family: var(--font-head); font-size: 3.2rem; line-height: 1;
-  color: #FEAE00; opacity: .55;
+.quote-band blockquote p {
+  margin: 0; color: #eef3f6; font-size: 1.16rem; line-height: 1.65;
+  max-width: 58ch; text-wrap: pretty;
 }
-.quote-card blockquote { margin: 0; }
-.quote-card blockquote p { margin: 0; font-size: .98rem; line-height: 1.6; color: var(--ink); }
-.quote-card figcaption { margin-top: .9rem; font-size: .88rem; font-weight: 600; color: var(--charcoal); }
-.quote-card figcaption span { display: block; font-weight: 500; font-size: .84rem; color: var(--ink-soft); margin-top: .1rem; }
-html.a11y-contrast .quote-card { border-color: #8fa2ac; }
+.quote-band .quote-attr {
+  margin: .95rem 0 0 2.7rem; font-family: var(--font-head);
+  font-weight: 600; font-size: .93rem; color: #FEAE00;
+}
+.quote-band .quote-attr span { color: #c4cfd8; font-weight: 500; }
 
 /* ---- Analytics consent banner (injected by js/consent.js) ---- */
 .consent-banner {
