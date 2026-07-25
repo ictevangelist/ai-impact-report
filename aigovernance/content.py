@@ -423,6 +423,9 @@ PAGES.append(("training.html", "Training", "Section 11 of the template",
     "For pupil use: age-appropriate teaching about AI, covering literacy, misinformation, deepfakes and responsible use.",
   ])}
 
+  {quote_band("Mark Anderson’s workshop provided one of the best CPDs I have done for classroom practice.",
+              "Teacher of Computer Science", "Marches Academy Trust")}
+
   {guidance_box([G_KCSIE, G_DFE_SAFETY, G_STANDARDS])}
   """,
   None, None, ("impact-assessment.html", "Impact assessment"), ("filtering-monitoring.html", "Filtering & monitoring")))
