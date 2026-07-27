@@ -181,12 +181,19 @@ cohort_body = banner("Work with me", 'The <span class="accent">autumn cohort</sp
 
   <h2>The investment</h2>
   <p>Five tiers, priced by the size of the job, because ratifying a policy across a large trust is a different undertaking from ratifying it in a one-form-entry primary. Find yours below; if you’re genuinely unsure which fits, email me and I’ll tell you straight.</p>
-  <div class="card-grid">
-    <div class="card"><h3>Small school</h3><p><strong style="font-size:1.5rem;">&pound;495</strong><br>for the term</p><p>Primaries of one-form entry or smaller, first, infant and junior schools, and special schools. Two seats.</p></div>
-    <div class="card"><h3>Larger primary</h3><p><strong style="font-size:1.5rem;">&pound;695</strong><br>for the term</p><p>Primaries of two-form entry or more. Two seats.</p></div>
-    <div class="card"><h3>Secondary, all-through or college</h3><p><strong style="font-size:1.5rem;">&pound;995</strong><br>for the term</p><p>Any secondary or all-through school, sixth form or FE college. Three seats.</p></div>
-    <div class="card"><h3>Small trust</h3><p><strong style="font-size:1.5rem;">&pound;1,450</strong><br>for the term</p><p>Multi-academy trusts and federations of two to seven schools, adopting one policy centrally. Three seats.</p></div>
-    <div class="card"><h3>Large trust</h3><p><strong style="font-size:1.5rem;">&pound;1,950</strong><br>for the term</p><p>Trusts of eight schools or more. Three seats, plus a private one-to-one session with me on your trust-specific rollout.</p></div>
+  <div class="data-table-wrap">
+  <table class="data pricing">
+    <thead>
+      <tr><th scope="col">Tier</th><th scope="col">Who it&rsquo;s for</th><th scope="col">Seats</th><th scope="col">For the term</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="tier">Small school</td><td>Primaries of one-form entry or smaller, first, infant and junior schools, and special schools</td><td>2</td><td class="price">&pound;495</td></tr>
+      <tr><td class="tier">Larger primary</td><td>Primaries of two-form entry or more</td><td>2</td><td class="price">&pound;695</td></tr>
+      <tr><td class="tier">Secondary, all-through or college</td><td>Any secondary or all-through school, sixth form or FE college</td><td>3</td><td class="price">&pound;995</td></tr>
+      <tr><td class="tier">Small trust</td><td>Multi-academy trusts and federations of two to seven schools, adopting one policy centrally</td><td>3</td><td class="price">&pound;1,450</td></tr>
+      <tr><td class="tier">Large trust</td><td>Trusts of eight schools or more. Includes a private one-to-one session with me on your trust-specific rollout</td><td>3</td><td class="price">&pound;1,950</td></tr>
+    </tbody>
+  </table>
   </div>
   <p style="margin-top:1rem;"><strong>Reserve and invoice by Friday 11 September and take 10% off any tier.</strong> I don’t charge VAT, so the price is the price, and your invoice confirms your place. One policy, one organisation, one booking: the trust tiers exist so a trust doesn’t buy a school place and share it around.</p>
 
