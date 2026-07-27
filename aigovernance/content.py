@@ -120,7 +120,7 @@ home_body = f"""<section class="hero">
               "Robbie McGrath", "Director of School Improvement (Primary), Nova Education Trust", reopen="container")}
 
   <h2>Need more than a template?</h2>
-  <p>If your school or trust needs support writing or refining your AI policy, or training staff to use AI well, that’s exactly the work I do. This autumn there’s also <a href="cohort.html">a small cohort working through the policy with me</a>, from completing each section through to ratification. <a href="mailto:mark@ictevangelist.com?subject=AI%20policy%20support">Get in touch</a> or find me at {link("ictevangelist.com", "https://ictevangelist.com/contact/")}. And if the template or the screening tool has helped you, I’d love to hear about it. Feedback is always welcome.</p>
+  <p>If your school or trust needs support writing or refining your AI policy, or training staff to use AI well, that’s exactly the work I do. <a href="mailto:mark@ictevangelist.com?subject=AI%20policy%20support">Get in touch</a> or find me at {link("ictevangelist.com", "https://ictevangelist.com/contact/")}. And if the template or the screening tool has helped you, I’d love to hear about it. Feedback is always welcome.</p>
 
   <h2>Your questions, answered</h2>
   <div class="faq">

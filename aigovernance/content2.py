@@ -211,6 +211,11 @@ cohort_body = banner("Work with me", 'The <span class="accent">autumn cohort</sp
 write("cohort.html", "The autumn cohort | " + build.BRAND_TITLE,
       "Work through the Use of AI Policy template with Mark Anderson and a small group of schools, trusts and colleges: five sessions to a completed, ratified policy.",
       cohort_body, ORG_LD)
+# Unlisted until launch: reachable only by direct link, invisible to search.
+_ch = build.OUT / "cohort" / "index.html"
+_ch.write_text(_ch.read_text(encoding="utf-8").replace(
+    '<meta name="robots" content="index, follow">',
+    '<meta name="robots" content="noindex, nofollow">'), encoding="utf-8")
 
 # ------------------------------------------------ PRIVACY NOTICE
 priv_body = banner("Legal", '<span class="accent">Privacy notice</span>',

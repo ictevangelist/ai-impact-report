@@ -189,7 +189,6 @@ FOOTER = f"""</main>
           <li><a href="references.html">References</a></li>
           <li><a href="dpia-tool.html">DPIA screening tool</a></li>
           <li><a href="policy-template.html">Get the template</a></li>
-          <li><a href="cohort.html">The autumn cohort</a></li>
           <li><a href="privacy.html">Privacy notice</a></li>
         </ul>
       </div>
