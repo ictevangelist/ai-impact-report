@@ -222,7 +222,15 @@ cohort_body = banner("Work with me", 'The <span class="accent">autumn cohort</sp
   <p><strong>Reserve and invoice by Friday 11 September and take 10% off any tier.</strong> I don’t charge VAT, so the price is the price, and your invoice confirms your place. One policy, one organisation, one booking: the trust tiers exist so a trust doesn’t buy a school place and share it around.</p>
 
   <h2>Dates</h2>
-  <p>Sessions run from late September to early December, scheduled around half-term, with dates published at the start of September. It’s the summer break as I write this, so nothing needs deciding this week: reserving now simply holds your place ahead of the September announcement.</p>
+  <p>Five Thursdays across the autumn term, 4.00pm to 5.30pm, online:</p>
+  <ul>
+    <li><strong>Session 1</strong> &middot; Thursday 24 September</li>
+    <li><strong>Session 2</strong> &middot; Thursday 15 October</li>
+    <li><strong>Session 3</strong> &middot; Thursday 22 October</li>
+    <li><strong>Session 4</strong> &middot; Thursday 12 November</li>
+    <li><strong>Session 5</strong> &middot; Thursday 26 November</li>
+  </ul>
+  <p>Recordings are available if you have to miss one. Finishing in November is deliberate: it means your completed policy can go to your governors or trustees at their late-autumn meeting, and you start the spring term with it ratified. It’s the summer break as I write this, so nothing needs deciding this week: reserving now simply holds your place.</p>
 
   <h2>Reserve your place</h2>
   <p>Email me with your organisation’s name and which tier fits, and I’ll come back to you with everything you need. No payment until you’ve seen the dates and confirmed.</p>
