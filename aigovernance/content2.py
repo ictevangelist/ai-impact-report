@@ -163,6 +163,44 @@ write("policy-template.html", "Get the policy template | " + build.BRAND_TITLE,
       "Download a free, completable Use of AI Policy template for schools, trusts and colleges. Written for September 2026. Creative Commons licensed.",
       tmpl_body, ORG_LD)
 
+# ------------------------------------------------ THE AUTUMN COHORT
+cohort_body = banner("Work with me", 'The <span class="accent">autumn cohort</span>',
+  "Complete, approve and ratify your Use of AI Policy this term, working through it with me and a small group of schools, trusts and colleges.") + f"""
+  <p class="lead">The template is free, and it always will be. But a template on its own isn’t a policy: it needs completing for your context, taking through your stakeholders, and ratifying. That’s the real work, and this cohort is how we do it together, so you start the spring term with it done.</p>
+
+  <h2>What it is</h2>
+  <p>A small group, capped at <strong>twelve organisations</strong> so everyone gets airtime, meeting online across the autumn term. Five sessions take you through the policy in the same order as this site: completing each section for your setting, running the DPIA and approval process properly, handling your stakeholders, and getting the policy ratified. Between sessions you get my eyes on your drafts, and the group as a sounding board. Bring your digital lead and a senior colleague; the seats are included because policies get ratified faster when two people carry them home.</p>
+  <p>It’s the work I’ve been doing with schools, trusts and colleges for years, across policy, digital strategy, staff training and coaching leaders. The cohort format gives you the same structure and scrutiny at a fraction of what one-to-one consultancy costs.</p>
+
+  {keypoints("What you leave with", [
+    "A completed <em>Use of AI Policy</em>, ratified by your governors or board.",
+    "A DPIA and tool-approval process that's actually running, not sitting in a drawer.",
+    "The confidence to keep the policy current as guidance moves, because you'll understand why every section is there.",
+    "A network of peers who've done the same work at the same time.",
+  ])}
+
+  <h2>The investment</h2>
+  <div class="card-grid">
+    <div class="card"><h3>Single school</h3><p><strong style="font-size:1.5rem;">&pound;695</strong><br>for the term</p><p>Two seats. Primary, secondary or special, maintained or independent.</p></div>
+    <div class="card"><h3>Trust or college</h3><p><strong style="font-size:1.5rem;">&pound;1,250</strong><br>for the term</p><p>Three seats. Multi-academy trusts and FE colleges.</p></div>
+    <div class="card"><h3>Large trust</h3><p><strong style="font-size:1.5rem;">&pound;1,950</strong><br>for the term</p><p>Three seats for trusts of ten or more schools, plus a private one-to-one session with me on your trust-specific rollout.</p></div>
+  </div>
+  <p style="margin-top:1rem;">I don’t charge VAT, so the price is the price. Your invoice confirms your place. A small number of founder places at a reduced rate are reserved for the people who registered interest before this page existed; if that’s you, I’ll be in touch directly.</p>
+
+  <h2>Dates</h2>
+  <p>Sessions run from late September to early December, scheduled around half-term, with dates published at the start of September. It’s the summer break as I write this, so nothing needs deciding this week: reserving now simply holds your place ahead of the September announcement.</p>
+
+  <h2>Reserve your place</h2>
+  <p>Email me with your organisation’s name and which tier fits, and I’ll come back to you with everything you need. No payment until you’ve seen the dates and confirmed.</p>
+  <p><a class="btn btn--solid" href="mailto:mark@ictevangelist.com?subject=Autumn%20cohort%20place">Reserve a place</a></p>
+
+  <p class="chart-note">The cohort supports you in completing and ratifying your own policy; it isn’t legal advice, and responsibility for compliance rests with the adopting organisation, as it does for the template itself.</p>
+""" + pagenav(("policy-template.html", "Get the template"), None)
+
+write("cohort.html", "The autumn cohort | " + build.BRAND_TITLE,
+      "Work through the Use of AI Policy template with Mark Anderson and a small group of schools, trusts and colleges: five sessions to a completed, ratified policy.",
+      cohort_body, ORG_LD)
+
 # ------------------------------------------------ PRIVACY NOTICE
 priv_body = banner("Legal", '<span class="accent">Privacy notice</span>',
   "How this site handles information, including the sign-up you complete to unlock the DPIA screening tool.", crumbs=True) + f"""
