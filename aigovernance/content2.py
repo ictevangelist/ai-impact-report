@@ -166,7 +166,7 @@ write("policy-template.html", "Get the policy template | " + build.BRAND_TITLE,
 # ------------------------------------------------ THE AUTUMN COHORT
 cohort_body = banner("Work with me", 'The <span class="accent">autumn cohort</span>',
   "Complete, approve and ratify your Use of AI Policy this term, working through it with me and a small group of schools, trusts and colleges.") + f"""
-  <p class="lead">The template is free, and it always will be. But a template on its own isn’t a policy: it needs completing for your context, taking through your stakeholders, and ratifying. That’s the real work, and this cohort is how we do it together, so you start the spring term with it done.</p>
+  <p class="lead">A template on its own isn’t a policy. The cohort is where yours gets completed, agreed and ratified: five sessions across the autumn term, done by Christmas.</p>
 
   <figure class="fig-break"><img src="assets/cohort-journey.png" alt="The journey: from the free downloaded template, through five cohort sessions worked through together, to a policy ratified by your governors or board and in force for the spring term." width="1120" height="270" loading="lazy"></figure>
 
@@ -175,7 +175,7 @@ cohort_body = banner("Work with me", 'The <span class="accent">autumn cohort</sp
 
   <figure class="fig-break"><img src="assets/cohort-glance.png" alt="The autumn cohort at a glance: five Thursday sessions, 4.00 to 5.30pm, online, capped at twelve organisations. Session 1 on 24 September covers scope, the landscape and who owns what. Session 2 on 15 October covers approved tools and acceptable use. Session 3 on 22 October covers data protection and a live DPIA. Session 4 on 12 November covers safeguarding, oversight and enforcement. Session 5 on 26 November covers training, pupils and ratification." width="1120" height="420" loading="lazy"></figure>
 
-  <p>Open each session for exactly what it covers:</p>
+  <p>What each session covers:</p>
   <div class="faq">
 
     <details><summary>Session 1 &middot; Thu 24 September &middot; Scope, the landscape, and who owns what</summary><div class="faq__a"><p>The policy statement and scope, including what counts as AI: chatbots and content generators, the AI features inside software you already use, and AI reached through personal and wearable devices. The legal and statutory landscape your policy sits in, from KCSIE 2026 and the Data (Use and Access) Act amendments to the DfE standards, the Online Safety Act and Ofcom’s codes. Then roles and oversight: what your trustees or governors own, what sits with senior leadership, your AI or digital lead, DPO, DSL, filtering and monitoring lead and IT lead, and how AI gets onto your risk register and into assurance reporting. Between sessions you complete these sections in the workbook.</p></div></details>
@@ -204,7 +204,7 @@ cohort_body = banner("Work with me", 'The <span class="accent">autumn cohort</sp
   </ul>
 
   <h2>The investment</h2>
-  <p>Five tiers, priced by the size of the job. If you’re genuinely unsure which fits, email me and I’ll tell you straight.</p>
+  <p>Five tiers, priced by the size of the job. Unsure which fits? Email me.</p>
   <div class="pricing-wrap">
   <table class="pricing">
     <thead>
