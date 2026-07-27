@@ -288,15 +288,38 @@ table.data thead th { background: var(--charcoal); color: #fff; font-weight: 600
 table.data tbody tr:nth-child(even) { background: var(--surface-3); }
 table.data td.up { color: var(--ok); font-weight: 600; }
 
-/* Pricing table (cohort page) */
-table.pricing td.tier { font-weight: 600; font-family: var(--font-head); white-space: nowrap; }
-table.pricing td.price {
-  font-weight: 700; font-size: 1.08rem; white-space: nowrap;
-  font-variant-numeric: tabular-nums; text-align: right;
-  border-left: 3px solid #FEAE00; background: #fffaf0;
+/* Pricing table (cohort page) — branded to match the site's dark bands */
+.pricing-wrap {
+  margin: 1.5rem 0; border-radius: 12px; overflow-x: auto;
+  border: 1px solid var(--border); box-shadow: var(--shadow);
 }
-table.pricing th:last-child { text-align: right; }
+.pricing-wrap::before { content: ""; display: block; height: 4px; background: var(--brand-grad); }
+table.pricing { width: 100%; border-collapse: collapse; background: var(--surface); font-size: .96rem; }
+table.pricing thead th {
+  background: linear-gradient(150deg, var(--charcoal) 0%, var(--charcoal-2) 100%);
+  color: #fff; font-family: var(--font-head); font-weight: 600;
+  font-size: .88rem; letter-spacing: .4px; text-transform: uppercase;
+  padding: .95rem 1.15rem; text-align: left;
+}
+table.pricing td { padding: .95rem 1.15rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+table.pricing tbody tr:last-child td { border-bottom: 0; }
+table.pricing tbody tr:nth-child(even) { background: var(--surface-3); }
 table.pricing tbody tr:hover { background: var(--surface-2); }
+table.pricing td.tier {
+  font-family: var(--font-head); font-weight: 600; color: var(--charcoal); white-space: nowrap;
+}
+table.pricing td.tier::before {
+  content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 3px;
+  background: #FEAE00; margin-right: .55rem; vertical-align: 1px;
+}
+table.pricing th.num, table.pricing td.num { text-align: center; }
+table.pricing td.price {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.12rem;
+  color: var(--charcoal); white-space: nowrap; font-variant-numeric: tabular-nums;
+  background: #fff7e2;
+}
+table.pricing th:last-child { background-color: #2a3441; }
+@media (max-width: 640px) { table.pricing { font-size: .9rem; } table.pricing td, table.pricing thead th { padding: .75rem .8rem; } }
 
 /* ---------- Section navigation (prev/next) ---------- */
 .page-nav { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--border); margin-top: 2.6rem; padding-top: 1.6rem; flex-wrap: wrap; }
