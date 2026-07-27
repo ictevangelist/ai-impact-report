@@ -168,42 +168,43 @@ cohort_body = banner("Work with me", 'The <span class="accent">autumn cohort</sp
   "Complete, approve and ratify your Use of AI Policy this term, working through it with me and a small group of schools, trusts and colleges.") + f"""
   <p class="lead">The template is free, and it always will be. But a template on its own isn’t a policy: it needs completing for your context, taking through your stakeholders, and ratifying. That’s the real work, and this cohort is how we do it together, so you start the spring term with it done.</p>
 
+  <figure class="fig-break"><img src="assets/cohort-journey.png" alt="The journey: from the free downloaded template, through five cohort sessions worked through together, to a policy ratified by your governors or board and in force for the spring term." width="1120" height="270" loading="lazy"></figure>
+
   <h2>What it is</h2>
-  <p>A small group, capped at <strong>twelve organisations</strong>, meeting online across the autumn term: five live sessions of ninety minutes, roughly fortnightly from late September to early December. Every session is taught, structured, and the same for everyone in the room. This is a programme, not a queue for one-to-one advice, and it’s built so that every question answered helps all twelve organisations, not just the one that asked it. Bring your digital lead and a senior colleague; the seats exist because policies get ratified faster when two people carry them home.</p>
-  <p>The sessions follow the policy template’s own structure, section by section:</p>
+  <p>A small group, capped at <strong>twelve organisations</strong>, working through the policy together across the autumn term: five live online sessions of ninety minutes, each one taught, structured, and built so that every question answered helps the whole room. Bring your digital lead and a senior colleague; policies get ratified faster when two people carry them home.</p>
 
-  <h3>Session 1 &middot; Scope, the landscape, and who owns what</h3>
-  <p>The policy statement and scope, including what counts as AI: chatbots and content generators, the AI features inside software you already use, and AI reached through personal and wearable devices. The legal and statutory landscape your policy sits in, from KCSIE 2026 and the Data (Use and Access) Act amendments to the DfE standards, the Online Safety Act and Ofcom’s codes. Then roles and oversight: what your trustees or governors own, what sits with senior leadership, your AI or digital lead, DPO, DSL, filtering and monitoring lead and IT lead, and how AI gets onto your risk register and into assurance reporting. Between sessions you complete these sections in the workbook.</p>
+  <figure class="fig-break"><img src="assets/cohort-glance.png" alt="The autumn cohort at a glance: five Thursday sessions, 4.00 to 5.30pm, online, capped at twelve organisations. Session 1 on 24 September covers scope, the landscape and who owns what. Session 2 on 15 October covers approved tools and acceptable use. Session 3 on 22 October covers data protection and a live DPIA. Session 4 on 12 November covers safeguarding, oversight and enforcement. Session 5 on 26 November covers training, pupils and ratification." width="1120" height="420" loading="lazy"></figure>
 
-  <h3>Session 2 &middot; Approved tools and acceptable use</h3>
-  <p>How a tool gets approved: the route from request through DPIA to the approved list, who approves, and how changes are communicated. Then what staff may and must not do: organisation accounts rather than personal ones, the rule that no personal or special category data goes into AI tools and the reasons behind it (including why a name alone can skew what a model produces), the high-risk prohibitions, and the five non-negotiables you may reword but mustn’t weaken.</p>
+  <p>Open each session for exactly what it covers:</p>
+  <div class="faq">
 
-  <h3>Session 3 &middot; Data protection and impact assessment</h3>
-  <p>The data protection spine: whose data it is, lawful basis, controller and processor roles, contracts and sub-processors, international transfers, retention, and the rules for AI note-takers, meeting transcription and recording. Then impact assessment done properly: when a DPIA is required, the DfE generative AI product safety checks, and a <strong>live DPIA screening, start to finish, on a real product</strong> using the screening tool, so you’ve seen the whole process before you run your own.</p>
+    <details><summary>Session 1 &middot; Thu 24 September &middot; Scope, the landscape, and who owns what</summary><div class="faq__a"><p>The policy statement and scope, including what counts as AI: chatbots and content generators, the AI features inside software you already use, and AI reached through personal and wearable devices. The legal and statutory landscape your policy sits in, from KCSIE 2026 and the Data (Use and Access) Act amendments to the DfE standards, the Online Safety Act and Ofcom’s codes. Then roles and oversight: what your trustees or governors own, what sits with senior leadership, your AI or digital lead, DPO, DSL, filtering and monitoring lead and IT lead, and how AI gets onto your risk register and into assurance reporting. Between sessions you complete these sections in the workbook.</p></div></details>
 
-  <h3>Session 4 &middot; Safeguarding, oversight and enforcement</h3>
-  <p>Safeguarding and Prevent as they apply to AI: deepfakes, nudification tools, voice cloning and fraud, and how AI concerns travel your existing safeguarding routes. Accuracy and human oversight: meaningful human involvement as a legal test, bias and the Equality Act, and who owns an AI-assisted decision. Then enforcement: filtering and monitoring, shadow AI and how to stop it becoming the norm, and the assurance your board should receive.</p>
+    <details><summary>Session 2 &middot; Thu 15 October &middot; Approved tools and acceptable use</summary><div class="faq__a"><p>How a tool gets approved: the route from request through DPIA to the approved list, who approves, and how changes are communicated. Then what staff may and must not do: organisation accounts rather than personal ones, the rule that no personal or special category data goes into AI tools and the reasons behind it (including why a name alone can skew what a model produces), the high-risk prohibitions, and the five non-negotiables you may reword but mustn’t weaken.</p></div></details>
 
-  <h3>Session 5 &middot; Training, incidents, pupils, and ratification</h3>
-  <p>The training and awareness your staff actually need and how to evidence it. Breach and incident routes, decided before you need them. Whether to switch on the optional pupil-use module, and what the ICO Children’s Code and JCQ rules require if you do. Then the finish line: taking the policy through your stakeholders, presenting it to governors or trustees using the ratification pack, and keeping it current as guidance moves.</p>
+    <details><summary>Session 3 &middot; Thu 22 October &middot; Data protection, and a live DPIA</summary><div class="faq__a"><p>The data protection spine: whose data it is, lawful basis, controller and processor roles, contracts and sub-processors, international transfers, retention, and the rules for AI note-takers, meeting transcription and recording. Then impact assessment done properly: when a DPIA is required, the DfE generative AI product safety checks, and a <strong>live DPIA screening, start to finish, on a real product</strong> using the screening tool, so you’ve seen the whole process before you run your own.</p></div></details>
 
-  <p>It’s the work I’ve been doing with schools, trusts and colleges for years, across policy, digital strategy, staff training and coaching leaders. The cohort format gives you the same structure and scrutiny at a fraction of what one-to-one consultancy costs.</p>
+    <details><summary>Session 4 &middot; Thu 12 November &middot; Safeguarding, oversight and enforcement</summary><div class="faq__a"><p>Safeguarding and Prevent as they apply to AI: deepfakes, nudification tools, voice cloning and fraud, and how AI concerns travel your existing safeguarding routes. Accuracy and human oversight: meaningful human involvement as a legal test, bias and the Equality Act, and who owns an AI-assisted decision. Then enforcement: filtering and monitoring, shadow AI and how to stop it becoming the norm, and the assurance your board should receive.</p></div></details>
+
+    <details><summary>Session 5 &middot; Thu 26 November &middot; Training, incidents, pupils, and ratification</summary><div class="faq__a"><p>The training and awareness your staff actually need and how to evidence it. Breach and incident routes, decided before you need them. Whether to switch on the optional pupil-use module, and what the ICO Children’s Code and JCQ rules require if you do. Then the finish line: taking the policy through your stakeholders, presenting it to governors or trustees using the ratification pack, and keeping it current as guidance moves.</p></div></details>
+
+  </div>
+
+  <p>Every session is recorded, so an absence never means a gap. Finishing in November is deliberate: your completed policy reaches your governors or trustees before Christmas, and the spring term starts with it in force. It’s the work I’ve been doing with schools, trusts and colleges for years, at a fraction of what one-to-one consultancy costs.</p>
 
   <h2>What you get</h2>
   <p>For one price, your organisation gets all of this:</p>
   <ul>
     <li><strong>Five live ninety-minute sessions</strong>, for every seat in your tier, with recordings available afterwards so an absence never means a gap.</li>
     <li><strong>The cohort workbook</strong>: a section-by-section completion checklist for the entire policy, so at every stage you know exactly what “done” looks like and can check your own draft against it.</li>
-    <li><strong>Structured peer review, twice in the term</strong>: your draft checked against the workbook by another organisation in the cohort, and theirs by you. A second set of eyes at the two points where drafts most often go wrong, and the fastest learning in the whole programme.</li>
     <li><strong>Your questions answered, every week</strong>: send them in by Friday and I answer the themes for the whole cohort, at the start of the next session and in a short written round-up. If you’re wondering it, someone else in the room is too.</li>
     <li><strong>A live DPIA screening on a real product</strong> in session three, using the free screening tool you may already have.</li>
     <li><strong>The ratification pack</strong>: a model paper for presenting the policy to your governors or trustees, and an adoption checklist for the weeks after ratification.</li>
     <li><strong>For large trusts</strong>: a private one-to-one session with me on your trust-specific rollout.</li>
   </ul>
-  <p>And to be equally clear about what it isn’t: it isn’t individual consultancy. I don’t review each organisation’s draft line by line, and nobody sits waiting while I work through somebody else’s policy. If you want me one-to-one on yours, that’s consultancy and you can book it; the cohort exists precisely so you don’t have to.</p>
 
   <h2>The investment</h2>
-  <p>Five tiers, priced by the size of the job, because ratifying a policy across a large trust is a different undertaking from ratifying it in a one-form-entry primary. Find yours below; if you’re genuinely unsure which fits, email me and I’ll tell you straight.</p>
+  <p>Five tiers, priced by the size of the job. If you’re genuinely unsure which fits, email me and I’ll tell you straight.</p>
   <div class="pricing-wrap">
   <table class="pricing">
     <thead>
@@ -220,17 +221,6 @@ cohort_body = banner("Work with me", 'The <span class="accent">autumn cohort</sp
   </div>
   <p>The price is <strong>one-off, for the whole programme</strong>: all five sessions, my eyes on your drafts throughout, and everything above. Nothing recurs, and there’s nothing else to buy. The programme runs across the autumn term, late September to early December.</p>
   <p><strong>Reserve and invoice by Friday 11 September and take 10% off any tier.</strong> I don’t charge VAT, so the price is the price, and your invoice confirms your place. One policy, one organisation, one booking: the trust tiers exist so a trust doesn’t buy a school place and share it around.</p>
-
-  <h2>Dates</h2>
-  <p>Five Thursdays across the autumn term, 4.00pm to 5.30pm, online:</p>
-  <ul>
-    <li><strong>Session 1</strong> &middot; Thursday 24 September</li>
-    <li><strong>Session 2</strong> &middot; Thursday 15 October</li>
-    <li><strong>Session 3</strong> &middot; Thursday 22 October</li>
-    <li><strong>Session 4</strong> &middot; Thursday 12 November</li>
-    <li><strong>Session 5</strong> &middot; Thursday 26 November</li>
-  </ul>
-  <p>Recordings are available if you have to miss one. Finishing in November is deliberate: it means your completed policy can go to your governors or trustees at their late-autumn meeting, and you start the spring term with it ratified. It’s the summer break as I write this, so nothing needs deciding this week: reserving now simply holds your place.</p>
 
   <h2>Reserve your place</h2>
   <p>Email me with your organisation’s name and which tier fits, and I’ll come back to you with everything you need. No payment until you’ve seen the dates and confirmed.</p>

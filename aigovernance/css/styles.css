@@ -288,6 +288,11 @@ table.data thead th { background: var(--charcoal); color: #fff; font-weight: 600
 table.data tbody tr:nth-child(even) { background: var(--surface-3); }
 table.data td.up { color: var(--ok); font-weight: 600; }
 
+
+/* Figure breaks (cohort page graphics) */
+.fig-break { margin: 1.7rem 0; }
+.fig-break img { display: block; width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow); }
+
 /* Pricing table (cohort page) — branded to match the site's dark bands */
 .pricing-wrap {
   margin: 1.5rem 0; border-radius: 12px; overflow-x: auto;
