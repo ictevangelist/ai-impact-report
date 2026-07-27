@@ -198,11 +198,11 @@ cohort_body = banner("Work with me", 'The <span class="accent">autumn cohort</sp
       <tr><th scope="col">Tier</th><th scope="col">Who it&rsquo;s for</th><th scope="col" class="num">Seats</th><th scope="col" class="num">Early bird</th><th scope="col" class="num">Price</th></tr>
     </thead>
     <tbody>
-      <tr><td class="tier">Small school</td><td>Primaries of one-form entry or smaller, first, infant and junior schools, and special schools</td><td class="num">2</td><td class="num price">&pound;470</td><td class="num">&pound;495</td></tr>
-      <tr><td class="tier">Larger primary</td><td>Primaries of two-form entry or more</td><td class="num">2</td><td class="num price">&pound;660</td><td class="num">&pound;695</td></tr>
-      <tr><td class="tier">Secondary, all-through or college</td><td>Any secondary or all-through school, sixth form or FE college</td><td class="num">3</td><td class="num price">&pound;945</td><td class="num">&pound;995</td></tr>
-      <tr><td class="tier">Small trust</td><td>Multi-academy trusts and federations of two to seven schools, adopting one policy centrally</td><td class="num">3</td><td class="num price">&pound;1,375</td><td class="num">&pound;1,450</td></tr>
-      <tr><td class="tier">Large trust</td><td>Trusts of eight schools or more. Includes a private one-to-one session with me on your trust-specific rollout</td><td class="num">3</td><td class="num price">&pound;1,850</td><td class="num">&pound;1,950</td></tr>
+      <tr><td class="tier">Small school</td><td>Primaries of one-form entry or smaller, first, infant and junior schools, and special schools</td><td class="num">2</td><td class="num price">&pound;470</td><td class="num price-std">&pound;495</td></tr>
+      <tr><td class="tier">Larger primary</td><td>Primaries of two-form entry or more</td><td class="num">2</td><td class="num price">&pound;660</td><td class="num price-std">&pound;695</td></tr>
+      <tr><td class="tier">Secondary, all-through or college</td><td>Any secondary or all-through school, sixth form or FE college</td><td class="num">3</td><td class="num price">&pound;945</td><td class="num price-std">&pound;995</td></tr>
+      <tr><td class="tier">Small trust</td><td>Multi-academy trusts and federations of two to seven schools, adopting one policy centrally</td><td class="num">3</td><td class="num price">&pound;1,375</td><td class="num price-std">&pound;1,450</td></tr>
+      <tr><td class="tier">Large trust</td><td>Trusts of eight schools or more. Includes a private one-to-one session with me on your trust-specific rollout</td><td class="num">3</td><td class="num price">&pound;1,850</td><td class="num price-std">&pound;1,950</td></tr>
     </tbody>
   </table>
   </div>

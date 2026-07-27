@@ -323,6 +323,10 @@ table.pricing td.price {
   color: var(--charcoal); white-space: nowrap; font-variant-numeric: tabular-nums;
   background: #fff7e2;
 }
+table.pricing td.price-std {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.12rem;
+  color: var(--charcoal); white-space: nowrap; font-variant-numeric: tabular-nums;
+}
 table.pricing th:last-child { background-color: #2a3441; }
 @media (max-width: 640px) { table.pricing { font-size: .9rem; } table.pricing td, table.pricing thead th { padding: .75rem .8rem; } }
 
