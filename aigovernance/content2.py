@@ -206,7 +206,7 @@ cohort_body = banner("Work with me", 'The <span class="accent">autumn cohort</sp
     </tbody>
   </table>
   </div>
-  <p>Prices are one-off and cover the whole programme. I don’t charge VAT. Early-bird prices apply to bookings invoiced by Friday 11 September.</p>
+  <p>Prices are one-off and cover the whole programme. VAT not chargeable. Early-bird prices apply to a purchase order received by Friday 11 September. Invoices due on receipt.</p>
 
   <h2>Reserve your place</h2>
   <p>Email me your organisation’s name and tier. I’ll reply with the invoice, and that confirms your place.</p>
