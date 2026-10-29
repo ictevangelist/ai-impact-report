@@ -26,7 +26,8 @@ static host.
 | `reflections-recommendations.html` | Reflections &amp; Recommendations |
 | `data-findings.html` | Data &amp; Findings — headline metrics visualised as charts |
 | `css/styles.css` | Shared stylesheet |
-| `privacy.html` | Privacy notice (no cookies / tracking / data collection) |
+| `privacy.html` | Privacy notice (no personal data; Google Analytics on by default with an opt-out) |
+| `js/ga-optout.js` | Google Analytics opt-out: footer control and one-time notice |
 | `js/nav.js` | Header waffle-menu toggle + autohide-on-scroll |
 | `js/a11y.js` | Reading-controls widget (text size, contrast, spacing, listen-aloud) |
 | `js/charts.js` | Chart definitions with all data values hard-coded |

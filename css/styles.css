@@ -424,3 +424,12 @@ html.a11y-spacing li { margin-bottom: .75em; }
 .faq details[open] summary { border-bottom: 1px solid var(--border); }
 .faq .faq__a { padding: 1rem 1.2rem; }
 .faq .faq__a p { margin: 0; color: var(--ink-soft); }
+
+/* Google Analytics opt-out: footer control and one-time notice */
+.ga-note button { font: inherit; background: none; border: 0; padding: 0; color: #ffffff; text-decoration: underline; cursor: pointer; }
+.ga-note button:hover { text-decoration-thickness: 2px; }
+.ga-pop { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.5rem; padding: .8rem 5.5rem .8rem 1.1rem; background: #1d2632; color: #c4cfd8; font-family: 'Poppins', Segoe UI, system-ui, sans-serif; font-size: .9rem; box-shadow: 0 -2px 14px rgba(0,0,0,.25); }
+.ga-pop .ga-note { margin: 0; color: #c4cfd8; font-size: .9rem; }
+.ga-pop .ga-close { font: inherit; font-weight: 600; background: none; color: #ffffff; border: 2px solid #ffffff; border-radius: 6px; padding: .2rem .9rem; cursor: pointer; }
+.ga-pop :focus-visible, .ga-note :focus-visible { outline: 3px solid #ffffff; outline-offset: 2px; }
+@media print { .ga-pop, .ga-note { display: none !important; } }
